@@ -182,7 +182,7 @@
       "enableParallelism": true,
       "ignoreMissingScript": false,
       "ignoreDependencyOrder": true,
-      "allowWarningsInSuccessfulBuild": false
+      "allowWarningsInSuccessfulBuild": true
     },
     {
       "name": "lint",
