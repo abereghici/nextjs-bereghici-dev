@@ -1,11 +1,11 @@
 # Name of workflow
-name: Development workflow
+name: Release workflow
 
 # When workflow is triggered
 on:
   push:
     branches:
-      - dev
+      - main
 # Jobs to carry out
 jobs:
   deploy:
@@ -40,6 +40,6 @@ jobs:
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ secrets.RELEASE_NETLIFY_SITE_ID }}
         with:
           args: deploy --dir=apps/client/build --prod
