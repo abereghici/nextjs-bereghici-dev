@@ -182,7 +182,17 @@
       "enableParallelism": true,
       "ignoreMissingScript": false,
       "ignoreDependencyOrder": true,
-      "allowWarningsInSuccessfulBuild": true
+      "allowWarningsInSuccessfulBuild": false
+    },
+    {
+      "name": "lint",
+      "commandKind": "bulk",
+      "summary": "Run linter on each package",
+      "description": "Iterates through each package in the monorepo and runs the 'lint' script",
+      "enableParallelism": true,
+      "ignoreMissingScript": false,
+      "ignoreDependencyOrder": true,
+      "allowWarningsInSuccessfulBuild": false
     }
   ],
   /**
