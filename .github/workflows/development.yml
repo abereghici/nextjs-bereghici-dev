@@ -26,9 +26,10 @@ jobs:
           node-version: 14.x
       # Run rush install and build on our code
       - name: Install dependencies
-        run: node common/scripts/install-run-rush.js change -v
-        run: node common/scripts/install-run-rush.js install
-      # Run eslint to check all packages 
+        run: |
+          node common/scripts/install-run-rush.js change -v
+          node common/scripts/install-run-rush.js install
+      # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint
       # Run unit tests for all packages
