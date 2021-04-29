@@ -13,7 +13,8 @@ jobs:
   deploy:
     # Operating system to run job on
     runs-on: ubuntu-latest
-
+    env:
+      CI: true
     # Steps in job
     steps:
       # Get code from repo
@@ -26,9 +27,7 @@ jobs:
           node-version: 14.x
       # Run rush install and build on our code
       - name: Install dependencies
-        run: |
-          node common/scripts/install-run-rush.js change -v
-          node common/scripts/install-run-rush.js install
+        run: node common/scripts/install-run-rush.js change -v && node common/scripts/install-run-rush.js install
       # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint

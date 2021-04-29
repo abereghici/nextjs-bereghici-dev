@@ -180,7 +180,7 @@
       "summary": "Run tests on each package",
       "description": "Iterates through each package in the monorepo and runs the 'test' script",
       "enableParallelism": true,
-      "ignoreMissingScript": true,
+      "ignoreMissingScript": false,
       "ignoreDependencyOrder": true,
       "allowWarningsInSuccessfulBuild": false
     },
