@@ -18,14 +18,23 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v1
       # Install NodeJS
-      - name: Use Node.js 12.x
+      - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 14.x
       # Run rush install and build on our code
-      - run: node common/scripts/install-run-rush.js change -v
-      - run: node common/scripts/install-run-rush.js install
-      - run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
+      - name: Install dependencies
+        run: node common/scripts/install-run-rush.js change -v
+        run: node common/scripts/install-run-rush.js install
+      # Run eslint to check all packages 
+      - name: Lint packages
+        run: node common/scripts/install-run-rush.js lint
+      # Run unit tests for all packages
+      - name: Run tests
+        run: node common/scripts/install-run-rush.js test
+      # Build client app
+      - name: Build client app
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
       # Deploy to Netlify using our production secrets
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
