@@ -79,31 +79,31 @@ jobs:
           PROJECTS="$(node tools/detect-changed-projects)"
           echo "::set-output name=PROJECTS::$PROJECTS"
       - name: Build client app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, $CLIENT_APP)
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to $CLIENT_APP
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }})
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.CLIENT_APP }}
       - name: Deploy client app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, $CLIENT_APP)
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }})
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
         with:
-          publish-dir: $CLIENT_BUILD_DIR
+          publish-dir: ${{ env.CLIENT_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
       - name: Build admin app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, $ADMIN_APP)
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to $ADMIN_APP
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }})
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.ADMIN_APP }}
       - name: Deploy admin app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, $ADMIN_APP)
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }})
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
         with:
-          publish-dir: $ADMIN_BUILD_DIR
+          publish-dir: ${{ env.ADMIN_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
