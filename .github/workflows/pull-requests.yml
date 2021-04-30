@@ -3,9 +3,7 @@ name: Pull requests workflow
 
 # When workflow is triggered
 on:
-  push:
-    branches:
-      - dev
+  pull_request:
 # Jobs to carry out
 jobs:
   lint:
