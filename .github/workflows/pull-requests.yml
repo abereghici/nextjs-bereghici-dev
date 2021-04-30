@@ -59,7 +59,7 @@ jobs:
       CLIENT_BUILD_DIR: 'apps/client/build'
       ADMIN_APP: '@bereghici/admin-app'
       ADMIN_BUILD_DIR: 'apps/admin/build'
-      IS_PRODUCTION_DEPLOY: github.ref == 'refs/heads/main'
+      IS_PRODUCTION_DEPLOY: github.ref != 'refs/heads/main'
     needs: [lint, test]
     # Steps in job
     steps:
