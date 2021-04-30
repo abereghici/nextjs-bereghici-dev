@@ -73,11 +73,13 @@ jobs:
         run: |
           projects="$(node tools/detect-changed-projects)"
           echo "::set-output name=projects::$projects"
+      - name: Log output of the script
+        run: echo "${{steps.changedProjects.outputs.projects}}"
       - name: Build client app
-        if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
+        if: contains(${{steps.changedProjects.outputs.projects}}, '@bereghici/client-app')
         run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
       - name: Deploy client app to netlify
-        if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
+        if: contains(${{steps.changedProjects.outputs.projects}}, '@bereghici/client-app')
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
