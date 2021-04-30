@@ -72,6 +72,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
         with:
           publish-dir: 'apps/client/build'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: false
           enable-commit-comment: true
           overwrites-pull-request-comment: true
