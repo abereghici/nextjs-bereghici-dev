@@ -51,6 +51,11 @@ jobs:
   deploy:
     # Operating system to run job on
     runs-on: ubuntu-latest
+    env:
+      CLIENT_APP: '@bereghici/client-app'
+      CLIENT_BUILD_DIR: 'apps/client/build'
+      ADMIN_APP: '@bereghici/admin-app'
+      ADMIN_BUILD_DIR: 'apps/admin/build'
     needs: [lint, test]
     # Steps in job
     steps:
@@ -67,38 +72,38 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
-      # Build client app
+      # Find changed projects to build it
       - name: Find changed projects
         id: changedProjects
         run: |
-          projects="$(node tools/detect-changed-projects)"
-          echo "::set-output name=projects::$projects"
+          PROJECTS="$(node tools/detect-changed-projects)"
+          echo "::set-output name=PROJECTS::$PROJECTS"
       - name: Build client app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/client-app')
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
+        if: contains(${{ steps.changedProjects.outputs.projects }}, $CLIENT_APP)
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to $CLIENT_APP
       - name: Deploy client app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/client-app')
+        if: contains(${{ steps.changedProjects.outputs.projects }}, $CLIENT_APP)
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
         with:
-          publish-dir: 'apps/client/build'
+          publish-dir: $CLIENT_BUILD_DIR
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
       - name: Build admin app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/admin-app')
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/admin-app
+        if: contains(${{ steps.changedProjects.outputs.projects }}, $ADMIN_APP)
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to $ADMIN_APP
       - name: Deploy admin app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/admin-app')
+        if: contains(${{ steps.changedProjects.outputs.projects }}, $ADMIN_APP)
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
         with:
-          publish-dir: 'apps/admin/build'
+          publish-dir: $ADMIN_BUILD_DIR
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
