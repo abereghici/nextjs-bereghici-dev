@@ -85,9 +85,9 @@ jobs:
         with:
           publish-dir: 'apps/client/build'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: true
-          overwrites-pull-request-comment: true
+          overwrites-pull-request-comment: false
           github-deployment-description: 'Client app preview'
       - name: Build admin app
         if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/admin-app')
@@ -101,7 +101,7 @@ jobs:
         with:
           publish-dir: 'apps/admin/build'
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          enable-pull-request-comment: false
+          enable-pull-request-comment: true
           enable-commit-comment: true
-          overwrites-pull-request-comment: true
+          overwrites-pull-request-comment: false
           github-deployment-description: 'Admin app preview'
