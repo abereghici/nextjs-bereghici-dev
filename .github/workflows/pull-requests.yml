@@ -89,6 +89,7 @@ jobs:
           enable-commit-comment: true
           overwrites-pull-request-comment: false
           github-deployment-description: 'Client app preview'
+          github-deployment-environment: 'client'
       - name: Build admin app
         if: contains(${{ steps.changedProjects.outputs.projects }}, '@bereghici/admin-app')
         run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/admin-app
@@ -105,3 +106,4 @@ jobs:
           enable-commit-comment: true
           overwrites-pull-request-comment: false
           github-deployment-description: 'Admin app preview'
+          github-deployment-environment: 'admin'
