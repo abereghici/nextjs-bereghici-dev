@@ -3,6 +3,9 @@ name: Pull requests workflow
 
 # When workflow is triggered
 on:
+  push:
+    branches:
+      - main
   pull_request:
     branches:
       - main
@@ -56,6 +59,7 @@ jobs:
       CLIENT_BUILD_DIR: 'apps/client/build'
       ADMIN_APP: '@bereghici/admin-app'
       ADMIN_BUILD_DIR: 'apps/admin/build'
+      IS_PRODUCTION_DEPLOY: github.ref == 'refs/heads/main'
     needs: [lint, test]
     # Steps in job
     steps:
@@ -90,9 +94,11 @@ jobs:
         with:
           publish-dir: ${{ env.CLIENT_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: ${{ env.IS_PRODUCTION_DEPLOY }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
+
       - name: Build admin app
         if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }})
         run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.ADMIN_APP }}
@@ -105,6 +111,7 @@ jobs:
         with:
           publish-dir: ${{ env.ADMIN_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: ${{ env.IS_PRODUCTION_DEPLOY }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
