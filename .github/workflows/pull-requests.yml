@@ -76,7 +76,6 @@ jobs:
       - name: Build client app
         if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
         run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
-      # Deploy to Netlify using our dev secrets
       - name: Deploy client app to netlify
         if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
         uses: nwtgck/actions-netlify@v1.2.0
@@ -92,7 +91,6 @@ jobs:
       - name: Build admin app
         if: contains(steps.changedProjects.outputs.projects, '@bereghici/admin-app')
         run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/admin-app
-      # Deploy to Netlify using our dev secrets
       - name: Deploy admin app to netlify
         if: contains(steps.changedProjects.outputs.projects, '@bereghici/admin-app')
         uses: nwtgck/actions-netlify@v1.2.0
