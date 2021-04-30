@@ -5,7 +5,7 @@ name: Pull requests workflow
 on:
   pull_request:
     branches:
-      - dev
+      - main
 # Jobs to carry out
 jobs:
   lint:
@@ -64,18 +64,43 @@ jobs:
           node-version: 14.x
       # Run rush install and build on our code
       - name: Install dependencies
-        run: node common/scripts/install-run-rush.js change -v && node common/scripts/install-run-rush.js install
+        run: |
+          node common/scripts/install-run-rush.js change -v
+          node common/scripts/install-run-rush.js install
       # Build client app
+      - name: Find changed projects
+        id: changedProjects
+        run: |
+          projects="$(node tools/detect-changed-projects)"
+          echo "::set-output name=projects::$projects"
       - name: Build client app
+        if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
         run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/client-app
       # Deploy to Netlify using our dev secrets
-      - name: Deploy to netlify
+      - name: Deploy client app to netlify
+        if: contains(steps.changedProjects.outputs.projects, '@bereghici/client-app')
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
         with:
           publish-dir: 'apps/client/build'
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          enable-pull-request-comment: false
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+      - name: Build admin app
+        if: contains(steps.changedProjects.outputs.projects, '@bereghici/admin-app')
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to @bereghici/admin-app
+      # Deploy to Netlify using our dev secrets
+      - name: Deploy admin app to netlify
+        if: contains(steps.changedProjects.outputs.projects, '@bereghici/admin-app')
+        uses: nwtgck/actions-netlify@v1.2.0
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
+        with:
+          publish-dir: 'apps/admin/build'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: false
           enable-commit-comment: true

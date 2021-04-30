@@ -5,7 +5,7 @@ name: Development workflow
 on:
   push:
     branches:
-      - dev
+      - main
 # Jobs to carry out
 jobs:
   lint:

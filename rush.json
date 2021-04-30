@@ -207,12 +207,7 @@
     //    * Designate categories with whatever granularity is appropriate for your review process,
     //    * or you could just have a single category called "default".
     //    */
-    "reviewCategories": [
-      // Some example categories:
-      "production", // projects that ship to production
-      "tools", // non-shipping projects that are part of the developer toolchain
-      "prototypes" // experiments that should mostly be ignored by the review process
-    ]
+    "reviewCategories": ["apps", "packages", "tools"]
     //
     //   /**
     //    * A list of NPM package scopes that will be excluded from review.
@@ -451,7 +446,17 @@
     {
       "packageName": "@bereghici/client-app",
       "projectFolder": "apps/client",
-      "reviewCategory": "production"
+      "reviewCategory": "apps"
+    },
+    {
+      "packageName": "@bereghici/admin-app",
+      "projectFolder": "apps/admin",
+      "reviewCategory": "apps"
+    },
+    {
+      "packageName": "@bereghici/detect-changed-projects-tool",
+      "projectFolder": "tools/detect-changed-projects",
+      "reviewCategory": "tools"
     }
   ]
 }

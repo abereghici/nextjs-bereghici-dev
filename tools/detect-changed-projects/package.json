@@ -1,0 +1,8 @@
+{
+  "name": "@bereghici/detect-changed-projects-tool",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "@microsoft/rush-lib": "^5.45.6"
+  }
+}
