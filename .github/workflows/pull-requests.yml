@@ -87,7 +87,7 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
-          overwrites-pull-request-comment: false
+          overwrites-pull-request-comment: true
           github-deployment-description: 'Client app preview'
           github-deployment-environment: 'client'
       - name: Build admin app
@@ -104,6 +104,6 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           enable-pull-request-comment: true
           enable-commit-comment: true
-          overwrites-pull-request-comment: false
+          overwrites-pull-request-comment: true
           github-deployment-description: 'Admin app preview'
           github-deployment-environment: 'admin'
