@@ -452,11 +452,6 @@
       "packageName": "@bereghici/admin-app",
       "projectFolder": "apps/admin",
       "reviewCategory": "apps"
-    },
-    {
-      "packageName": "@bereghici/detect-changed-projects-tool",
-      "projectFolder": "tools/detect-changed-projects",
-      "reviewCategory": "tools"
     }
   ]
 }
