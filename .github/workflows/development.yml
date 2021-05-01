@@ -11,6 +11,11 @@ on:
       - main
 # Jobs to carry out
 jobs:
+  sayHello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        uses: ./.github/actions/say-hello
   lint:
     runs-on: ubuntu-latest
     steps:
