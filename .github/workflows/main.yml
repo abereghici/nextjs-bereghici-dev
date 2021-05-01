@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: 14.x
+        node-version: [14.x]
     steps:
       # Get code from repo
       - name: Checkout code
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: 14.x
+        node-version: [14.x]
     env:
       CI: true
     steps:
@@ -66,13 +66,13 @@ jobs:
       matrix:
         include:
           - app: '@bereghici/admin-app'
-            node-version: 14.x
+            node-version: [14.x]
             app-name: 'admin'
             build-dir: 'apps/admin/build'
             site-id: ${{ secrets.NETLIFY_ADMIN_SITE_ID }}
             dev-site-id: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
           - app: '@bereghici/client-app'
-            node-version: 14.x
+            node-version: [14.x]
             app-name: 'client'
             build-dir: 'apps/clinet/build'
             site-id: ${{ secrets.NETLIFY_SITE_ID }}
