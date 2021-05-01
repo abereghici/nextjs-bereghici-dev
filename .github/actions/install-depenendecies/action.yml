@@ -1,8 +1,0 @@
-runs:
-  using: 'composite'
-  steps:
-    # Check dependencies and run rush install
-    - name: Install dependencies
-      run: |
-        node common/scripts/install-run-rush.js change -v 
-        node common/scripts/install-run-rush.js install

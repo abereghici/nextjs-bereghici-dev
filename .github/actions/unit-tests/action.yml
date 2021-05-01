@@ -1,6 +1,0 @@
-runs:
-  using: 'composite'
-  steps:
-    # Run unit tests for all packages
-    - name: Run tests
-      run: node common/scripts/install-run-rush.js test
