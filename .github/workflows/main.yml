@@ -88,11 +88,9 @@ jobs:
           if [[ ${{ startsWith(github.ref, 'refs/tags/v') }} ]]; then
             echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}" >> $GITHUB_ENV
             echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-            echo "IS_PROD_BUILD=true" >> $GITHUB_ENV
           else 
             echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.DEV_NETLIFY_SITE_ID }}" >> $GITHUB_ENV
             echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-            echo "IS_PROD_BUILD=${{ github.event_name != 'pull_request' }}" >> $GITHUB_ENV
           fi
       # Run rush install and build on our code
       - name: Install dependencies
@@ -119,7 +117,7 @@ jobs:
         with:
           publish-dir: ${{ env.CLIENT_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-deploy: ${{ env.IS_PROD_BUILD == 'true' }}
+          production-deploy: ${{ github.event_name != 'pull_request' }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
@@ -137,7 +135,7 @@ jobs:
         with:
           publish-dir: ${{ env.ADMIN_BUILD_DIR }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-deploy: ${{ env.IS_PROD_BUILD == 'true' }}
+          production-deploy: ${{ github.event_name != 'pull_request' }}
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
