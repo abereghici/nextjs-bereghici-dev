@@ -65,15 +65,29 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        app-name: [admin, client]
+        include:
+          - app-name: admin
+            app: '@bereghici/admin-app'
+            build-dir: 'apps/admin/build'
+            site-id: NETLIFY_ADMIN_SITE_ID
+            dev-site-id: DEV_NETLIFY_ADMIN_SITE_ID
+          - app-name: client
+            app: '@bereghici/client-app'
+            build-dir: 'apps/client/build'
+            site-id: NETLIFY_SITE_ID
+            dev-site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
-    # Set default environment variables
-    env:
-      CLIENT_APP: '@bereghici/client-app'
-      CLIENT_BUILD_DIR: 'apps/client/build'
-      ADMIN_APP: '@bereghici/admin-app'
-      ADMIN_BUILD_DIR: 'apps/admin/build'
     # Steps in job
     steps:
+      # Set conditional environment variables
+      - name: Set environment variables
+        run: |
+          if [[ ${{ startsWith(github.ref, 'refs/tags/v') }} ]]; then
+            echo "NETLIFY_SITE_ID=${{ secrets[matrix.site-id] }}" >> $GITHUB_ENV
+          else 
+            echo "NETLIFY_SITE_ID=${{ secrets[matrix.dev-site-id] }}" >> $GITHUB_ENV
+          fi
       # Get code from repo
       - name: Checkout code
         uses: actions/checkout@v1
@@ -82,16 +96,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      # Set conditional environment variables
-      - name: Set environment variables
-        run: |
-          if [[ ${{ startsWith(github.ref, 'refs/tags/v') }} ]]; then
-            echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}" >> $GITHUB_ENV
-            echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-          else 
-            echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.DEV_NETLIFY_SITE_ID }}" >> $GITHUB_ENV
-            echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-          fi
       # Run rush install and build on our code
       - name: Install dependencies
         run: |
@@ -103,37 +107,19 @@ jobs:
         run: |
           PROJECTS="$(node tools/detect-changed-projects)"
           echo "::set-output name=PROJECTS::$PROJECTS"
-      # Build client app if needed
-      - name: Build client app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }})
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.CLIENT_APP }}
-      # Deploy client app to netlify if needed
-      - name: Deploy client app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }}) && {{ success() }}
+      # Build app if needed
+      - name: Build ${{ matrix.app-name }} app
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ matrix.app }})
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
+      # Deploy app to netlify if needed
+      - name: Deploy ${{ matrix.app-name }} app to netlify
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ matrix.app }}) && {{ success() }}
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
         with:
-          publish-dir: ${{ env.CLIENT_BUILD_DIR }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-deploy: ${{ github.event_name != 'pull_request' }}
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-      # Build admin app if needed
-      - name: Build admin app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }})
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.ADMIN_APP }}
-      # Deploy admin app to netlify if needed
-      - name: Deploy admin app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }}) && {{ success() }}
-        uses: nwtgck/actions-netlify@v1.2.0
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
-        with:
-          publish-dir: ${{ env.ADMIN_BUILD_DIR }}
+          publish-dir: ${{ matrix.build-dir }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-deploy: ${{ github.event_name != 'pull_request' }}
           enable-pull-request-comment: true

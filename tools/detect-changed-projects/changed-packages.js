@@ -1,15 +1,7 @@
 const { spawnSync } = require('child_process');
 
-const MAIN_BRANCH = 'main';
-
 function getChangedFiles() {
-  return spawnSync('git', [
-    '--no-pager',
-    'diff',
-    '--name-only',
-    '--no-renames',
-    MAIN_BRANCH,
-  ])
+  return spawnSync('git', ['--no-pager', 'diff', '--name-only', '--no-renames'])
     .stdout.toString()
     .split('\n')
     .filter(Boolean);
