@@ -74,7 +74,7 @@ jobs:
             dev-site-id: DEV_NETLIFY_ADMIN_SITE_ID
           - app-name: client
             app: '@bereghici/client-app'
-            build-dir: 'apps/clinet/build'
+            build-dir: 'apps/client/build'
             site-id: NETLIFY_SITE_ID
             dev-site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
