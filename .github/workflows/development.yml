@@ -36,6 +36,12 @@ jobs:
       CI: true
     steps:
       # Get code from repo
+      - name: Checkout code
+        uses: actions/checkout@v1
+      # Install NodeJS
+      - name: Install Node
+        uses: ./.github/actions/use-node
+      # Run tests
       - name: Run unit tests
         uses: ./.github/actions/unit-tests
   deploy:

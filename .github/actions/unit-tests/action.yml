@@ -1,14 +1,6 @@
 runs:
   using: 'composite'
   steps:
-    # Get code from repo
-    - name: Checkout code
-      uses: actions/checkout@v1
-    # Install NodeJS
-    - name: Use Node.js 14.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 14.x
     # Run rush install and build on our code
     - name: Install dependencies
       run: |
