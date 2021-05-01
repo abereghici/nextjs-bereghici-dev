@@ -85,10 +85,8 @@ jobs:
         run: |
           if [[ "${{ startsWith(github.ref, 'refs/tags/v') }}" == "true" ]]; then
             echo "CURRENT_NETLIFY_SITE_ID=${{ secrets[matrix.site-id] }}" >> $GITHUB_ENV
-            echo "IS_RELEASE=true" >> $GITHUB_ENV
           else 
             echo "CURRENT_NETLIFY_SITE_ID=${{ secrets[matrix.dev-site-id] }}" >> $GITHUB_ENV
-            echo "IS_RELEASE=false" >> $GITHUB_ENV
           fi
       # Get code from repo
       - name: Checkout code
@@ -103,19 +101,11 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
-      # Find changed projects to build it
-      - name: Find changed projects
-        id: changedProjects
-        run: |
-          PROJECTS="$(node tools/detect-changed-projects)"
-          echo "::set-output name=PROJECTS::$PROJECTS"
-      # Build app if needed
+      # Build app
       - name: Build ${{ matrix.app-name }} app
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) || env.IS_RELEASE == 'true' }}
         run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
-      # Deploy app to netlify if needed
+      # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
-        if: ${{ (contains(steps.changedProjects.outputs.projects, matrix.app) || env.IS_RELEASE == 'true') && success() }}
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
