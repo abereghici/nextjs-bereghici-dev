@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: 14.x
     steps:
       # Get code from repo
       - name: Checkout code
@@ -39,7 +39,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        node-version: 14.x
     env:
       CI: true
     steps:
@@ -59,26 +59,34 @@ jobs:
       # Run unit tests for all packages
       - name: Run tests
         run: node common/scripts/install-run-rush.js test
-  deploy-client:
+  deploy:
     # Operating system to run job on
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [14.x]
+        include:
+          - app: '@bereghici/admin-app'
+            node-version: 14.x
+            app-name: 'admin'
+            build-dir: 'apps/admin/build'
+            site-id: ${{ secrets.NETLIFY_ADMIN_SITE_ID }}
+            dev-site-id: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
+          - app: '@bereghici/client-app'
+            node-version: 14.x
+            app-name: 'client'
+            build-dir: 'apps/clinet/build'
+            site-id: ${{ secrets.NETLIFY_SITE_ID }}
+            dev-site-id: ${{ secrets.DEV_NETLIFY_SITE_ID }}
     needs: [lint, test]
-    # Set default environment variables
-    env:
-      CLIENT_APP: '@bereghici/client-app'
-      CLIENT_BUILD_DIR: 'apps/client/build'
     # Steps in job
     steps:
       # Set conditional environment variables
       - name: Set environment variables
         run: |
           if [[ ${{ startsWith(github.ref, 'refs/tags/v') }} ]]; then
-            echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.NETLIFY_SITE_ID }}" >> $GITHUB_ENV
+            echo "NETLIFY_SITE_ID=${{ matrix.site-id }}" >> $GITHUB_ENV
           else 
-            echo "NETLIFY_CLIENT_SITE_ID=${{ secrets.DEV_NETLIFY_SITE_ID }}" >> $GITHUB_ENV
+            echo "NETLIFY_SITE_ID=${{ matrix.dev-site-id }}" >> $GITHUB_ENV
           fi
       # Get code from repo
       - name: Checkout code
@@ -99,77 +107,19 @@ jobs:
         run: |
           PROJECTS="$(node tools/detect-changed-projects)"
           echo "::set-output name=PROJECTS::$PROJECTS"
-      # Build client app if needed
-      - name: Build client app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }})
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.CLIENT_APP }}
-      # Deploy client app to netlify if needed
-      - name: Deploy client app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.CLIENT_APP }}) && {{ success() }}
+      # Build app if needed
+      - name: Build ${{ matrix.app-name }} app
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ matrix.app }})
+        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
+      # Deploy app to netlify if needed
+      - name: Deploy ${{ matrix.app-name }} app to netlify
+        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ matrix.app }}) && {{ success() }}
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_SITE_ID }}
+          NETLIFY_SITE_ID: ${{ env.NETLIFY_SITE_ID }}
         with:
-          publish-dir: ${{ env.CLIENT_BUILD_DIR }}
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-deploy: ${{ github.event_name != 'pull_request' }}
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-  deploy-admin:
-    # Operating system to run job on
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x]
-    needs: [lint, test]
-    # Set default environment variables
-    env:
-      ADMIN_APP: '@bereghici/admin-app'
-      ADMIN_BUILD_DIR: 'apps/admin/build'
-    # Steps in job
-    steps:
-      # Set conditional environment variables
-      - name: Set environment variables
-        run: |
-          if [[ ${{ startsWith(github.ref, 'refs/tags/v') }} ]]; then
-            echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-          else 
-            echo "NETLIFY_ADMIN_SITE_ID=${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}" >> $GITHUB_ENV
-          fi
-      # Get code from repo
-      - name: Checkout code
-        uses: actions/checkout@v1
-      # Install NodeJS
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      # Run rush install and build on our code
-      - name: Install dependencies
-        run: |
-          node common/scripts/install-run-rush.js change -v
-          node common/scripts/install-run-rush.js install
-      # Find changed projects to build it
-      - name: Find changed projects
-        id: changedProjects
-        run: |
-          PROJECTS="$(node tools/detect-changed-projects)"
-          echo "::set-output name=PROJECTS::$PROJECTS"
-      # Build admin app if needed
-      - name: Build admin app
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }})
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ env.ADMIN_APP }}
-      # Deploy admin app to netlify if needed
-      - name: Deploy admin app to netlify
-        if: contains(${{ steps.changedProjects.outputs.projects }}, ${{ env.ADMIN_APP }}) && {{ success() }}
-        uses: nwtgck/actions-netlify@v1.2.0
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.DEV_NETLIFY_ADMIN_SITE_ID }}
-        with:
-          publish-dir: ${{ env.ADMIN_BUILD_DIR }}
+          publish-dir: ${{ matrix.build-dir }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-deploy: ${{ github.event_name != 'pull_request' }}
           enable-pull-request-comment: true
