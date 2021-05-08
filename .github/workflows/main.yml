@@ -112,11 +112,8 @@ jobs:
         id: changedProjects
         run: |
           PROJECTS="$(node tools/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
-          echo '$PROJECTS'
+          echo $PROJECTS
           echo '${{ steps.file_changes.outputs.files}}'
-          echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo '${{ steps.file_changes.outputs.files_added}}'
-          echo '${{ steps.file_changes.outputs.files_removed}}'
           echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app
