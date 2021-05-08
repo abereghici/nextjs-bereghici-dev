@@ -101,11 +101,30 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
+      - name: Get changed files
+        id: file_changes
+        uses: trilom/file-changes-action@v1.2.3
+        with:
+          output: ','
+          fileOutput: ','
+      # Find changed projects to build it
+      - name: Find changed projects
+        id: changedProjects
+        run: |
+          PROJECTS="$(node tools/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
+          echo '$PROJECTS'
+          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+          echo '${{ steps.file_changes.outputs.files_removed}}'
+          echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
       # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
