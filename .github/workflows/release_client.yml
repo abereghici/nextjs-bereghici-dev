@@ -105,5 +105,7 @@ jobs:
           enable-commit-comment: true
           overwrites-pull-request-comment: true
       # Create release tag
-      - name: Example variable usage
-        run: git tag ${{ github.event.inputs.version }}
+      - name: Create tag
+        run: |
+          git tag ${{ github.event.inputs.version }}
+          git push origin --tags
