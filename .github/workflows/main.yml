@@ -68,13 +68,11 @@ jobs:
           - app-name: admin
             app: '@bereghici/admin-app'
             build-dir: 'apps/admin/build'
-            site-id: NETLIFY_ADMIN_SITE_ID
-            dev-site-id: DEV_NETLIFY_ADMIN_SITE_ID
+            site-id: DEV_NETLIFY_ADMIN_SITE_ID
           - app-name: client
             app: '@bereghici/client-app'
             build-dir: 'apps/client/build'
-            site-id: NETLIFY_SITE_ID
-            dev-site-id: DEV_NETLIFY_SITE_ID
+            site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
     # Steps in job
     steps:
@@ -113,7 +111,7 @@ jobs:
         uses: nwtgck/actions-netlify@v1.2.0
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets[matrix.dev-site-id] }}
+          NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
         with:
           publish-dir: ${{ matrix.build-dir }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
