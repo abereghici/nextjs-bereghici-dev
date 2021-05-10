@@ -193,6 +193,16 @@
       "ignoreMissingScript": false,
       "ignoreDependencyOrder": true,
       "allowWarningsInSuccessfulBuild": false
+    },
+    {
+      "name": "build:watch",
+      "commandKind": "bulk",
+      "summary": "Build projects and watch for changes",
+      "description": "For details, see the article \"Using watch mode\" on the Rush website: https://rushjs.io/",
+      "incremental": true,
+      "enableParallelism": true,
+      "watchForChanges": true,
+      "ignoreMissingScript": true
     }
   ],
 

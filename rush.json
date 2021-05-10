@@ -207,7 +207,7 @@
     //    * Designate categories with whatever granularity is appropriate for your review process,
     //    * or you could just have a single category called "default".
     //    */
-    "reviewCategories": ["apps", "packages", "tools"]
+    "reviewCategories": ["apps", "packages", "platform"]
     //
     //   /**
     //    * A list of NPM package scopes that will be excluded from review.
@@ -454,9 +454,19 @@
       "reviewCategory": "apps"
     },
     {
-      "packageName": "@bereghici/detect-changed-projects-tool",
-      "projectFolder": "tools/detect-changed-projects",
-      "reviewCategory": "tools"
+      "packageName": "@bereghici/button",
+      "projectFolder": "packages/button",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/detect-changed-projects",
+      "projectFolder": "platform/detect-changed-projects",
+      "reviewCategory": "platform"
+    },
+    {
+      "packageName": "@bereghici/build-tools",
+      "projectFolder": "platform/build-tools",
+      "reviewCategory": "platform"
     }
   ]
 }

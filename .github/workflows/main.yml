@@ -54,6 +54,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v 
           node common/scripts/install-run-rush.js install
+          node common/scripts/install-run-rush.js build --verbose
       # Run unit tests for all packages
       - name: Run tests
         run: node common/scripts/install-run-rush.js test
@@ -99,12 +100,12 @@ jobs:
       - name: Find changed projects
         id: changedProjects
         run: |
-          PROJECTS="$(node tools/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
+          PROJECTS="$(node platform/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app
         if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
+        run: node common/scripts/install-run-rush.js build --verbose --to ${{ matrix.app }}
       # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
         if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
