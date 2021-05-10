@@ -19,10 +19,9 @@
     "@bereghici/build-tools": "1.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "rush build --to @bereghici/client-app && react-scripts start",
     "start:watch": "concurrently --kill-others --raw \"rush build:watch --to-except @bereghici/client-app\" \"react-scripts start\"",
     "build": "react-scripts build",
-    "build:watch": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
     "lint": ""
   },
