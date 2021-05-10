@@ -249,7 +249,7 @@ function copyPublicFolder() {
 function emitDefinitionTypes() {
   try {
     execSync(
-      `tsc --rootDir ${paths.appSrc} --outDir ${paths.appBuild} --noEmit false --emitDeclarationOnly --declaration --declarationDir  ${paths.appBuild}`,
+      `tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ${paths.appBuild}`,
       { stdio: 'inherit' }
     );
   } catch (e) {
