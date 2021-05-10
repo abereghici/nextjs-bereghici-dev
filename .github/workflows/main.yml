@@ -104,7 +104,7 @@ jobs:
       # Build app
       - name: Build ${{ matrix.app-name }} app
         if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to ${{ matrix.app }}
+        run: node common/scripts/install-run-rush.js build --verbose --to ${{ matrix.app }}
       # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
         if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
