@@ -248,6 +248,6 @@ function copyPublicFolder() {
 
 function emitDefinitionTypes() {
   execSync(
-    `tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ${paths.appBuild}`
+    `tsc --rootDir ${paths.appSrc} --outDir ${paths.appBuild} --noEmit false --emitDeclarationOnly --declaration --declarationDir  ${paths.appBuild}`
   );
 }
