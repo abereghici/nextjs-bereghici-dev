@@ -247,7 +247,11 @@ function copyPublicFolder() {
 }
 
 function emitDefinitionTypes() {
-  execSync(
-    `tsc --rootDir ${paths.appSrc} --outDir ${paths.appBuild} --noEmit false --emitDeclarationOnly --declaration --declarationDir  ${paths.appBuild}`
-  );
+  try {
+    execSync(
+      `tsc --rootDir ${paths.appSrc} --outDir ${paths.appBuild} --noEmit false --emitDeclarationOnly --declaration --declarationDir  ${paths.appBuild}`
+    );
+  } catch (e) {
+    process.stderr.write(e);
+  }
 }
