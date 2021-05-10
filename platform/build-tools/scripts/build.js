@@ -252,6 +252,6 @@ function emitDefinitionTypes() {
       `tsc --rootDir ${paths.appSrc} --outDir ${paths.appBuild} --noEmit false --emitDeclarationOnly --declaration --declarationDir  ${paths.appBuild}`
     );
   } catch (e) {
-    process.stderr.write(e);
+    process.stderr.write(JSON.stringify(e));
   }
 }
