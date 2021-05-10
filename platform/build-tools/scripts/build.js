@@ -68,6 +68,7 @@ if (isAppPackage) {
 
 const argv = process.argv.slice(2);
 const writeStatsJson = argv.indexOf('--stats') !== -1;
+const watchMode = argv.indexOf('--watchMode') !== -1;
 
 // Generate configuration
 // CUSTOM: Pass isAppPackage to webpack configuration
@@ -84,19 +85,19 @@ checkBrowsers(path.resolve(__dirname, '../'), isInteractive)
     return measureFileSizesBeforeBuild(paths.appBuild);
   })
   .then(previousFileSizes => {
-    // Remove all content but keep the directory so that
-    // if you're in it, you don't end up in Trash
-    fs.emptyDirSync(paths.appBuild);
-
-    // CUSTOM: Emit definition types for package
-    if (!isAppPackage) {
-      //emitDefinitionTypes();
+    // CUSTOM: remove build dir only if we're not in watch mode
+    if (!isAppPackage && !watchMode) {
+      // Remove all content but keep the directory so that
+      // if you're in it, you don't end up in Trash
+      fs.emptyDirSync(paths.appBuild);
     }
-
     // CUSTOM: Copy public folder only if is app build
     if (isAppPackage) {
       // Merge with the public folder
       copyPublicFolder();
+    } else {
+      // Emit definition types for package
+      emitDefinitionTypes();
     }
 
     // Start the webpack build

@@ -127,6 +127,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "dts-bundle",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "eslint",
       "allowedCategories": ["platform"]
     },
@@ -204,6 +208,10 @@
     },
     {
       "name": "mini-css-extract-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "npm-dts-webpack-plugin",
       "allowedCategories": ["platform"]
     },
     {

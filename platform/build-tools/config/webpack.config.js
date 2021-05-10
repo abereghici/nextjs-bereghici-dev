@@ -29,9 +29,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 
-// CUSTOM
-const WebpackHookPlugin = require('webpack-hook-plugin');
-
 const postcssNormalize = require('postcss-normalize');
 
 const appPackageJson = require(paths.appPackageJson);
