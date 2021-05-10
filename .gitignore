@@ -123,4 +123,4 @@ full_stack_test_results
 integration_test_results
 imjs_plugins
 imjs_extensions
-!tools/build
+!platform/build

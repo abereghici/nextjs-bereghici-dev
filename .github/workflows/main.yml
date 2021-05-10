@@ -99,7 +99,7 @@ jobs:
       - name: Find changed projects
         id: changedProjects
         run: |
-          PROJECTS="$(node tools/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
+          PROJECTS="$(node platform/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app

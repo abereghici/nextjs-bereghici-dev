@@ -4,7 +4,19 @@
   "packages": [
     {
       "name": "@babel/core",
-      "allowedCategories": ["production"]
+      "allowedCategories": ["platform", "production"]
+    },
+    {
+      "name": "@bereghici/build-tool",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@bereghici/build-tools",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
+      "name": "@bereghici/button",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "@bereghici/detect-changed-projects-tool",
@@ -12,63 +24,319 @@
     },
     {
       "name": "@microsoft/rush-lib",
-      "allowedCategories": ["tools"]
+      "allowedCategories": ["platform", "tools"]
+    },
+    {
+      "name": "@pmmmwh/react-refresh-webpack-plugin",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "@rushstack/node-core-library",
       "allowedCategories": ["tools"]
     },
     {
+      "name": "@svgr/webpack",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "@testing-library/dom",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@testing-library/jest-dom",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "platform", "production"]
     },
     {
       "name": "@testing-library/react",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@testing-library/user-event",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@types/jest",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@types/node",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@types/react",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
     },
     {
       "name": "@types/react-dom",
       "allowedCategories": ["apps", "production"]
     },
     {
+      "name": "@typescript-eslint/eslint-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-eslint",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-jest",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-plugin-named-asset-import",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-preset-react-app",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "bfj",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "camelcase",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "case-sensitive-paths-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "concurrently",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "css-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "dotenv",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "dotenv-expand",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-config-react-app",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-flowtype",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-import",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-jest",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-jsx-a11y",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-react",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-testing-library",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "file-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "fs-extra",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "fsevents",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "html-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "identity-obj-proxy",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "jest",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "jest-circus",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "jest-resolve",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "jest-watch-typeahead",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "mini-css-extract-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "optimize-css-assets-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "pnp-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss-flexbugs-fixes",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss-normalize",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss-preset-env",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "postcss-safe-parser",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "prompts",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "react",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "platform", "production"]
+    },
+    {
+      "name": "react-app-polyfill",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "react-dev-utils",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "react-dom",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "production"]
+    },
+    {
+      "name": "react-refresh",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "react-scripts",
       "allowedCategories": ["apps", "production"]
     },
     {
+      "name": "resolve",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "resolve-url-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "sass-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "semver",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "style-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "terser-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "ts-declaration-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "ts-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "ts-pnp",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "typescript",
-      "allowedCategories": ["apps", "production"]
+      "allowedCategories": ["apps", "packages", "platform", "production"]
+    },
+    {
+      "name": "url-loader",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "web-vitals",
       "allowedCategories": ["apps", "production"]
+    },
+    {
+      "name": "webpack",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "webpack-dev-server",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "webpack-hook-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "webpack-manifest-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "webpack-shell-plugin-next",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "workbox-webpack-plugin",
+      "allowedCategories": ["platform"]
     }
   ]
 }
