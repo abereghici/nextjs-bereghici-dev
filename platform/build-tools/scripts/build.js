@@ -249,8 +249,8 @@ function copyPublicFolder() {
 function emitDefinitionTypes() {
   try {
     execSync(
-      `npx tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ${paths.appBuild}`,
-      { stdio: 'ignore' }
+      `tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ${paths.appBuild}`,
+      { stdio: 'pipe', cwd: paths.appPath }
     );
   } catch (e) {
     console.log(e);
