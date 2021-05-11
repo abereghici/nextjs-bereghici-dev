@@ -467,6 +467,11 @@
       "packageName": "@bereghici/build-tools",
       "projectFolder": "platform/build-tools",
       "reviewCategory": "platform"
+    },
+    {
+      "packageName": "@bereghici/eslint-plugin",
+      "projectFolder": "platform/eslint-plugin",
+      "reviewCategory": "platform"
     }
   ]
 }
