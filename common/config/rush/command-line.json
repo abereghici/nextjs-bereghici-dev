@@ -195,6 +195,13 @@
       "allowWarningsInSuccessfulBuild": false
     },
     {
+      "name": "lint-staged",
+      "commandKind": "global",
+      "summary": "Used by the pre-commit Git hook. This command invokes lint-staged to reformat staged changes.",
+      "autoinstallerName": "rush-lintstaged",
+      "shellCommand": "lint-staged"
+    },
+    {
       "name": "build:watch",
       "commandKind": "bulk",
       "summary": "Build projects and watch for changes",
