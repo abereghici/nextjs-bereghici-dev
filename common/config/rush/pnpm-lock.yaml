@@ -54,7 +54,7 @@ specifiers:
   mini-css-extract-plugin: 0.11.3
   optimize-css-assets-webpack-plugin: 5.0.4
   pnp-webpack-plugin: 1.6.4
-  postcss: 8.2.4
+  postcss: 8.2.10
   postcss-flexbugs-fixes: 5.0.2
   postcss-loader: 4.2.0
   postcss-normalize: 9.0.0
@@ -133,9 +133,9 @@ dependencies:
   mini-css-extract-plugin: 0.11.3_webpack@4.44.2
   optimize-css-assets-webpack-plugin: 5.0.4_webpack@4.44.2
   pnp-webpack-plugin: 1.6.4
-  postcss: 8.2.4
-  postcss-flexbugs-fixes: 5.0.2_postcss@8.2.4
-  postcss-loader: 4.2.0_postcss@8.2.4+webpack@4.44.2
+  postcss: 8.2.10
+  postcss-flexbugs-fixes: 5.0.2_postcss@8.2.10
+  postcss-loader: 4.2.0_postcss@8.2.10+webpack@4.44.2
   postcss-normalize: 9.0.0
   postcss-preset-env: 6.7.0
   postcss-safe-parser: 5.0.2
@@ -9811,12 +9811,12 @@ packages:
       postcss-values-parser: 2.0.1
     dev: false
 
-  /postcss-flexbugs-fixes/5.0.2_postcss@8.2.4:
+  /postcss-flexbugs-fixes/5.0.2_postcss@8.2.10:
     resolution: {integrity: sha512-18f9voByak7bTktR2QgDveglpn9DTbBWPUzSOe9g0N4WR/2eSt6Vrcbf0hmspvMI6YWGywz6B9f7jzpFNJJgnQ==}
     peerDependencies:
       postcss: ^8.1.4
     dependencies:
-      postcss: 8.2.4
+      postcss: 8.2.10
     dev: false
 
   /postcss-focus-visible/4.0.0:
@@ -9869,7 +9869,7 @@ packages:
       postcss-values-parser: 2.0.1
     dev: false
 
-  /postcss-loader/4.2.0_postcss@8.2.4+webpack@4.44.2:
+  /postcss-loader/4.2.0_postcss@8.2.10+webpack@4.44.2:
     resolution: {integrity: sha512-mqgScxHqbiz1yxbnNcPdKYo/6aVt+XExURmEbQlviFVWogDbM4AJ0A/B+ZBpYsJrTRxKw7HyRazg9x0Q9SWwLA==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -9879,7 +9879,7 @@ packages:
       cosmiconfig: 7.0.0
       klona: 2.0.4
       loader-utils: 2.0.0
-      postcss: 8.2.4
+      postcss: 8.2.10
       schema-utils: 3.0.0
       semver: 7.3.5
       webpack: 4.44.2
@@ -10298,6 +10298,15 @@ packages:
       chalk: 2.4.2
       source-map: 0.6.1
       supports-color: 6.1.0
+    dev: false
+
+  /postcss/8.2.10:
+    resolution: {integrity: sha512-b/h7CPV7QEdrqIxtAf2j31U5ef05uBDuvoXv6L51Q4rcS1jdlXAVKJv+atCFdUXYl9dyTHGyoMzIepwowRJjFw==}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      colorette: 1.2.2
+      nanoid: 3.1.23
+      source-map: 0.6.1
     dev: false
 
   /postcss/8.2.4:
@@ -13260,7 +13269,7 @@ packages:
     dev: false
 
   file:projects/build-tools.tgz:
-    resolution: {integrity: sha512-mMOjkald3Svmuv3fadI50G4DOfbAFExYphhUbBYixTOW7KRPOCIApTN++Z+O4+JV9Wt/l16e6bpsI8zRC+WknA==, tarball: file:projects/build-tools.tgz}
+    resolution: {integrity: sha512-suv0qL0Y4IUFVJ4GExLw5zWRSNbt5d1tmgDht2rlaQzThvS5QSrmMchT9YzFygwFJY9QjAoO8zJ9L/0gDun+sg==, tarball: file:projects/build-tools.tgz}
     name: '@rush-temp/build-tools'
     version: 0.0.0
     dependencies:
@@ -13293,9 +13302,9 @@ packages:
       mini-css-extract-plugin: 0.11.3_webpack@4.44.2
       optimize-css-assets-webpack-plugin: 5.0.4_webpack@4.44.2
       pnp-webpack-plugin: 1.6.4_typescript@4.2.4
-      postcss: 8.2.4
-      postcss-flexbugs-fixes: 5.0.2_postcss@8.2.4
-      postcss-loader: 4.2.0_postcss@8.2.4+webpack@4.44.2
+      postcss: 8.2.10
+      postcss-flexbugs-fixes: 5.0.2_postcss@8.2.10
+      postcss-loader: 4.2.0_postcss@8.2.10+webpack@4.44.2
       postcss-normalize: 9.0.0
       postcss-preset-env: 6.7.0
       postcss-safe-parser: 5.0.2
