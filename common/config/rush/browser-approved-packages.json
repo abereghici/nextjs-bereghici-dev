@@ -23,6 +23,14 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/eslint-config",
+      "allowedCategories": ["apps", "packages", "platform"]
+    },
+    {
+      "name": "@bereghici/eslint-plugin",
+      "allowedCategories": ["apps", "packages", "platform"]
+    },
+    {
       "name": "@microsoft/rush-lib",
       "allowedCategories": ["platform", "tools"]
     },
@@ -132,6 +140,10 @@
     },
     {
       "name": "eslint",
+      "allowedCategories": ["apps", "packages", "platform"]
+    },
+    {
+      "name": "eslint-config-prettier",
       "allowedCategories": ["platform"]
     },
     {
@@ -273,6 +285,10 @@
     {
       "name": "react-scripts",
       "allowedCategories": ["apps", "production"]
+    },
+    {
+      "name": "require-dir",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "resolve",

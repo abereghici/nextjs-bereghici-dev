@@ -1,5 +1,3 @@
-'use strict';
-
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
@@ -14,14 +12,6 @@ process.on('unhandledRejection', err => {
 
 // Ensure environment variables are read.
 require('../config/env');
-// Do the preflight check (only happens before eject).
-const verifyPackageTree = require('./utils/verifyPackageTree');
-if (process.env.SKIP_PREFLIGHT_CHECK !== 'true') {
-  verifyPackageTree();
-}
-// CUSTOM: Disabled typescript setup verification
-// const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
-// verifyTypeScriptSetup();
 
 const jest = require('jest');
 const execSync = require('child_process').execSync;
