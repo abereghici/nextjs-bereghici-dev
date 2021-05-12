@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "",
-    "lint": "",
+    "lint": "eslint './**/*.{js,ts,jsx,tsx}'",
     "build": ""
   },
   "types": "./lib/react-app.d.ts",
@@ -101,6 +101,12 @@
     ]
   },
   "eslintConfig": {
-    "extends": "@bereghici/eslint-config"
+    "extends": "@bereghici/eslint-config",
+    "rules": {
+      "no-console": "off",
+      "camelcase": "off",
+      "import/order": "off",
+      "no-shadow": "off"
+    }
   }
 }

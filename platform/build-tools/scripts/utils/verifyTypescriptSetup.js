@@ -1,5 +1,3 @@
-'use strict';
-
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs');
 const resolve = require('resolve');
