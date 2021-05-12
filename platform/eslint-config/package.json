@@ -1,20 +1,20 @@
 {
-  "name": "@bereghici/eslint-plugin",
+  "name": "@bereghici/eslint-config",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "scripts": {
     "build": "",
-    "lint": "",
+    "lint": "eslint './**/*.{js,ts,jsx,tsx}'",
     "test": ""
   },
   "author": "",
   "license": "ISC",
   "peerDependencies": {
-    "eslint": "^6.8.0 || ^7.0.0"
-  },
-  "dependencies": {
-    "require-dir": "1.2.0",
+    "eslint": "^7.5.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
@@ -28,5 +28,8 @@
     "eslint-config-prettier": "8.2.0",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0"
+  },
+  "eslintConfig": {
+    "extends": "./index.js"
   }
 }

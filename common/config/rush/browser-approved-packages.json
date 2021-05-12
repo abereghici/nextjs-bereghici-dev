@@ -23,8 +23,12 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/eslint-config",
+      "allowedCategories": ["apps", "packages", "platform"]
+    },
+    {
       "name": "@bereghici/eslint-plugin",
-      "allowedCategories": ["apps", "packages"]
+      "allowedCategories": ["apps", "packages", "platform"]
     },
     {
       "name": "@microsoft/rush-lib",

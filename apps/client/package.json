@@ -18,7 +18,7 @@
     "eslint": "7.24.0",
     "concurrently": "6.1.0",
     "@bereghici/build-tools": "1.0.0",
-    "@bereghici/eslint-plugin": "1.0.0"
+    "@bereghici/eslint-config": "1.0.0"
   },
   "scripts": {
     "start": "rush build --to @bereghici/client-app && react-scripts start",
@@ -28,9 +28,6 @@
     "lint": "eslint './src/**/*.{js,ts,jsx,tsx}'"
   },
   "eslintConfig": {
-    "plugins": [
-      "@bereghici/eslint-plugin"
-    ],
-    "extends": "plugin:@bereghici/eslint-plugin/base"
+    "extends": "@bereghici/eslint-config"
   }
 }

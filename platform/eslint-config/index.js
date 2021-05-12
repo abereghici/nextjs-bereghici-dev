@@ -1,22 +1,5 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  env: {
-    es6: true,
-    jest: true,
-    browser: true,
-    node: true,
-    worker: true,
-  },
-  globals: {
-    globals: true,
-    shallow: true,
-    render: true,
-    mount: true,
-  },
-  extends: ['eslint:recommended', 'react-app', 'react-app/jest', 'prettier'],
+  extends: ['react-app', 'react-app/jest', 'prettier'],
   rules: {
     'comma-dangle': [
       'error',
