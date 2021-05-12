@@ -1,5 +1,5 @@
 {
-  "name": "rush-lintstaged",
+  "name": "rush-lint",
   "version": "1.0.0",
   "private": true,
   "dependencies": {

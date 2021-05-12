@@ -198,7 +198,7 @@
       "name": "lint-staged",
       "commandKind": "global",
       "summary": "Used by the pre-commit Git hook. This command invokes lint-staged to reformat staged changes.",
-      "autoinstallerName": "rush-lintstaged",
+      "autoinstallerName": "rush-lint",
       "shellCommand": "lint-staged"
     },
     {
