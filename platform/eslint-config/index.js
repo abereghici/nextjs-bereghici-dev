@@ -1,5 +1,10 @@
 module.exports = {
   extends: ['react-app', 'react-app/jest', 'prettier'],
+  settings: {
+    react: {
+      version: 'latest',
+    },
+  },
   rules: {
     'comma-dangle': [
       'error',
