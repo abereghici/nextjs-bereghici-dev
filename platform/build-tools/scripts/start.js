@@ -15,15 +15,6 @@ require('../config/env');
 // CUSTOM: Import isAppPackage to detect what kind of build we should do
 const checkIsAppPackage = require('./utils/checkIsAppPackage');
 
-// Do the preflight check (only happens before eject).
-const verifyPackageTree = require('./utils/verifyPackageTree');
-if (process.env.SKIP_PREFLIGHT_CHECK !== 'true') {
-  verifyPackageTree();
-}
-// CUSTOM: Disabled typescript setup verification
-// const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
-// verifyTypeScriptSetup();
-
 const path = require('path');
 const fs = require('fs');
 const chalk = require('react-dev-utils/chalk');
