@@ -4,6 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "",
+    "test": "",
+    "lint": "eslint '.storybook/**/*.{js,ts,jsx,tsx}'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -15,6 +17,10 @@
     "@storybook/addon-actions": "^6.2.9",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9"
+    "@storybook/react": "^6.2.9",
+    "@bereghici/eslint-config": "1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@bereghici/eslint-config"
   }
 }
