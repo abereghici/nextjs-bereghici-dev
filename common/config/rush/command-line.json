@@ -200,6 +200,18 @@
       "summary": "Used by the pre-commit Git hook. This command invokes lint-staged to reformat staged changes.",
       "autoinstallerName": "rush-lint",
       "shellCommand": "lint-staged"
+    },
+    {
+      "name": "storybook:start",
+      "commandKind": "global",
+      "summary": "Start storybook.",
+      "shellCommand": "cd platform/storybook && rushx storybook"
+    },
+    {
+      "name": "storybook:build",
+      "commandKind": "global",
+      "summary": "Start storybook.",
+      "shellCommand": "cd platform/storybook && rushx build-storybook"
     }
   ],
 

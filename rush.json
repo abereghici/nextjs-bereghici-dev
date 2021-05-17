@@ -472,6 +472,11 @@
       "packageName": "@bereghici/eslint-config",
       "projectFolder": "platform/eslint-config",
       "reviewCategory": "platform"
+    },
+    {
+      "packageName": "@bereghici/storybook",
+      "projectFolder": "platform/storybook",
+      "reviewCategory": "platform"
     }
   ]
 }
