@@ -3,17 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "react-scripts build",
-    "build:watch": "react-scripts build --watchMode",
+    "build": "",
     "test": "react-scripts test --watchAll=false",
     "lint": "eslint './src/**/*.{js,ts,jsx,tsx}'"
   },
-  "main": "build/index.js",
-  "module": "build/index.js",
-  "files": [
-    "build"
-  ],
-  "types:": "build",
+  "main": "src/index",
   "dependencies": {
     "@testing-library/jest-dom": "5.11.4",
     "@testing-library/react": "11.1.0",

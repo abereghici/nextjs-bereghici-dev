@@ -46,5 +46,4 @@ if (['build', 'start', 'test'].includes(script)) {
 } else {
   console.log('Unknown script "' + script + '".');
   console.log('Perhaps you need to update react-scripts?');
-  // CUSTOM: removed facebook link
 }

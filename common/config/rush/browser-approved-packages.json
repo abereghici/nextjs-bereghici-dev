@@ -7,6 +7,18 @@
       "allowedCategories": ["platform", "production"]
     },
     {
+      "name": "@babel/preset-env",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/preset-react",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "@bereghici/build-tool",
       "allowedCategories": ["apps"]
     },
