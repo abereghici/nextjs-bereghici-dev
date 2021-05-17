@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "",
     "test": "",
-    "lint": "",
-    "build": ""
+    "lint": "eslint './**/*.{js,ts,jsx,tsx}'"
   },
   "dependencies": {
-    "@microsoft/rush-lib": "^5.45.6"
+    "@microsoft/rush-lib": "^5.45.6",
+    "@bereghici/eslint-config": "1.0.0"
+  },
+  "eslintConfig": {
+    "extends": "@bereghici/eslint-config"
   }
 }

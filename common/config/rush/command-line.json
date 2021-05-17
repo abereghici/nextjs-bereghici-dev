@@ -200,16 +200,6 @@
       "summary": "Used by the pre-commit Git hook. This command invokes lint-staged to reformat staged changes.",
       "autoinstallerName": "rush-lint",
       "shellCommand": "lint-staged"
-    },
-    {
-      "name": "build:watch",
-      "commandKind": "bulk",
-      "summary": "Build projects and watch for changes",
-      "description": "For details, see the article \"Using watch mode\" on the Rush website: https://rushjs.io/",
-      "incremental": true,
-      "enableParallelism": true,
-      "watchForChanges": true,
-      "ignoreMissingScript": true
     }
   ],
 

@@ -1,4 +1,4 @@
-import { Button } from '@bereghici/button';
+import Button from '@bereghici/button';
 
 function App() {
   return (

@@ -17,12 +17,14 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 const getCSSModuleLocalIdent = require('react-dev-utils/getCSSModuleLocalIdent');
 const paths = require('./paths');
-const modules = require('./modules');
 const getClientEnvironment = require('./env');
 const ModuleNotFoundPlugin = require('react-dev-utils/ModuleNotFoundPlugin');
 const ForkTsCheckerWebpackPlugin = require('react-dev-utils/ForkTsCheckerWebpackPlugin');
 const typescriptFormatter = require('react-dev-utils/typescriptFormatter');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+// CUSTOM
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 const getCacheIdentifier = require('react-dev-utils/getCacheIdentifier');
 
@@ -75,8 +77,7 @@ const hasJsxRuntime = (() => {
 
 // This is the production and development configuration.
 // It is focused on developer experience, fast rebuilds, and a minimal bundle.
-// CUSTOM: Added a boolean to understand what kind of build we're doing
-module.exports = function (webpackEnv, isAppPackage) {
+module.exports = function (webpackEnv) {
   const isEnvDevelopment = webpackEnv === 'development';
   const isEnvProduction = webpackEnv === 'production';
 
@@ -96,18 +97,15 @@ module.exports = function (webpackEnv, isAppPackage) {
   // common function to get style loaders
   const getStyleLoaders = (cssOptions, preProcessor) => {
     const loaders = [
-      // CUSTOM: Inject styles for packages in `style` tag
-      (isEnvDevelopment || !isAppPackage) && require.resolve('style-loader'),
-      // CUSTOM: Extract css only for apps
-      isEnvProduction &&
-        isAppPackage && {
-          loader: MiniCssExtractPlugin.loader,
-          // css is located in `static/css`, use '../../' to locate index.html folder
-          // in production `paths.publicUrlOrPath` can be a relative path
-          options: paths.publicUrlOrPath.startsWith('.')
-            ? { publicPath: '../../' }
-            : {},
-        },
+      isEnvDevelopment && require.resolve('style-loader'),
+      isEnvProduction && {
+        loader: MiniCssExtractPlugin.loader,
+        // css is located in `static/css`, use '../../' to locate index.html folder
+        // in production `paths.publicUrlOrPath` can be a relative path
+        options: paths.publicUrlOrPath.startsWith('.')
+          ? { publicPath: '../../' }
+          : {},
+      },
       {
         loader: require.resolve('css-loader'),
         options: cssOptions,
@@ -203,14 +201,9 @@ module.exports = function (webpackEnv, isAppPackage) {
       pathinfo: isEnvDevelopment,
       // There will be one main bundle, and one file per asynchronous chunk.
       // In development, it does not produce real files.
-      // CUSTOM: Change file name for packages to be index.js
-      filename: isAppPackage
-        ? isEnvProduction
-          ? 'static/js/[name].[contenthash:8].js'
-          : isEnvDevelopment && 'static/js/bundle.js'
-        : 'index.js',
-      // CUSTOM: Set the library target for non-app packages
-      libraryTarget: isAppPackage ? undefined : 'umd',
+      filename: isEnvProduction
+        ? 'static/js/[name].[contenthash:8].js'
+        : isEnvDevelopment && 'static/js/bundle.js',
       // TODO: remove this when upgrading to webpack 5
       futureEmitAssets: true,
       // There are also additional JS chunk files if you use code splitting.
@@ -310,19 +303,13 @@ module.exports = function (webpackEnv, isAppPackage) {
       // Keep the runtime chunk separated to enable long term caching
       // https://twitter.com/wSokra/status/969679223278505985
       // https://github.com/facebook/create-react-app/issues/5358
-      // CUSTOM: set runtime option only for apps
-      runtimeChunk: isAppPackage && {
+      runtimeChunk: {
         name: entrypoint => `runtime-${entrypoint.name}`,
       },
     },
     resolve: {
-      // This allows you to set a fallback for where webpack should look for modules.
-      // We placed these paths second because we want `node_modules` to "win"
-      // if there are any conflicts. This matches Node resolution mechanism.
-      // https://github.com/facebook/create-react-app/issues/253
-      modules: ['node_modules', paths.appNodeModules].concat(
-        modules.additionalModulePaths || []
-      ),
+      // CUSTOM: remove additionalModulePaths
+      modules: ['node_modules', paths.appNodeModules],
       // These are the reasonable defaults supported by the Node ecosystem.
       // We also include JSX as a common component filename extension to support
       // some tools, although we do not recommend using it, see:
@@ -341,7 +328,7 @@ module.exports = function (webpackEnv, isAppPackage) {
           'react-dom$': 'react-dom/profiling',
           'scheduler/tracing': 'scheduler/tracing-profiling',
         }),
-        ...(modules.webpackAliases || {}),
+        // CUSTOM: Removed modules.webpackAliases
       },
       plugins: [
         // Adds support for installing with Plug'n'Play, leading to faster installs and adding
@@ -401,7 +388,8 @@ module.exports = function (webpackEnv, isAppPackage) {
             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
             {
               test: /\.(js|mjs|jsx|ts|tsx)$/,
-              include: paths.appSrc,
+              // CUSTOM: include packages src to resolve modules
+              include: [paths.appSrc, paths.packagesSrc],
               loader: require.resolve('babel-loader'),
               options: {
                 customize: require.resolve(
@@ -415,7 +403,6 @@ module.exports = function (webpackEnv, isAppPackage) {
                     },
                   ],
                 ],
-
                 babelrc: false,
                 configFile: false,
                 // Make sure we have a unique cache identifier, erring on the
@@ -602,33 +589,31 @@ module.exports = function (webpackEnv, isAppPackage) {
     },
     plugins: [
       // Generates an `index.html` file with the <script> injected.
-      // CUSTOM: Run html plugin only for apps
-      isAppPackage &&
-        new HtmlWebpackPlugin(
-          Object.assign(
-            {},
-            {
-              inject: true,
-              template: paths.appHtml,
-            },
-            isEnvProduction
-              ? {
-                  minify: {
-                    removeComments: true,
-                    collapseWhitespace: true,
-                    removeRedundantAttributes: true,
-                    useShortDoctype: true,
-                    removeEmptyAttributes: true,
-                    removeStyleLinkTypeAttributes: true,
-                    keepClosingSlash: true,
-                    minifyJS: true,
-                    minifyCSS: true,
-                    minifyURLs: true,
-                  },
-                }
-              : undefined
-          )
-        ),
+      new HtmlWebpackPlugin(
+        Object.assign(
+          {},
+          {
+            inject: true,
+            template: paths.appHtml,
+          },
+          isEnvProduction
+            ? {
+                minify: {
+                  removeComments: true,
+                  collapseWhitespace: true,
+                  removeRedundantAttributes: true,
+                  useShortDoctype: true,
+                  removeEmptyAttributes: true,
+                  removeStyleLinkTypeAttributes: true,
+                  keepClosingSlash: true,
+                  minifyJS: true,
+                  minifyCSS: true,
+                  minifyURLs: true,
+                },
+              }
+            : undefined
+        )
+      ),
       // Inlines the webpack runtime script. This script is too small to warrant
       // a network request.
       // https://github.com/facebook/create-react-app/issues/5358
@@ -640,8 +625,7 @@ module.exports = function (webpackEnv, isAppPackage) {
       // <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
       // It will be an empty string unless you specify "homepage"
       // in `package.json`, in which case it will be the pathname of that URL.
-      // CUSTOM: Run InterpolateHtmlPlugin only for apps
-      isAppPackage && new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
+      new InterpolateHtmlPlugin(HtmlWebpackPlugin, env.raw),
       // This gives some necessary context to module not found errors, such as
       // the requesting resource.
       new ModuleNotFoundPlugin(paths.appPath),
@@ -759,14 +743,13 @@ module.exports = function (webpackEnv, isAppPackage) {
           // The formatter is invoked directly in WebpackDevServerUtils during development
           formatter: isEnvProduction ? typescriptFormatter : undefined,
         }),
+      // CUSTOM: removed Eslint Plugin
+      // CUSTOM: added bundle analyzer
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false,
+      }),
     ].filter(Boolean),
-    // CUSTOM: no need to ship React since it's shipped with the main app
-    externals: isAppPackage
-      ? {}
-      : {
-          react: 'react',
-          'react-dom': 'react-dom',
-        },
     // Some libraries import Node modules but don't use them in the browser.
     // Tell webpack to provide empty mocks for them so importing them works.
     node: {

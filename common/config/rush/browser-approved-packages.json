@@ -343,6 +343,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "webpack-bundle-analyzer",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "webpack-dev-server",
       "allowedCategories": ["platform"]
     },

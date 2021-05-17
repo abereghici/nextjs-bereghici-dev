@@ -12,10 +12,14 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
-// CUSTOM: Import isAppPackage to detect what kind of build we should do
-const checkIsAppPackage = require('./utils/checkIsAppPackage');
+// Do the preflight checks (only happens before eject).
+const verifyPackageTree = require('./utils/verifyPackageTree');
+if (process.env.SKIP_PREFLIGHT_CHECK !== 'true') {
+  verifyPackageTree();
+}
+const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
+verifyTypeScriptSetup();
 
-const execSync = require('child_process').execSync;
 const path = require('path');
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs-extra');
@@ -40,28 +44,16 @@ const WARN_AFTER_CHUNK_GZIP_SIZE = 1024 * 1024;
 
 const isInteractive = process.stdout.isTTY;
 
-const isAppPackage = checkIsAppPackage();
-
 // Warn and crash if required files are missing
-// CUSTOM: check required files based on package type
-
-if (isAppPackage) {
-  if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
-    process.exit(1);
-  }
-} else {
-  if (!checkRequiredFiles([paths.appIndexJs])) {
-    process.exit(1);
-  }
+if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+  process.exit(1);
 }
 
 const argv = process.argv.slice(2);
 const writeStatsJson = argv.indexOf('--stats') !== -1;
-const watchMode = argv.indexOf('--watchMode') !== -1;
 
 // Generate configuration
-// CUSTOM: Pass isAppPackage to webpack configuration
-const config = configFactory('production', isAppPackage);
+const config = configFactory('production');
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
@@ -74,21 +66,11 @@ checkBrowsers(path.resolve(__dirname, '../'), isInteractive)
     return measureFileSizesBeforeBuild(paths.appBuild);
   })
   .then(previousFileSizes => {
-    // CUSTOM: remove build dir only if we're not in watch mode
-    if (!isAppPackage && !watchMode) {
-      // Remove all content but keep the directory so that
-      // if you're in it, you don't end up in Trash
-      fs.emptyDirSync(paths.appBuild);
-    }
-    // CUSTOM: Copy public folder only if is app build
-    if (isAppPackage) {
-      // Merge with the public folder
-      copyPublicFolder();
-    } else {
-      // Emit definition types for package
-      emitDefinitionTypes();
-    }
-
+    // Remove all content but keep the directory so that
+    // if you're in it, you don't end up in Trash
+    fs.emptyDirSync(paths.appBuild);
+    // Merge with the public folder
+    copyPublicFolder();
     // Start the webpack build
     return build(previousFileSizes);
   })
@@ -233,15 +215,4 @@ function copyPublicFolder() {
     dereference: true,
     filter: file => file !== paths.appHtml,
   });
-}
-
-function emitDefinitionTypes() {
-  try {
-    execSync(
-      `tsc --noEmit false --emitDeclarationOnly --declaration --declarationDir ${paths.appBuild}`,
-      { stdio: 'inherit' }
-    );
-  } catch (e) {
-    console.error(e);
-  }
 }

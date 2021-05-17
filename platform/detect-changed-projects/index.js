@@ -26,14 +26,14 @@ function isAppPackage(packageName) {
 function getChangedProjects() {
   const projects = new Set();
 
-  changedPackages.forEach(package => {
-    if (isAppPackage(package)) {
-      projects.add(package);
+  changedPackages.forEach(pkg => {
+    if (isAppPackage(pkg)) {
+      projects.add(pkg);
     } else {
       rushConfiguration.projects.forEach(project => {
         if (
           project.reviewCategory === 'apps' &&
-          dependencyGraph[package].dependents.includes(project.packageName)
+          dependencyGraph[pkg].dependents.includes(project.packageName)
         ) {
           projects.add(project.packageName);
         }

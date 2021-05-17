@@ -12,8 +12,13 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
-// CUSTOM: Import isAppPackage to detect what kind of build we should do
-const checkIsAppPackage = require('./utils/checkIsAppPackage');
+// Do the preflight check (only happens before eject).
+const verifyPackageTree = require('./utils/verifyPackageTree');
+if (process.env.SKIP_PREFLIGHT_CHECK !== 'true') {
+  verifyPackageTree();
+}
+const verifyTypeScriptSetup = require('./utils/verifyTypeScriptSetup');
+verifyTypeScriptSetup();
 
 const path = require('path');
 const fs = require('fs');
@@ -40,21 +45,8 @@ const env = getClientEnvironment(paths.publicUrlOrPath.slice(0, -1));
 const useYarn = fs.existsSync(paths.yarnLockFile);
 const isInteractive = process.stdout.isTTY;
 
-const isAppPackage = checkIsAppPackage();
-
-// CUSTOM: Check if start script was launched for a simple package
-if (!isAppPackage) {
-  // Warn and crash if required files are missing
-  console.log(
-    chalk.red(
-      'Failed to start. You cannot launch a dev server for a package.\n'
-    )
-  );
-  process.exit(1);
-}
-
+// Warn and crash if required files are missing
 if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
-  // Warn and crash if required files are missing
   process.exit(1);
 }
 
@@ -94,8 +86,8 @@ checkBrowsers(path.resolve(__dirname, '../'), isInteractive)
       // We have not found a port.
       return;
     }
-    // CUSTOM: set isAppPackage to true
-    const config = configFactory('development', true);
+
+    const config = configFactory('development');
     const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
     const appName = require(paths.appPackageJson).name;
 
