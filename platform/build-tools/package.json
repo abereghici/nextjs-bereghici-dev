@@ -71,7 +71,8 @@
     "webpack-manifest-plugin": "3.0.0",
     "workbox-webpack-plugin": "5.1.4",
     "@microsoft/rush-lib": "^5.45.6",
-    "@bereghici/eslint-config": "1.0.0"
+    "@bereghici/eslint-config": "1.0.0",
+    "webpack-bundle-analyzer": "~4.4.1"
   },
   "optionalDependencies": {
     "fsevents": "^2.1.3"
