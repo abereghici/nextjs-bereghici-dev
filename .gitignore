@@ -124,3 +124,5 @@ integration_test_results
 imjs_plugins
 imjs_extensions
 !platform/build-tools/lib
+
+.DS_Store
