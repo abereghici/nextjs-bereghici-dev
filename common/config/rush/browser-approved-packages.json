@@ -7,10 +7,6 @@
       "allowedCategories": ["platform", "production"]
     },
     {
-      "name": "@bereghici/build-tool",
-      "allowedCategories": ["apps"]
-    },
-    {
       "name": "@bereghici/build-tools",
       "allowedCategories": ["apps", "packages"]
     },
@@ -27,10 +23,6 @@
       "allowedCategories": ["apps", "packages", "platform"]
     },
     {
-      "name": "@bereghici/eslint-plugin",
-      "allowedCategories": ["apps", "packages", "platform"]
-    },
-    {
       "name": "@microsoft/rush-lib",
       "allowedCategories": ["platform", "tools"]
     },
@@ -41,6 +33,22 @@
     {
       "name": "@rushstack/node-core-library",
       "allowedCategories": ["tools"]
+    },
+    {
+      "name": "@storybook/addon-actions",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@storybook/addon-essentials",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@storybook/addon-links",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@storybook/react",
+      "allowedCategories": ["platform"]
     },
     {
       "name": "@svgr/webpack",
@@ -276,7 +284,7 @@
     },
     {
       "name": "react-dom",
-      "allowedCategories": ["apps", "packages", "production"]
+      "allowedCategories": ["apps", "packages", "platform", "production"]
     },
     {
       "name": "react-refresh",
