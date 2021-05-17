@@ -10,7 +10,7 @@ function App() {
         }}
         onClick={() => {
           // eslint-disable-next-line no-console
-          console.log('Test!');
+          console.log('Test');
         }}
       >
         Test button
