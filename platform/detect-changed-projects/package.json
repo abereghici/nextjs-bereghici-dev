@@ -8,6 +8,7 @@
     "lint": "eslint './**/*.{js,ts,jsx,tsx}'"
   },
   "dependencies": {
+    "eslint": "7.24.0",
     "@microsoft/rush-lib": "^5.45.6",
     "@bereghici/eslint-config": "1.0.0"
   },

@@ -7,6 +7,10 @@
       "allowedCategories": ["platform", "production"]
     },
     {
+      "name": "@babel/eslint-parser",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "@bereghici/build-tools",
       "allowedCategories": ["apps", "packages"]
     },
@@ -320,7 +324,7 @@
     },
     {
       "name": "stylelint",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["apps", "packages", "platform"]
     },
     {
       "name": "stylelint-config-prettier",
