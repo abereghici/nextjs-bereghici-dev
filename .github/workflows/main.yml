@@ -125,7 +125,7 @@ jobs:
           overwrites-pull-request-comment: true
       - name: Generate Lighthouse Report
         if: ${{ steps.netlify.outputs.deploy-url }}
-        uses: justinribeiro/lighthouse-action@v1.0.1
+        uses: abereghici/lighthouse-action@issue_8_undefined_comments_url
         with:
           url: ${{ steps.netlify.outputs.deploy-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
