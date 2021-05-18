@@ -3006,7 +3006,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
       chalk: 4.1.1
       jest-message-util: 26.6.2
       jest-util: 26.6.2
@@ -3069,7 +3069,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@sinonjs/fake-timers': 6.0.1
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
       jest-message-util: 26.6.2
       jest-mock: 26.6.2
       jest-util: 26.6.2
@@ -3288,7 +3288,7 @@ packages:
       npm-packlist: 2.1.5
       read-package-tree: 5.1.6
       resolve: 1.17.0
-      semver: 7.3.5
+      semver: 7.3.2
       ssri: 8.0.1
       strict-uri-encode: 2.0.0
       tar: 5.0.5
@@ -5698,7 +5698,7 @@ packages:
     resolution: {integrity: sha512-SEYeGAIQIQX8NN6LDKprLjbrd5dARM5EXsd8GI/A5l0apYI1fGMWgPHSe4ZKL4eozlAyI+doUE9XbYS4xCkQ1w==}
     dependencies:
       '@types/minimatch': 3.0.4
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
     dev: false
 
   /@types/graceful-fs/4.1.5:
@@ -5909,7 +5909,7 @@ packages:
   /@types/webpack-sources/2.1.0:
     resolution: {integrity: sha512-LXn/oYIpBeucgP1EIJbKQ2/4ZmpvRl+dlrFdX7+94SKRUV3Evy3FsfMZY318vGhkWUS5MPhtOM3w1/hCOAOXcg==}
     dependencies:
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
       '@types/source-list-map': 0.1.2
       source-map: 0.7.3
     dev: false
@@ -11791,7 +11791,7 @@ packages:
     dependencies:
       '@jest/types': 26.6.2
       '@types/graceful-fs': 4.1.5
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
       anymatch: 3.1.2
       fb-watchman: 2.0.1
       graceful-fs: 4.2.6
@@ -11874,7 +11874,7 @@ packages:
     engines: {node: '>= 10.14.2'}
     dependencies:
       '@jest/types': 26.6.2
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
     dev: false
 
   /jest-pnp-resolver/1.2.2_jest-resolve@26.6.0:
@@ -11925,7 +11925,7 @@ packages:
       jest-pnp-resolver: 1.2.2_jest-resolve@26.6.0
       jest-util: 26.6.2
       read-pkg-up: 7.0.1
-      resolve: 1.18.1
+      resolve: 1.20.0
       slash: 3.0.0
     dev: false
 
@@ -16003,7 +16003,7 @@ packages:
     hasBin: true
     dependencies:
       '@types/estree': 0.0.47
-      '@types/node': 12.0.0
+      '@types/node': 14.14.45
       acorn: 7.4.1
     dev: false
 
@@ -18715,7 +18715,7 @@ packages:
     dev: false
 
   file:projects/admin-app.tgz:
-    resolution: {integrity: sha512-F+V6Fs6G5tvUVyTGQqss7KozbRegY5X57p4paEyo+wkPVg/eUExmMtcsRxw1W+G4bolQb0BPRIQqG9wyyulA2A==, tarball: file:projects/admin-app.tgz}
+    resolution: {integrity: sha512-lFgoZpcHtSiaxtZqHTB8FXC/p6p9eUDCgtXS1x3cC4kWM2C4H5wvZxIsZUwgBOtXCK+LBycCxJgzW1QzQJt4SQ==, tarball: file:projects/admin-app.tgz}
     name: '@rush-temp/admin-app'
     version: 0.0.0
     dependencies:
@@ -18727,14 +18727,18 @@ packages:
       '@types/node': 12.0.0
       '@types/react': 17.0.0
       '@types/react-dom': 17.0.0
+      eslint: 7.24.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      stylelint: 13.13.1
       typescript: 4.1.2
       web-vitals: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   file:projects/build-tools.tgz:
-    resolution: {integrity: sha512-9GGpYPEv1/EGgyMilvWgzuvWa7Ce3Ywvt51dQfZvrku3NyUpns20Y/3iJjxj7IXYDVrqthHbA74wxBPAZBig7Q==, tarball: file:projects/build-tools.tgz}
+    resolution: {integrity: sha512-OXXScsOIY+91JhrRzkiqvdH+XdNOvk73bgMW1JwMEeISW/9CSx2D/zb/uMxMWo5citn2FpTxO8OQWRDRC6unHg==, tarball: file:projects/build-tools.tgz}
     name: '@rush-temp/build-tools'
     version: 0.0.0
     dependencies:
@@ -18753,6 +18757,7 @@ packages:
       css-loader: 4.3.0_webpack@4.44.2
       dotenv: 8.2.0
       dotenv-expand: 5.1.0
+      eslint: 7.24.0
       file-loader: 6.1.1_webpack@4.44.2
       fs-extra: 9.1.0
       html-webpack-plugin: 4.5.0_webpack@4.44.2
@@ -18811,7 +18816,7 @@ packages:
     dev: false
 
   file:projects/button.tgz:
-    resolution: {integrity: sha512-LlmY+NyLCRVecmOEyaHsEwBLzIdrHZLop2N0C8jVSyTU8ypgvexQHt96SqjMeWrLQgKcdXmF0+P96tlNpkqjDA==, tarball: file:projects/button.tgz}
+    resolution: {integrity: sha512-zzPrpI/uTrfaVR0XDkJtvvl/d3QfdDT+Fd1UjB3Oxt/RuF9i/nuD/UT3a0DqS1W1CpOqRB2Cc2Dc6QWr770X1g==, tarball: file:projects/button.tgz}
     name: '@rush-temp/button'
     version: 0.0.0
     dependencies:
@@ -18822,13 +18827,17 @@ packages:
       '@types/jest': 26.0.15
       '@types/node': 12.0.0
       '@types/react': 17.0.0
+      eslint: 7.24.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      stylelint: 13.13.1
       typescript: 4.1.2
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   file:projects/client-app.tgz:
-    resolution: {integrity: sha512-K/NTEfXHty60GGACPzE2QbO2uulXrHPupIx/HyT+XugmyMd+ah+jF7ep6FKbJTHA0Fjinj9zloxCI/nxKSVTew==, tarball: file:projects/client-app.tgz}
+    resolution: {integrity: sha512-fAh4XIw1PBTShRl2nu3fL6JhNkb7th+JdStfhZoQLGGX4nzRgQaizjBEipYLUMSBPs0wC1aDG/Ur1B2Gb0UJIQ==, tarball: file:projects/client-app.tgz}
     name: '@rush-temp/client-app'
     version: 0.0.0
     dependencies:
@@ -18840,18 +18849,23 @@ packages:
       '@types/node': 12.0.0
       '@types/react': 17.0.0
       '@types/react-dom': 17.0.0
+      eslint: 7.24.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
+      stylelint: 13.13.1
       typescript: 4.1.2
       web-vitals: 1.0.1
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   file:projects/detect-changed-projects.tgz:
-    resolution: {integrity: sha512-tbP46CuJaDPYtR20cHC3GmddKW2gdfFuO5V6PyosAYah5rZe6us4FrTkP5FZ+DO7Xp1+7raFihNOYeLOI5gImg==, tarball: file:projects/detect-changed-projects.tgz}
+    resolution: {integrity: sha512-9USMxsug0lCW7P3ohauXnaqKunDm0K1qOQnEvDS3FeSXa+ZDWoeQOS/682wY0f2iZ1Z/evUcAuyA0y3TYpGs6w==, tarball: file:projects/detect-changed-projects.tgz}
     name: '@rush-temp/detect-changed-projects'
     version: 0.0.0
     dependencies:
       '@microsoft/rush-lib': 5.47.0
+      eslint: 7.24.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -18883,7 +18897,7 @@ packages:
     dev: false
 
   file:projects/storybook.tgz_3f917e02fbc33fd73d0fe3c5e522e00d:
-    resolution: {integrity: sha512-1y3rbrexC55QY/l5j+4ctlgfnz8PDhFEKl2tcIyzXuedpckP1Z7pDrZIychLqqs4a2JG0G36+b34sR1DQ0vwfA==, tarball: file:projects/storybook.tgz}
+    resolution: {integrity: sha512-z7HLpQENr8YofB0PbaDWm4rs3WXOmkXSGNSWoBsuBKOBTiZRw/fuwB0lhvPi/rzoBB+7iz5+3gDem38/wKEhLQ==, tarball: file:projects/storybook.tgz}
     id: file:projects/storybook.tgz
     name: '@rush-temp/storybook'
     version: 0.0.0
@@ -18894,6 +18908,7 @@ packages:
       '@storybook/addon-links': 6.2.9_react-dom@17.0.2+react@17.0.2
       '@storybook/react': 6.2.9_cc6cf59211a2763e68c4dba16f5ca055
       babel-loader: 8.1.0_427212bc1158d185e577033f19ca0757
+      eslint: 7.24.0
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
     transitivePeerDependencies:
