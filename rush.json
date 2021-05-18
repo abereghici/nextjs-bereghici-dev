@@ -459,8 +459,8 @@
       "reviewCategory": "packages"
     },
     {
-      "packageName": "@bereghici/detect-changed-projects",
-      "projectFolder": "platform/detect-changed-projects",
+      "packageName": "@bereghici/detect-changed-packages",
+      "projectFolder": "platform/detect-changed-packages",
       "reviewCategory": "platform"
     },
     {

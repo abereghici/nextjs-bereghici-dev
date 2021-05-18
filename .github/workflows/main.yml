@@ -102,7 +102,7 @@ jobs:
       - name: Find changed projects
         id: changedProjects
         run: |
-          PROJECTS="$(node platform/detect-changed-projects ${{ steps.file_changes.outputs.files}} )"
+          PROJECTS="$(node platform/detect-changed-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app
@@ -124,12 +124,14 @@ jobs:
           enable-commit-comment: true
           overwrites-pull-request-comment: true
       - name: Generate Lighthouse Report
+        if: ${{ steps.netlify.outputs.deploy-url }}
         uses: justinribeiro/lighthouse-action@v1.0.1
         with:
           url: ${{ steps.netlify.outputs.deploy-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
+        if: ${{ steps.netlify.outputs.deploy-url }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts

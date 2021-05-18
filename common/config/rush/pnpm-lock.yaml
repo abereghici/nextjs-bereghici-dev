@@ -8,7 +8,7 @@ specifiers:
   '@rush-temp/build-tools': file:./projects/build-tools.tgz
   '@rush-temp/button': file:./projects/button.tgz
   '@rush-temp/client-app': file:./projects/client-app.tgz
-  '@rush-temp/detect-changed-projects': file:./projects/detect-changed-projects.tgz
+  '@rush-temp/detect-changed-packages': file:./projects/detect-changed-packages.tgz
   '@rush-temp/eslint-config': file:./projects/eslint-config.tgz
   '@rush-temp/storybook': file:./projects/storybook.tgz
   '@rush-temp/stylelint-config': file:./projects/stylelint-config.tgz
@@ -58,6 +58,7 @@ specifiers:
   jest-resolve: 26.6.0
   jest-watch-typeahead: 0.6.1
   mini-css-extract-plugin: 0.11.3
+  minimist: ~1.2.5
   optimize-css-assets-webpack-plugin: 5.0.4
   pnp-webpack-plugin: 1.6.4
   postcss: 8.2.10
@@ -98,7 +99,7 @@ dependencies:
   '@rush-temp/build-tools': file:projects/build-tools.tgz
   '@rush-temp/button': file:projects/button.tgz
   '@rush-temp/client-app': file:projects/client-app.tgz
-  '@rush-temp/detect-changed-projects': file:projects/detect-changed-projects.tgz
+  '@rush-temp/detect-changed-packages': file:projects/detect-changed-packages.tgz
   '@rush-temp/eslint-config': file:projects/eslint-config.tgz_webpack@4.44.2
   '@rush-temp/storybook': file:projects/storybook.tgz_3f917e02fbc33fd73d0fe3c5e522e00d
   '@rush-temp/stylelint-config': file:projects/stylelint-config.tgz
@@ -148,6 +149,7 @@ dependencies:
   jest-resolve: 26.6.0
   jest-watch-typeahead: 0.6.1_jest@26.6.0
   mini-css-extract-plugin: 0.11.3_webpack@4.44.2
+  minimist: 1.2.5
   optimize-css-assets-webpack-plugin: 5.0.4_webpack@4.44.2
   pnp-webpack-plugin: 1.6.4
   postcss: 8.2.10
@@ -18859,13 +18861,14 @@ packages:
       - supports-color
     dev: false
 
-  file:projects/detect-changed-projects.tgz:
-    resolution: {integrity: sha512-9USMxsug0lCW7P3ohauXnaqKunDm0K1qOQnEvDS3FeSXa+ZDWoeQOS/682wY0f2iZ1Z/evUcAuyA0y3TYpGs6w==, tarball: file:projects/detect-changed-projects.tgz}
-    name: '@rush-temp/detect-changed-projects'
+  file:projects/detect-changed-packages.tgz:
+    resolution: {integrity: sha512-75rbxysS3M+QqBuXVFerfAAh3ffzIufh3/1jr1HW2pY2oDswChEJ/lvw7DAFHU6XiUzGiYVodWOfuLQGhmM7xg==, tarball: file:projects/detect-changed-packages.tgz}
+    name: '@rush-temp/detect-changed-packages'
     version: 0.0.0
     dependencies:
       '@microsoft/rush-lib': 5.47.0
       eslint: 7.24.0
+      minimist: 1.2.5
     transitivePeerDependencies:
       - supports-color
     dev: false

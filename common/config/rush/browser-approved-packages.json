@@ -235,6 +235,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "minimist",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "npm-dts-webpack-plugin",
       "allowedCategories": ["platform"]
     },
