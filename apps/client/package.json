@@ -15,19 +15,21 @@
     "react-dom": "17.0.2",
     "typescript": "4.1.2",
     "web-vitals": "1.0.1",
-    "eslint": "7.24.0",
-    "concurrently": "6.1.0",
     "@bereghici/build-tools": "1.0.0",
-    "@bereghici/eslint-config": "1.0.0"
+    "@bereghici/eslint-config": "1.0.0",
+    "@bereghici/stylelint-config": "1.0.0"
   },
   "scripts": {
-    "start": "rush build --to @bereghici/client-app && react-scripts start",
-    "start:watch": "concurrently --kill-others --raw \"rush build:watch --to-except @bereghici/client-app\" \"react-scripts start\"",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
-    "lint": "eslint './src/**/*.{js,ts,jsx,tsx}'"
+    "lint": "eslint './src/**/*.{js,ts,jsx,tsx}'",
+    "lint:css": "stylelint './src/**/*.css'"
   },
   "eslintConfig": {
     "extends": "@bereghici/eslint-config"
+  },
+  "stylelint": {
+    "extends": "@bereghici/stylelint-config"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "name": "rush-stylelint",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "stylelint": "13.13.1",
+    "stylelint-config-prettier": "8.0.2",
+    "stylelint-config-standard": "20.0.0",
+    "stylelint-value-no-unknown-custom-properties": "3.0.0"
+  }
+}
