@@ -1,0 +1,19 @@
+{
+  "name": "@bereghici/detect-changed-packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "",
+    "test": "",
+    "lint": "eslint './**/*.{js,ts,jsx,tsx}'"
+  },
+  "dependencies": {
+    "eslint": "7.24.0",
+    "@microsoft/rush-lib": "^5.45.6",
+    "@bereghici/eslint-config": "1.0.0",
+    "minimist": "~1.2.5"
+  },
+  "eslintConfig": {
+    "extends": "@bereghici/eslint-config"
+  }
+}
