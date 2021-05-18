@@ -1,6 +1,9 @@
-import React from 'react';
+import styles from './App.module.css';
+
 function App() {
-  return <div>🚧 Client app Coming Soon!!!!! 🚧</div>;
+  return (
+    <div className={styles.container}>🚧 Client app Coming Soon!!!!! 🚧</div>
+  );
 }
 
 export default App;
