@@ -37,7 +37,7 @@
   "eslint.options": {
     "configFile": "./package.json",
     "useEslintrc": false,
-    "resolvePluginsRelativeTo": "./node_modules/@bereghici/eslint-plugin"
+    "resolvePluginsRelativeTo": "./node_modules/@bereghici/eslint-config"
   },
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,

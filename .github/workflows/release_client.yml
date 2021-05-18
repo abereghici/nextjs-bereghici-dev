@@ -31,11 +31,13 @@ jobs:
       # Run rush install and build on our code
       - name: Install dependencies
         run: |
-          node common/scripts/install-run-rush.js change -v 
+          node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
       # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint
+      - name: Stylelint packages
+        run: node common/scripts/install-run-rush.js lint:css
   test:
     runs-on: ubuntu-latest
     env:
@@ -58,7 +60,7 @@ jobs:
       # Run rush install
       - name: Install dependencies
         run: |
-          node common/scripts/install-run-rush.js change -v 
+          node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
           node common/scripts/install-run-rush.js build --verbose
       # Run unit tests for all packages

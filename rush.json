@@ -474,6 +474,11 @@
       "reviewCategory": "platform"
     },
     {
+      "packageName": "@bereghici/stylelint-config",
+      "projectFolder": "platform/stylelint-config",
+      "reviewCategory": "platform"
+    },
+    {
       "packageName": "@bereghici/storybook",
       "projectFolder": "platform/storybook",
       "reviewCategory": "platform"

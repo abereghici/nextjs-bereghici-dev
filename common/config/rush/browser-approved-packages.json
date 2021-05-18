@@ -23,6 +23,10 @@
       "allowedCategories": ["apps", "packages", "platform"]
     },
     {
+      "name": "@bereghici/stylelint-config",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
       "name": "@microsoft/rush-lib",
       "allowedCategories": ["platform", "tools"]
     },
@@ -125,10 +129,6 @@
     {
       "name": "case-sensitive-paths-webpack-plugin",
       "allowedCategories": ["platform"]
-    },
-    {
-      "name": "concurrently",
-      "allowedCategories": ["apps"]
     },
     {
       "name": "css-loader",
@@ -316,6 +316,22 @@
     },
     {
       "name": "style-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "stylelint",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "stylelint-config-prettier",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "stylelint-config-standard",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "stylelint-value-no-unknown-custom-properties",
       "allowedCategories": ["platform"]
     },
     {

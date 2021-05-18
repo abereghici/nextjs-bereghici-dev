@@ -7,8 +7,3 @@
 # are committed. The command is defined in common/config/rush/command-line.json
 # and uses the "rush-prettier" autoinstaller.
 node common/scripts/install-run-rush.js prettier || exit $?
-
-# Invoke the "rush lint-staged" custom command to reformat files whenever they
-# are committed. The command is defined in common/config/rush/command-line.json
-# and uses the "rush-lintstaged" autoinstaller.
-node common/scripts/install-run-rush.js lint-staged || exit $?

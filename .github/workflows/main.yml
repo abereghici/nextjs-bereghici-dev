@@ -33,6 +33,8 @@ jobs:
       # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint
+      - name: Stylelint packages
+        run: node common/scripts/install-run-rush.js lint:css
   test:
     runs-on: ubuntu-latest
     strategy:
