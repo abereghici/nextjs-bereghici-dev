@@ -1,6 +1,5 @@
 const getDependencyGraph = require('./get-dependency-graph');
 const findPackages = require('./find-packages');
-
 const rushConfiguration = require('./get-rush-configuration')();
 
 function isAppPackage(packageName) {
