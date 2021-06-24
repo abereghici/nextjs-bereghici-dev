@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`format calls node with the script path and args 1`] = `node <PROJECT_ROOT>/src/scripts/test.js --no-watch`;
+
+exports[`format calls node with the script path and args including inspect-brk argument 1`] = `node --inspect-brk=3080 <PROJECT_ROOT>/src/scripts/test.js --no-watch`;
+
+exports[`format does not log for other signals 1`] = `Array []`;
+
+exports[`format logs for SIGKILL signal 1`] = `
+Array [
+  Array [
+    The script "lint" failed because the process exited too early. This probably means the system ran out of memory or someone called \`kill -9\` on the process.,
+  ],
+]
+`;
+
+exports[`format logs help with no args 1`] = `
+Array [
+  Array [
+    
+Usage: ../ [script] [--flags]
+
+Available Scripts:
+  lint
+  pre-commit
+  test
+  typecheck
+  validate
+,
+  ],
+]
+`;
+
+exports[`format throws unknown script 1`] = `Unknown script "unknown-script".`;

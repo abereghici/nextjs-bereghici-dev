@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lint --no-cache will disable caching 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --no-cache . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint calls eslint CLI with default args 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in config with .eslintrc file 1`] = `eslint --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to <PROJECT_ROOT>/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in config with .eslintrc.js file 1`] = `eslint --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to <PROJECT_ROOT>/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in config with --config 1`] = `eslint --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache --config ./custom-config.js . --resolve-plugins-relative-to <PROJECT_ROOT>/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in config with eslintConfig pkg prop 1`] = `eslint --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to <PROJECT_ROOT>/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in ignore with .eslintignore file 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in ignore with --ignore-path 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache --ignore-path ./my-ignore . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint does not use built-in ignore with eslintIgnore pkg prop 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint runs on given files, but only js files 1`] = `eslint --config ./src/config/eslintrc.js --ext js,jsx,ts,tsx --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache ./src/index.js ./src/thing.ts ./src/lib.tsx ./src/component.js --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;
+
+exports[`lint supports custom --ext 1`] = `eslint --config ./src/config/eslintrc.js --ignore-path ./src/config/eslintignore --cache --cache-location <PROJECT_ROOT>/node_modules/.cache/.eslintcache --ext js . --resolve-plugins-relative-to p => path.join(__dirname, p)/node_modules/@bereghici/eslint-config`;

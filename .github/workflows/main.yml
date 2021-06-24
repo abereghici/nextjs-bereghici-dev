@@ -33,8 +33,6 @@ jobs:
       # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint
-      - name: Stylelint packages
-        run: node common/scripts/install-run-rush.js lint:css
   test:
     runs-on: ubuntu-latest
     strategy:
@@ -68,13 +66,9 @@ jobs:
         node-version: [14.x]
         app-name: [admin, client]
         include:
-          - app-name: admin
-            app: '@bereghici/admin-app'
-            build-dir: 'apps/admin/build'
-            site-id: DEV_NETLIFY_ADMIN_SITE_ID
           - app-name: client
-            app: '@bereghici/client-app'
-            build-dir: 'apps/client/build'
+            app: '@bereghici/blog-app'
+            build-dir: 'apps/blog/.next'
             site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
     # Steps in job
@@ -102,7 +96,7 @@ jobs:
       - name: Find changed projects
         id: changedProjects
         run: |
-          PROJECTS="$(node platform/detect-changed-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
+          PROJECTS="$(node platform/affected-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
       # Build app
       - name: Build ${{ matrix.app-name }} app

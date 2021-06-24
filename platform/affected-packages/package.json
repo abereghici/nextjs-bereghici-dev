@@ -1,0 +1,32 @@
+{
+  "name": "@bereghici/affected-packages",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "affected-packages": "./index.js"
+  },
+  "scripts": {
+    "build": "bereghici-scripts build",
+    "lint": "bereghici-scripts lint 'src/**/*.{js,jsx}'",
+    "validate": "bereghici-scripts validate"
+  },
+  "dependencies": {
+    "@microsoft/rush-lib": "^5.47.0",
+    "jest": "^27.0.4",
+    "yargs-parser": "^20.2.7"
+  },
+  "devDependencies": {
+    "@bereghici/eslint-config": "0.0.1",
+    "@bereghici/bereghici-scripts": "0.0.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@bereghici/eslint-config",
+      "@bereghici/eslint-config/jest"
+    ],
+    "ignorePatterns": [
+      "build",
+      "coverage"
+    ]
+  }
+}
