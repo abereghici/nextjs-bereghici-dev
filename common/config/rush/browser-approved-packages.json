@@ -275,10 +275,6 @@
       "allowedCategories": ["apps", "packages", "platform"]
     },
     {
-      "name": "eslint-config-kentcdodds",
-      "allowedCategories": ["platform"]
-    },
-    {
       "name": "eslint-config-next",
       "allowedCategories": ["apps"]
     },

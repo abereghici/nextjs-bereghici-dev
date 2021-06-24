@@ -45,7 +45,6 @@ specifiers:
   cross-spawn: ^7.0.3
   doctoc: ^2.0.0
   eslint: ^7.28.0
-  eslint-config-kentcdodds: ^19.0.0
   eslint-config-next: 11.0.1
   eslint-config-prettier: ^8.3.0
   eslint-find-rules: ^3.6.1
@@ -129,7 +128,6 @@ dependencies:
   cross-spawn: 7.0.3
   doctoc: 2.0.1
   eslint: 7.29.0
-  eslint-config-kentcdodds: 19.0.0_eslint@7.29.0
   eslint-config-next: 11.0.1_eslint@7.29.0+next@11.0.1
   eslint-config-prettier: 8.3.0_eslint@7.29.0
   eslint-find-rules: 3.6.1_eslint@7.29.0
@@ -4408,37 +4406,6 @@ packages:
       optionator: 0.8.3
     optionalDependencies:
       source-map: 0.6.1
-    dev: false
-
-  /eslint-config-kentcdodds/19.0.0_eslint@7.29.0:
-    resolution: {integrity: sha512-4Pxl4e2m3CguKvgeXoMGW7b0BCY6IGr6ju6DKCPa802eG8U4SGY6AW198cNmIMutfTmmkmM82SRZByqTtoVZiw==}
-    engines: {node: ^10.12.0 || >=12.0.0, npm: '>=6', yarn: '>=1'}
-    peerDependencies:
-      eslint: ^7.5.0
-      typescript: ^4.0.0
-    peerDependenciesMeta:
-      typescript:
-        optional: true
-    dependencies:
-      '@babel/core': 7.14.6
-      '@babel/eslint-parser': 7.14.7_@babel+core@7.14.6+eslint@7.29.0
-      '@babel/eslint-plugin': 7.14.5_30a7edcd738da97241a97262b6b848dc
-      '@babel/preset-react': 7.14.5_@babel+core@7.14.6
-      '@typescript-eslint/eslint-plugin': 4.28.0_5e6c8293beaa92db4f50b9c20eea1507
-      '@typescript-eslint/parser': 4.28.0_eslint@7.29.0
-      eslint: 7.29.0
-      eslint-config-prettier: 8.3.0_eslint@7.29.0
-      eslint-plugin-import: 2.23.4_eslint@7.29.0
-      eslint-plugin-jest: 24.3.6_950a8efaffe51944df60f8425b09dd52
-      eslint-plugin-jest-dom: 3.9.0_eslint@7.29.0
-      eslint-plugin-jsx-a11y: 6.4.1_eslint@7.29.0
-      eslint-plugin-react: 7.24.0_eslint@7.29.0
-      eslint-plugin-react-hooks: 4.2.0_eslint@7.29.0
-      eslint-plugin-testing-library: 4.6.0_eslint@7.29.0
-      read-pkg-up: 7.0.1
-      semver: 7.3.5
-    transitivePeerDependencies:
-      - supports-color
     dev: false
 
   /eslint-config-next/11.0.1_e90ffcbdf3367222fda70985c619e72c:
@@ -10413,7 +10380,6 @@ packages:
       cross-spawn: 7.0.3
       doctoc: 2.0.1
       eslint: 7.29.0
-      eslint-config-kentcdodds: 19.0.0_eslint@7.29.0
       glob: 7.1.7
       is-ci: 3.0.0
       jest: 27.0.5

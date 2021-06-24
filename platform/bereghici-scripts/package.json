@@ -58,7 +58,6 @@
     "cross-spawn": "^7.0.3",
     "doctoc": "^2.0.0",
     "eslint": "^7.28.0",
-    "eslint-config-kentcdodds": "^19.0.0",
     "glob": "^7.1.7",
     "is-ci": "^3.0.0",
     "jest": "^27.0.4",
