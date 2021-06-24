@@ -109,6 +109,7 @@ dist
 
 # rush-specific
 /common/temp
+/common/scripts
 package-deps.json
 /**/.rush
 *.build.log
