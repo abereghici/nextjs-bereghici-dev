@@ -68,7 +68,7 @@ jobs:
         include:
           - app-name: blog
             app: '@bereghici/blog-app'
-            build-dir: 'apps/blog/.next'
+            build-dir: 'apps/blog/.next/'
             site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
     # Steps in job
