@@ -118,7 +118,7 @@ package-deps.json
 /generated-docs
 /out
 **/DevBuild.txt
-coverage
+**/coverage
 full_stack_test_results
 integration_test_results
 imjs_plugins

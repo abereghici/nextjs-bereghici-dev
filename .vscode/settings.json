@@ -5,7 +5,6 @@
   "editor.formatOnSave": true,
   "search.exclude": {
     "**/node_modules": true,
-    "**/bower_components": true,
     "**/.nyc_output": true,
     "**/.rush": true
   },
@@ -20,7 +19,7 @@
     "**/test-apps/**/build": true,
     "**/out": true,
     "**/lib": true,
-    "common/temp": true
+    "common/temp": false
   },
   "files.trimTrailingWhitespace": true,
   "eslint.validate": [
@@ -34,10 +33,10 @@
       "mode": "auto"
     }
   ],
+  "eslint.nodePath": "common/temp/node_modules",
+  "eslint.trace.server": "verbose",
   "eslint.options": {
-    "configFile": "./package.json",
-    "useEslintrc": false,
-    "resolvePluginsRelativeTo": "./node_modules/@bereghici/eslint-config"
+    "resolvePluginsRelativeTo": "node_modules/@bereghici/eslint-config"
   },
   "eslint.format.enable": true,
   "eslint.lintTask.enable": true,

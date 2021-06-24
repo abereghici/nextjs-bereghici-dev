@@ -3,12 +3,52 @@
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/approved-packages.schema.json",
   "packages": [
     {
+      "name": "@babel/cli",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "@babel/core",
       "allowedCategories": ["platform", "production"]
     },
     {
       "name": "@babel/eslint-parser",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/eslint-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/plugin-proposal-class-properties",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/plugin-transform-modules-commonjs",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/plugin-transform-runtime",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/preset-env",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/preset-react",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/preset-typescript",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@babel/runtime",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@bereghici/bereghici-scripts",
+      "allowedCategories": ["apps", "platform"]
     },
     {
       "name": "@bereghici/build-tools",
@@ -39,6 +79,26 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "@rollup/plugin-babel",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@rollup/plugin-commonjs",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@rollup/plugin-json",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@rollup/plugin-node-resolve",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@rollup/plugin-replace",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "@rushstack/node-core-library",
       "allowedCategories": ["tools"]
     },
@@ -64,7 +124,7 @@
     },
     {
       "name": "@testing-library/dom",
-      "allowedCategories": ["apps", "packages", "production"]
+      "allowedCategories": ["apps", "packages", "platform", "production"]
     },
     {
       "name": "@testing-library/jest-dom",
@@ -103,6 +163,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "arrify",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "babel-eslint",
       "allowedCategories": ["platform"]
     },
@@ -115,7 +179,27 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "babel-plugin-macros",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-plugin-minify-dead-code-elimination",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-plugin-module-resolver",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "babel-plugin-named-asset-import",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-plugin-transform-inline-environment-variables",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "babel-plugin-transform-react-remove-prop-types",
       "allowedCategories": ["platform"]
     },
     {
@@ -127,6 +211,14 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "browserslist",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "builtin-modules",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "camelcase",
       "allowedCategories": ["platform"]
     },
@@ -135,7 +227,35 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "chalk",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "concurrently",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "cosmiconfig",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "cpy",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "cross-env",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "cross-spawn",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "css-loader",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "doctoc",
       "allowedCategories": ["platform"]
     },
     {
@@ -155,11 +275,23 @@
       "allowedCategories": ["apps", "packages", "platform"]
     },
     {
+      "name": "eslint-config-kentcdodds",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-config-next",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "eslint-config-prettier",
       "allowedCategories": ["platform"]
     },
     {
       "name": "eslint-config-react-app",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-find-rules",
       "allowedCategories": ["platform"]
     },
     {
@@ -172,6 +304,10 @@
     },
     {
       "name": "eslint-plugin-jest",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "eslint-plugin-jest-dom",
       "allowedCategories": ["platform"]
     },
     {
@@ -207,11 +343,19 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "glob",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "html-webpack-plugin",
       "allowedCategories": ["platform"]
     },
     {
       "name": "identity-obj-proxy",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "is-ci",
       "allowedCategories": ["platform"]
     },
     {
@@ -223,11 +367,39 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "jest-in-case",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "jest-resolve",
       "allowedCategories": ["platform"]
     },
     {
+      "name": "jest-serializer-path",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "jest-snapshot-serializer-raw",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "jest-watch-typeahead",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "lint-staged",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "lodash.camelcase",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "lodash.has",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "lodash.omit",
       "allowedCategories": ["platform"]
     },
     {
@@ -239,7 +411,19 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "mkdirp",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "next",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "npm-dts-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "npm-run-all",
       "allowedCategories": ["platform"]
     },
     {
@@ -303,6 +487,10 @@
       "allowedCategories": ["apps", "production"]
     },
     {
+      "name": "read-pkg-up",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "require-dir",
       "allowedCategories": ["platform"]
     },
@@ -315,11 +503,35 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "rimraf",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "rollup",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "rollup-plugin-node-builtins",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "rollup-plugin-node-globals",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "rollup-plugin-terser",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "sass-loader",
       "allowedCategories": ["platform"]
     },
     {
       "name": "semver",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "slash",
       "allowedCategories": ["platform"]
     },
     {
@@ -395,7 +607,15 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "which",
+      "allowedCategories": ["platform"]
+    },
+    {
       "name": "workbox-webpack-plugin",
+      "allowedCategories": ["platform"]
+    },
+    {
+      "name": "yargs-parser",
       "allowedCategories": ["platform"]
     }
   ]

@@ -1,4 +1,0 @@
-{
-  "extends": "./node_modules/@bereghici/build-tools/tsconfig-base.json",
-  "include": ["src"]
-}
