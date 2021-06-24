@@ -6,7 +6,7 @@
     "affected-packages": "./index.js"
   },
   "scripts": {
-    "build": "bereghici-scripts build",
+    "build": "",
     "lint": "bereghici-scripts lint 'src/**/*.{js,jsx}'",
     "validate": "bereghici-scripts validate"
   },

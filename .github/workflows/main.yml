@@ -28,6 +28,7 @@ jobs:
       # Run rush install and build on our code
       - name: Install dependencies
         run: |
+          node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
       # Run eslint to check all packages
       - name: Lint packages
