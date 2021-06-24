@@ -415,6 +415,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "next-on-netlify",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "npm-dts-webpack-plugin",
       "allowedCategories": ["platform"]
     },
