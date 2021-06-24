@@ -109,7 +109,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
         with:
-          args: deploy -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
+          args: deploy --dir=.next -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
 
       # Publish the inspect and preview link to the PR
       - name: 👓 Netlify Preview URL
