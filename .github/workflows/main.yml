@@ -107,7 +107,7 @@ jobs:
         uses: netlify/actions/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ matrix.site-id }}
+          NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
         with:
           args: deploy -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
 
