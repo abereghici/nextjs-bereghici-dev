@@ -54,6 +54,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
+          node common/scripts/install-run-rush.js build --verbose
       # Run unit tests for all packages
       - name: Run tests
         run: node common/scripts/install-run-rush.js test
@@ -101,22 +102,31 @@ jobs:
       - name: Build ${{ matrix.app-name }} app
         #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         run: node common/scripts/install-run-rush.js build --verbose --to ${{ matrix.app }}
-        # Deploy to Netlify with a personalized message
-      - name: 🚀 Deploy to Netlify
-        id: deploy-netlify
-        uses: netlify/actions/cli@master
+      # Deploy app to netlify
+      - name: Deploy ${{ matrix.app-name }} app to netlify
+        id: netlify
+        #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+        uses: nwtgck/actions-netlify@v1.2.2
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
         with:
-          args: deploy --dir=.next -m 'v${{ steps.package-version.outputs.current-version}} ・ ${{ github.head_ref }}'
-
-      # Publish the inspect and preview link to the PR
-      - name: 👓 Netlify Preview URL
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OUTPUT: "This pull request is being automatically deployed to Netlify.\n\n🔍 Inspect: ${{ steps.deploy-netlify.outputs.NETLIFY_LOGS_URL }}\n✅ Preview: ${{ steps.deploy-netlify.outputs.NETLIFY_URL }}"
+          publish-dir: ${{ matrix.build-dir }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          production-deploy: ${{ github.event_name != 'pull_request' }}
+          enable-pull-request-comment: true
+          enable-commit-comment: true
+          overwrites-pull-request-comment: true
+      - name: Generate Lighthouse Report
+        if: ${{ steps.netlify.outputs.deploy-url }}
+        uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
-          msg: ${{ env.OUTPUT }}
-          check_for_duplicate_msg: false
+          url: ${{ steps.netlify.outputs.deploy-url }}
+          secret: ${{ secrets.GITHUB_TOKEN }}
+          wptConnectionSpeed: threegfast
+      - name: Saving Lighthouse Audit Artifacts
+        if: ${{ steps.netlify.outputs.deploy-url }}
+        uses: actions/upload-artifact@master
+        with:
+          name: lighthouse-artifacts
+          path: './results'
