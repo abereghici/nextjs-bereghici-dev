@@ -99,7 +99,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
-          publish-dir: 'apps/blog/.next'
+          publish-dir: 'apps/blog/out'
           github-token: ${{ secrets.GITHUB_TOKEN }}
           production-deploy: true
           enable-pull-request-comment: true
