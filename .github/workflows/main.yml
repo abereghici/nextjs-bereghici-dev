@@ -109,7 +109,7 @@ jobs:
           else
             PROD_FLAG="--prod"
           fi
-          RESULTS=node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+          RESULTS="$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
           echo "::set-output name=RESULTS::$RESULTS"
       - name: Save preview url to pull request
         if: ${{ github.event_name == 'pull_request' }}
