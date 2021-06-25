@@ -108,7 +108,7 @@ jobs:
       - name: Deploy ${{ matrix.app-name }} app to netlify
         uses: netlify/actions/cli@master
         with:
-          args: build && deploy --prod
+          args: cd apps/blog && build && deploy --prod && cd ../../
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
