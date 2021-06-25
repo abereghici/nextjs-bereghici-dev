@@ -102,35 +102,11 @@ jobs:
         id: netlify
         if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         run: |
-          node common/scripts/install-run-rush.js build --to-except ${{ matrix.app }} > /dev/null 2>&1
+          node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
           if [ {{ github.event_name == 'pull_request' }} ]; then
             PROD_FLAG=""
           else
             PROD_FLAG="--prod"
           fi
-          echo "::set-output name=deploy::$(npm run deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
-      - name: Logs
-        run: |
-          echo  ${{ steps.netlify.outputs.deploy }}
-      - name: Save preview url to pull request
-        if: ${{ github.event_name == 'pull_request' }}
-        uses: unsplash/comment-on-pr@master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          msg: ${{ steps.netlify.outputs.deploy.deploy_url }}
-          check_for_duplicate_msg: 'true'
-      - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.deploy.deploy-url }}
-        uses: abereghici/lighthouse-action@undefined_comments_url_fix
-        with:
-          url: ${{ steps.netlify.outputs.deploy.deploy-url }}
-          secret: ${{ secrets.GITHUB_TOKEN }}
-          wptConnectionSpeed: threegfast
-      - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.deploy.deploy-url }}
-        uses: actions/upload-artifact@master
-        with:
-          name: lighthouse-artifacts
-          path: './results'
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}

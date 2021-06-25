@@ -91,20 +91,10 @@ jobs:
           node common/scripts/install-run-rush.js install
       # Build app
       - name: Build blog app
-        run: node common/scripts/install-run-rush.js rebuild --verbose --to '@bereghici/blog-app'
-      # Deploy app to netlify
-      - name: Deploy blog app to netlify
-        uses: nwtgck/actions-netlify@v1.2.0
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-        with:
-          publish-dir: 'apps/blog/out'
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          production-deploy: true
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
+        run: |
+          node common/scripts/install-run-rush.js build --verbose --to-except @bereghici/blog-app
+          cd apps/blog
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --prod --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets.NETLIFY_SITE_ID }}
       # Create release tag
       - name: Create tag
         run: |
