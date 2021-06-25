@@ -104,7 +104,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy ${{ github.event_name != 'pull_request' ? '--prod' : '' }} --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --prod="${{ github.event_name != 'pull_request' }}" --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
       - name: Save preview url to pull request
         if: ${{ github.event_name == 'pull_request' && steps.netlify.outputs }}
         uses: unsplash/comment-on-pr@master
