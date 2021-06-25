@@ -101,14 +101,14 @@ jobs:
       - name: Build ${{ matrix.app-name }} app
         #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         run: |
-          node common/scripts/install-run-rush.js build --verbose --to ${{ matrix.app }}
+          node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           mkdir apps/blog/.netlify
           echo "{\"siteId\": \"${{ secrets[matrix.site-id] }}\"}" > apps/blog/.netlify/state.json
       # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod
+          args: build && deploy --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
