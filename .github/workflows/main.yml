@@ -115,17 +115,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ steps.netlify.outputs }}
+          msg: ${{ steps.netlify.outputs.deploy_url }}
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.deploy-url }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
           url: ${{ steps.netlify.outputs.deploy-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.deploy-url }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
