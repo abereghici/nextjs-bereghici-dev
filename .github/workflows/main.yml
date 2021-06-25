@@ -102,7 +102,6 @@ jobs:
         #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-          cd apps/blog
           mkdir apps/blog/.netlify
           echo "{\"siteId\": \"${{ secrets[matrix.site-id] }}\"}" > apps/blog/.netlify/state.json
       # Deploy app to netlify
