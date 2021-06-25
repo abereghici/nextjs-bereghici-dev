@@ -110,7 +110,7 @@ jobs:
             node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --prod --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
           fi
       - name: Save preview url to pull request
-        if: ${{ github.event_name == 'pull_request' && steps.netlify.outputs }}
+        if: ${{ github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
