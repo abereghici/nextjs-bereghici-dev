@@ -411,6 +411,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "netlify-cli",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "next",
       "allowedCategories": ["apps"]
     },
