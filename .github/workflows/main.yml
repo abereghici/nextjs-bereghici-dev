@@ -113,7 +113,7 @@ jobs:
       - name: Logs
         run: |
           echo  ${{ steps.netlify.outputs.deploy_url }}
-          - name: Save preview url to pull request
+      - name: Save preview url to pull request
         if: ${{ github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
