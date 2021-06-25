@@ -103,7 +103,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
-          node common/scripts/install-run-rushx.js deploy --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
       # - name: Deploy ${{ matrix.app-name }} app to netlify
       #   id: netlify
       #   #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
