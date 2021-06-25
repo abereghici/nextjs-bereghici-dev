@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && next export -o build",
     "start": "next start",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
     "typecheck": "bereghici-scripts typecheck"
