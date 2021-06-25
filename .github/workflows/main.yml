@@ -89,8 +89,8 @@ jobs:
         id: file_changes
         uses: trilom/file-changes-action@v1.2.4
         with:
-          output: ','
-          fileOutput: ','
+          output: ''
+          fileOutput: ''
       # Find changed projects to build it
       - name: Find changed projects
         id: changedProjects
