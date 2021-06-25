@@ -67,7 +67,7 @@ jobs:
         include:
           - app-name: blog
             app: '@bereghici/blog-app'
-            build-dir: 'apps/blog/build'
+            app-dir: 'apps/blog'
             site-id: DEV_NETLIFY_SITE_ID
     needs: [lint, test]
     # Steps in job
@@ -105,21 +105,14 @@ jobs:
           mkdir apps/blog/.netlify
           echo "{\"siteId\": \"${{ secrets[matrix.site-id] }}\"}" > apps/blog/.netlify/state.json
       # Deploy app to netlify
-      - name: Build ${{ matrix.app-name }} app with netlify
-        uses: netlify/actions/cli@master
-        with:
-          args: build
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
-      # Deploy app to netlify
       - name: Deploy ${{ matrix.app-name }} app to netlify
         uses: netlify/actions/cli@master
         with:
-          args: deploy --prod
+          args: build && deploy --prod
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
+          NETLIFY_BASE: ${{ matrix.app-dir }}
       # - name: Deploy ${{ matrix.app-name }} app to netlify
       #   id: netlify
       #   #if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
