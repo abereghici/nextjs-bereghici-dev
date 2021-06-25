@@ -17,8 +17,8 @@
     "**/package-deps.json": true,
     "**/node_modules": false,
     "**/test-apps/**/build": true,
-    "**/out": true,
-    "**/lib": true,
+    "**/out": false,
+    "**/lib": false,
     "common/temp": false
   },
   "files.trimTrailingWhitespace": true,
