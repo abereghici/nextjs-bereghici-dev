@@ -105,9 +105,9 @@ jobs:
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
           if [ {{ github.event_name == 'pull_request' }} ]; then
-            PROD_FLAG = '--prod'
+            PROD_FLAG=""
           else
-            PROD_FLAG = ''
+            PROD_FLAG="--prod"
           fi
           node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
 
