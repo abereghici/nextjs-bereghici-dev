@@ -128,3 +128,4 @@ imjs_extensions
 .DS_Store
 # Local Netlify folder
 .netlify
+**/netlify
