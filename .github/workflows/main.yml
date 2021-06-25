@@ -54,6 +54,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
+          node common/scripts/install-run-rush.js build
       # Run unit tests for all packages
       - name: Run tests
         run: node common/scripts/install-run-rush.js test
