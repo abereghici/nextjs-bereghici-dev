@@ -109,7 +109,7 @@ jobs:
           else
             PROD_FLAG="--prod"
           fi
-          echo "::set-output name=deploy::$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
+          echo "::set-output name=deploy::$(npm run deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
       - name: Logs
         run: |
           echo  ${{ steps.netlify.outputs.deploy }}
@@ -119,17 +119,17 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ steps.netlify.outputs.deploy_url }}
+          msg: ${{ steps.netlify.outputs.deploy.deploy_url }}
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.deploy-url }}
+        if: ${{ steps.netlify.outputs.deploy.deploy-url }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
-          url: ${{ steps.netlify.outputs.deploy-url }}
+          url: ${{ steps.netlify.outputs.deploy.deploy-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.deploy-url }}
+        if: ${{ steps.netlify.outputs.deploy.deploy-url }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
