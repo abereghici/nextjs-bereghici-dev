@@ -109,25 +109,25 @@ jobs:
           else
             PROD_FLAG="--prod"
           fi
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
-
+          RESULTS=node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+          echo "::set-output name=RESULTS::$RESULTS"
       - name: Save preview url to pull request
         if: ${{ github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          msg: ${{ steps.netlify.outputs.deploy_url }}
+          msg: ${{ steps.netlify.outputs.results }}
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.deploy-url }}
+        if: ${{ steps.netlify.outputs.results.deploy-url }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
-          url: ${{ steps.netlify.outputs.deploy-url }}
+          url: ${{ steps.netlify.outputs.results.deploy-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.deploy-url }}
+        if: ${{ steps.netlify.outputs.results.deploy-url }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
