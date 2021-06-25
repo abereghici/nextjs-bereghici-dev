@@ -126,3 +126,5 @@ imjs_extensions
 !platform/build-tools/lib
 
 .DS_Store
+# Local Netlify folder
+.netlify
