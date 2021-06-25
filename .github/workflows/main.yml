@@ -110,7 +110,10 @@ jobs:
             PROD_FLAG="--prod"
           fi
           node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
-      - name: Save preview url to pull request
+      - name: Logs
+        run: |
+          echo  ${{ steps.netlify.outputs.deploy_url }}
+          - name: Save preview url to pull request
         if: ${{ github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
@@ -118,9 +121,6 @@ jobs:
         with:
           msg: ${{ steps.netlify.outputs.deploy_url }}
           check_for_duplicate_msg: 'true'
-      - name: Logs
-        run: |
-          echo  ${{ steps.netlify.outputs.deploy_url }}
       - name: Generate Lighthouse Report
         if: ${{ steps.netlify.outputs.deploy-url }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
