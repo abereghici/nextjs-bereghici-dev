@@ -128,14 +128,14 @@ jobs:
           msg: '🚀 Deployed on ${{ steps.netlify.outputs.netlify_url }}'
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.netlify-url }}
+        if: steps.netlify.outputs.netlify-url
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
           url: ${{ steps.netlify.outputs.netlify-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.netlify-url }}
+        if: steps.netlify.outputs.netlify-url
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
