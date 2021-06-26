@@ -94,13 +94,13 @@ jobs:
           fileOutput: ''
       # Find changed projects to build it
       - name: Find changed projects
-        id: changedProjects
+        id: changed_projects
         run: |
           PROJECTS="$(node platform/affected-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
       - name: Build ${{ matrix.app-name }} app
         id: netlify
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+        if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
@@ -109,7 +109,8 @@ jobs:
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*') #Unique key: --
           echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
       - name: Publish preview urls
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) && github.event_name == 'pull_request' }}
+        id: preview_urls
+        if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) && github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -117,14 +118,16 @@ jobs:
           msg: '🚀 Deployed on ${{ steps.netlify.outputs.netlify_url }}'
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+        id: lighthouse_report
+        if: ${{ steps.netlify.outputs.netlify_url }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
           url: ${{ steps.netlify.outputs.netlify-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+        id: lighthouse_artifacts
+        if: ${{ steps.netlify.outputs.netlify_url }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
