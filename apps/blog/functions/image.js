@@ -8,6 +8,18 @@ exports.handler = async event => {
   const imageUrl = url.startsWith('/')
     ? `${process.env.URL || 'http://localhost:3000'}${url}`
     : url;
+
+  const isSvg = url.endsWith('.svg');
+
+  if (isSvg) {
+    return {
+      statusCode: 301,
+      headers: {
+        Location: url,
+      },
+    };
+  }
+
   const image = await jimp.read(imageUrl);
 
   image.resize(width, jimp.AUTO).quality(quality);
