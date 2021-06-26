@@ -105,7 +105,7 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
           BUILD_COMMAND: cd ${{ matrix.app-dir }}
-          PROD: $([ {{ github.event_name == 'pull_request' }} ] && echo "" || echo "--prod")
+          PROD: $([ ${{ github.event_name == 'pull_request' }} ] && echo "" || echo "--prod")
         with:
           args: 'deploy --json --build $PROD'
       - name: Generate Lighthouse Report
