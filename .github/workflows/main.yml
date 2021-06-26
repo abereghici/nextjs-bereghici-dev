@@ -98,16 +98,38 @@ jobs:
         run: |
           PROJECTS="$(node platform/affected-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
-      # Build app
-      - name: Build ${{ matrix.app-name }} app
+      - name: Deploy to Netlify
         id: netlify
-        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
-        run: |
-          node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-          cd ${{ matrix.app-dir }}
-          if [ {{ github.event_name == 'pull_request' }} ]; then
-            PROD_FLAG=""
-          else
-            PROD_FLAG="--prod"
-          fi
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+        uses: 'netlify/actions/cli@master'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
+          BUILD_COMMAND: cd {{ matrix.app-dir }}
+          PROD: $([ {{ github.event_name == 'pull_request' }} ] && echo "" || echo "--prod")
+        with:
+          args: 'deploy --json --build $PROD'
+      - name: Generate Lighthouse Report
+        if: ${{ steps.netlify.outputs.deploy-url }}
+        uses: abereghici/lighthouse-action@undefined_comments_url_fix
+        with:
+          url: ${{ steps.netlify.outputs.deploy-url }}
+          secret: ${{ secrets.GITHUB_TOKEN }}
+          wptConnectionSpeed: threegfast
+      - name: Saving Lighthouse Audit Artifacts
+        if: ${{ steps.netlify.outputs.deploy-url }}
+        uses: actions/upload-artifact@master
+        with:
+          name: lighthouse-artifacts
+          path: './results'
+      # - name: Build ${{ matrix.app-name }} app
+      #   id: netlify
+      #   if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+      #   run: |
+      #     node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
+      #     cd ${{ matrix.app-dir }}
+      #     if [ {{ github.event_name == 'pull_request' }} ]; then
+      #       PROD_FLAG=""
+      #     else
+      #       PROD_FLAG="--prod"
+      #     fi
+      #     node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
