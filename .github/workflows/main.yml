@@ -109,7 +109,7 @@ jobs:
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*') #Unique key: --
           echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
       - name: Publish preview urls
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) && github.event_name == 'pull_request' }}
         uses: unsplash/comment-on-pr@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -117,14 +117,14 @@ jobs:
           msg: '🚀 Deployed on ${{ steps.netlify.outputs.netlify_url }}'
           check_for_duplicate_msg: 'true'
       - name: Generate Lighthouse Report
-        if: ${{ always() && steps.netlify.outputs.netlify-url != '' }}
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         uses: abereghici/lighthouse-action@undefined_comments_url_fix
         with:
           url: ${{ steps.netlify.outputs.netlify-url }}
           secret: ${{ secrets.GITHUB_TOKEN }}
           wptConnectionSpeed: threegfast
       - name: Saving Lighthouse Audit Artifacts
-        if: ${{ always() && steps.netlify.outputs.netlify-url != '' }}
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
         uses: actions/upload-artifact@master
         with:
           name: lighthouse-artifacts
