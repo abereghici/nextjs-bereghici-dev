@@ -98,38 +98,27 @@ jobs:
         run: |
           PROJECTS="$(node platform/affected-packages --type=apps ${{ steps.file_changes.outputs.files}} )"
           echo "::set-output name=PROJECTS::$PROJECTS"
-      - name: Deploy to Netlify
+      - name: Build ${{ matrix.app-name }} app
         id: netlify
-        uses: 'netlify/actions/cli@master'
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
-          BUILD_COMMAND: cd ${{ matrix.app-dir }}
-          PROD: "${{ github.event_name == 'pull_request' && '' || '--prod' }}"
-        with:
-          args: 'deploy --build $PROD'
-      - name: Generate Lighthouse Report
-        if: ${{ steps.netlify.outputs.deploy-url }}
-        uses: abereghici/lighthouse-action@undefined_comments_url_fix
-        with:
-          url: ${{ steps.netlify.outputs.deploy-url }}
-          secret: ${{ secrets.GITHUB_TOKEN }}
-          wptConnectionSpeed: threegfast
-      - name: Saving Lighthouse Audit Artifacts
-        if: ${{ steps.netlify.outputs.deploy-url }}
-        uses: actions/upload-artifact@master
-        with:
-          name: lighthouse-artifacts
-          path: './results'
-      # - name: Build ${{ matrix.app-name }} app
-      #   id: netlify
-      #   if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
-      #   run: |
-      #     node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-      #     cd ${{ matrix.app-dir }}
-      #     if [ {{ github.event_name == 'pull_request' }} ]; then
-      #       PROD_FLAG=""
-      #     else
-      #       PROD_FLAG="--prod"
-      #     fi
-      #     node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }}
+        if: ${{ contains(steps.changedProjects.outputs.projects, matrix.app) }}
+        run: |
+          node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
+          cd ${{ matrix.app-dir }}
+          if [ {{ github.event_name == 'pull_request' }} ]; then
+            PROD_FLAG=""
+          else
+            PROD_FLAG="--prod"
+          fi
+          OUTPUT="$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $PROD_FLAG --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
+          NETLIFY_OUTPUT=$(echo "$OUTPUT")
+          NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*') #Unique key: --
+          NETLIFY_LOGS_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://app.netlify.com/[a-zA-Z0-9./?=_-]*') #Unique key: app.netlify.com
+          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com") #Unique key: don't containr -- and app.netlify.com
+
+          echo "::set-output name=NETLIFY_OUTPUT::$NETLIFY_OUTPUT"
+          echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
+          echo "::set-output name=NETLIFY_LOGS_URL::$NETLIFY_LOGS_URL"
+          echo "::set-output name=NETLIFY_LIVE_URL::$NETLIFY_LIVE_URL"
+      - name: Log
+        run: |
+          echo ${{ steps.netlify.outputs }}
