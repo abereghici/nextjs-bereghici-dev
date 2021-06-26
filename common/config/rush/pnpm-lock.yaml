@@ -67,6 +67,7 @@ specifiers:
   lodash.has: ^4.5.2
   lodash.omit: ^4.5.0
   mkdirp: ^1.0.4
+  netlify-cli: ~3.38.10
   next: 11.0.1
   npm-run-all: ^4.1.5
   react: ^17.0.2
@@ -150,6 +151,7 @@ dependencies:
   lodash.has: 4.5.2
   lodash.omit: 4.5.0
   mkdirp: 1.0.4
+  netlify-cli: 3.38.10
   next: 11.0.1_react-dom@17.0.2+react@17.0.2
   npm-run-all: 4.1.5
   react: 17.0.2
@@ -15918,13 +15920,14 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_eslint@7.29.0:
-    resolution: {integrity: sha512-GRkHPt4z76lRCgCPk3FwmTxLBDIPCh956cKyVItg+B770fXLWfrU5naZSHmemIJG0FIjObOm72TbgRyYv3OC2A==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-YZy6cPPGd1gqZX9Y4Cf7L8Q4sbIh+VyZCSatnKq2NuVZ323xq9JuWYux40WpM1LRxEe2Y0l/CHE2xQxgJOLMZg==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
     dependencies:
       '@types/react': 17.0.11
       eslint-config-next: 11.0.1_e90ffcbdf3367222fda70985c619e72c
+      jimp: 0.16.1
       netlify-cli: 3.38.10
       next: 11.0.1_2dbe935e140170ce01c975771f1adcbd
       next-on-netlify: 3.0.1
