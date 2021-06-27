@@ -109,6 +109,7 @@ jobs:
           cd ${{ matrix.app-dir }}
           mkdir .netlify
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
+          npm run netlify:link
           npm run netlify:build
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npm run netlify:deploy $IS_PROD)"

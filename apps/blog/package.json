@@ -8,6 +8,7 @@
     "export": "next export",
     "netlify:build": "netlify build",
     "netlify:deploy": "netlify deploy --json",
+    "netlify:link": "netlify link",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
     "typecheck": "bereghici-scripts typecheck"
   },
