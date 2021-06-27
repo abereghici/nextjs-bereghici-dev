@@ -5,23 +5,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
-    "deploy": "ntl deploy --json --build",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
     "typecheck": "bereghici-scripts typecheck"
   },
   "dependencies": {
     "next": "11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "netlify-cli": "~3.38.10",
-    "jimp": "~0.16.1"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "@bereghici/bereghici-scripts": "0.0.1",
     "@bereghici/eslint-config": "0.0.1",
     "@types/react": "17.0.11",
-    "eslint-config-next": "11.0.1",
-    "typescript": "^4.3.2"
+    "eslint-config-next": "11.0.1"
   }
 }

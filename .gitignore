@@ -129,3 +129,4 @@ imjs_extensions
 # Local Netlify folder
 .netlify
 **/netlify
+.vercel

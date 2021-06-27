@@ -75,6 +75,14 @@
       "allowedCategories": ["platform", "tools"]
     },
     {
+      "name": "@netlify/functions",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@netlify/plugin-nextjs",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@pmmmwh/react-refresh-webpack-plugin",
       "allowedCategories": ["platform"]
     },
@@ -101,6 +109,10 @@
     {
       "name": "@rushstack/node-core-library",
       "allowedCategories": ["tools"]
+    },
+    {
+      "name": "@sls-next/lambda-at-edge",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "@storybook/addon-actions",
@@ -161,6 +173,10 @@
     {
       "name": "@typescript-eslint/parser",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "adm-zip",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "arrify",
@@ -228,7 +244,15 @@
     },
     {
       "name": "chalk",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["apps", "platform"]
+    },
+    {
+      "name": "chokidar",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "commander",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "concurrently",
@@ -253,6 +277,10 @@
     {
       "name": "css-loader",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "debounce-fn",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "doctoc",
@@ -327,12 +355,32 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "etag",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "execa",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "fastq",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "file-loader",
       "allowedCategories": ["platform"]
     },
     {
+      "name": "find-cache-dir",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "find-up",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "fs-extra",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["apps", "platform"]
     },
     {
       "name": "fsevents",
@@ -351,8 +399,20 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "image-type",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "is-ci",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "is-promise",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "is-svg",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "jest",
@@ -403,6 +463,14 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "make-dir",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "mime-types",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "mini-css-extract-plugin",
       "allowedCategories": ["platform"]
     },
@@ -415,6 +483,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "moize",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "netlify-cli",
       "allowedCategories": ["apps"]
     },
@@ -424,6 +496,10 @@
     },
     {
       "name": "next-on-netlify",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "node-fetch",
       "allowedCategories": ["apps"]
     },
     {
@@ -536,7 +612,11 @@
     },
     {
       "name": "semver",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["apps", "platform"]
+    },
+    {
+      "name": "sharp",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "slash",
