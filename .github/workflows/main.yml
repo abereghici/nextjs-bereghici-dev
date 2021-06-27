@@ -85,7 +85,8 @@ jobs:
       - name: Install dependencies
         run: |
           node common/scripts/install-run-rush.js change -v
-          node common/scripts/install-run-rush.js install
+          OUTPUT="$(node common/scripts/install-run-rush.js install)"
+          echo "$OUTPUT"
       - name: Get changed files
         id: file_changes
         uses: trilom/file-changes-action@v1.2.4
