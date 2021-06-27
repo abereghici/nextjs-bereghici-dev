@@ -113,7 +113,10 @@ jobs:
           npm run netlify:build
           cd ./.netlify/plugins
           rm -rf node_modules/sharp
-          npm install --arch=x64 --platform=linux sharp
+          SHARP_IGNORE_GLOBAL_LIBVIPS=1
+          npm_config_arch=x64
+          npm_config_platform=linux
+          npm install sharp
           cd ../../
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npm run netlify:deploy $IS_PROD)"
