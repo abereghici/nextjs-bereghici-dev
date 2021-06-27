@@ -111,7 +111,7 @@ jobs:
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
           npm run netlify:link
           npm run netlify:build
-          cd ./netlify/plugins
+          cd ./.netlify/plugins
           rm -rf node_modules/sharp
           npm install --arch=x64 --platform=linux sharp
           cd ../../
