@@ -104,6 +104,8 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           cd ${{ matrix.app-dir }}
+          mkdir .netlify
+          echo "{\"siteId\": \"${{ secrets[matrix.site-id] }}\"}" > .netlify/state.json
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $IS_PROD --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*') #Unique key: --
