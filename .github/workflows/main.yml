@@ -102,6 +102,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
+          SHARP_IGNORE_GLOBAL_LIBVIPS: 1
         id: netlify
         working-directory: ${{ matrix.app-dir }}
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
@@ -113,9 +114,7 @@ jobs:
           npm run netlify:build
           cd ./.netlify/plugins
           rm -rf node_modules/sharp
-          SHARP_IGNORE_GLOBAL_LIBVIPS=1
-          npm_config_arch=x64
-          npm_config_platform=linux
+          npm i -g node-gyp
           npm install sharp
           cd ../../
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"

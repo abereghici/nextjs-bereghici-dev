@@ -68,7 +68,7 @@ specifiers:
   lodash.has: ^4.5.2
   lodash.omit: ^4.5.0
   mkdirp: ^1.0.4
-  netlify-cli: ~3.38.10
+  netlify-cli: ^3.39.0
   next: 11.0.1
   npm-run-all: ^4.1.5
   react: ^17.0.2
@@ -153,7 +153,7 @@ dependencies:
   lodash.has: 4.5.2
   lodash.omit: 4.5.0
   mkdirp: 1.0.4
-  netlify-cli: 3.38.13
+  netlify-cli: 3.39.0
   next: 11.0.1_react-dom@17.0.2+react@17.0.2
   npm-run-all: 4.1.5
   react: 17.0.2
@@ -10984,8 +10984,8 @@ packages:
     resolution: {integrity: sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==}
     dev: false
 
-  /netlify-cli/3.38.13:
-    resolution: {integrity: sha512-YlpBkjPeHnxhbB+nKe8s49dCiuqcRfEpjxqwZr7PgTa30UTBhP1qDDkhhLEXsTSwOV9WlMJ3p7OIXvaHQ+h6/g==}
+  /netlify-cli/3.39.0:
+    resolution: {integrity: sha512-XYkFp1WuWTcO7Q3LbY79ilobfCNWoL6UEYq2vhCHHKNLICSPxZtkzjDvNP628eGVzxe0L+D+Z9ce3sLdFiitMw==}
     engines: {node: '>=10.18.0'}
     hasBin: true
     requiresBuild: true
@@ -15111,7 +15111,7 @@ packages:
   /xml2js/0.4.19:
     resolution: {integrity: sha512-esZnJZJOiJR9wWKMyuvSE1y6Dq5LCuJanqhxslH2bxM6duahNZ+HMpCLhBQGZkbX6xRf8x1Y2eJlgt2q3qo49Q==}
     dependencies:
-      sax: 1.2.1
+      sax: 1.2.4
       xmlbuilder: 9.0.7
     dev: false
 
@@ -15387,7 +15387,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_eslint@7.29.0:
-    resolution: {integrity: sha512-ipqiUoAvtbBM0n4GyFt7Zzr6OC32A7mYaHEefS7SoikgbdKK4q+QVhG+un4ozgk+hE+9KGiOmM220IlXex9GQw==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-ds1fCWda6XXQogymTJDCwA3+kkhCfNKkVgS+vz/xL3pBVqlwAiERFufl2oNTXLStqYXQ/Xo6LOcEd1r9JiE21Q==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -15395,7 +15395,7 @@ packages:
       '@types/node': 15.12.5
       '@types/react': 17.0.11
       eslint-config-next: 11.0.1_e90ffcbdf3367222fda70985c619e72c
-      netlify-cli: 3.38.13
+      netlify-cli: 3.39.0
       next: 11.0.1_2dbe935e140170ce01c975771f1adcbd
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
