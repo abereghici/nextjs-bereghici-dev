@@ -64,7 +64,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-        os: [ubuntu-latest]
         app-name: [blog]
         include:
           - app-name: blog
