@@ -64,6 +64,7 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
+        os: [ubuntu-latest]
         app-name: [blog]
         include:
           - app-name: blog
@@ -111,7 +112,6 @@ jobs:
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
           npm run netlify:link
           npm run netlify:build
-          ls -a
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npm run netlify:deploy $IS_PROD)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
