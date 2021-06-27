@@ -67,6 +67,7 @@ specifiers:
   lodash.has: ^4.5.2
   lodash.omit: ^4.5.0
   mkdirp: ^1.0.4
+  netlify-cli: ~3.38.10
   next: 11.0.1
   npm-run-all: ^4.1.5
   react: ^17.0.2
@@ -150,6 +151,7 @@ dependencies:
   lodash.has: 4.5.2
   lodash.omit: 4.5.0
   mkdirp: 1.0.4
+  netlify-cli: 3.38.10
   next: 11.0.1_react-dom@17.0.2+react@17.0.2
   npm-run-all: 4.1.5
   react: 17.0.2
@@ -3921,14 +3923,14 @@ packages:
     dependencies:
       '@types/http-cache-semantics': 4.0.0
       '@types/keyv': 3.1.1
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
       '@types/responselike': 1.0.0
     dev: false
 
   /@types/decompress/4.2.3:
     resolution: {integrity: sha512-W24e3Ycz1UZPgr1ZEDHlK4XnvOr+CpJH3qNsFeqXwwlW/9END9gxn3oJSsp7gYdiQxrXUHwUUd3xuzVz37MrZQ==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/download/8.0.0:
@@ -3936,7 +3938,7 @@ packages:
     dependencies:
       '@types/decompress': 4.2.3
       '@types/got': 8.3.5
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/estree/0.0.39:
@@ -3957,7 +3959,7 @@ packages:
   /@types/got/8.3.5:
     resolution: {integrity: sha512-AaXSrIF99SjjtPVNmCmYb388HML+PKEJb/xmj4SbL2ZO0hHuETZZzyDIKfOqaEoAHZEuX4sC+FRFrHYJoIby6A==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/graceful-fs/4.1.5:
@@ -3973,7 +3975,7 @@ packages:
   /@types/http-proxy/1.17.6:
     resolution: {integrity: sha512-+qsjqR75S/ib0ig0R9WN+CDoZeOBU6F2XLewgC4KVgdXiNHiKKHFEMRHOrs5PbYE97D5vataw5wPj4KLYfUkuQ==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/istanbul-lib-coverage/2.0.3:
@@ -4017,7 +4019,7 @@ packages:
   /@types/keyv/3.1.1:
     resolution: {integrity: sha512-MPtoySlAZQ37VoLaPcTHCu1RWJ4llDkULYZIzOYxlhxBqYPB0RsRlmMU0R6tahtFe27mIdkHV+551ZWV4PLmVw==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/minimatch/3.0.4:
@@ -4027,7 +4029,7 @@ packages:
   /@types/node-fetch/2.5.10:
     resolution: {integrity: sha512-IpkX0AasN44hgEad0gEF/V6EgR5n69VEqPEgnmoM8GsIGro3PowbWs4tR6IhxUTyPLpOn+fiGG6nrQhcmoCuIQ==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
       form-data: 3.0.1
     dev: false
 
@@ -4041,6 +4043,10 @@ packages:
 
   /@types/node/15.12.4:
     resolution: {integrity: sha512-zrNj1+yqYF4WskCMOHwN+w9iuD12+dGm0rQ35HLl9/Ouuq52cEtd0CH9qMgrdNmi5ejC1/V7vKEXYubB+65DkA==}
+    dev: false
+
+  /@types/node/15.12.5:
+    resolution: {integrity: sha512-se3yX7UHv5Bscf8f1ERKvQOD6sTyycH3hdaoozvaLxgUiY5lIGEeH37AD0G0Qi9kPqihPn0HOfd2yaIEN9VwEg==}
     dev: false
 
   /@types/normalize-package-data/2.4.0:
@@ -4076,7 +4082,7 @@ packages:
   /@types/responselike/1.0.0:
     resolution: {integrity: sha512-85Y2BjiufFzaMIlvJDvTTB8Fxl2xfLo4HgmHzVBz08w4wDePCTjYw66PdrolO0kzli3yam/YCgRufyo1DdQVTA==}
     dependencies:
-      '@types/node': 15.12.4
+      '@types/node': 15.12.5
     dev: false
 
   /@types/scheduler/0.16.1:
@@ -15918,11 +15924,12 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_eslint@7.29.0:
-    resolution: {integrity: sha512-GRkHPt4z76lRCgCPk3FwmTxLBDIPCh956cKyVItg+B770fXLWfrU5naZSHmemIJG0FIjObOm72TbgRyYv3OC2A==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-ipqiUoAvtbBM0n4GyFt7Zzr6OC32A7mYaHEefS7SoikgbdKK4q+QVhG+un4ozgk+hE+9KGiOmM220IlXex9GQw==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
     dependencies:
+      '@types/node': 15.12.5
       '@types/react': 17.0.11
       eslint-config-next: 11.0.1_e90ffcbdf3367222fda70985c619e72c
       netlify-cli: 3.38.10

@@ -103,10 +103,10 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         id: netlify
+        working-directory: ${{ matrix.app-dir }}
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
         run: |
-          node common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-          cd ${{ matrix.app-dir }}
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           mkdir .netlify
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
           npm run netlify:link
