@@ -69,6 +69,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: [lint, test]
     # Steps in job
+    env:
+      NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
     steps:
       # Get code from repo
       - name: Clone Repository (Latest)
@@ -94,7 +97,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js build --verbose --to-except @bereghici/blog-app
           cd apps/blog
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --prod --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets.NETLIFY_SITE_ID }}
+          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy --prod
       # Create release tag
       - name: Create tag
         run: |
