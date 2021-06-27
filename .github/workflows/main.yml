@@ -108,6 +108,7 @@ jobs:
           echo "{\"siteId\": \"${{ secrets[matrix.site-id] }}\"}" > .netlify/state.json
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js deploy $IS_PROD --auth  ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }})"
+          echo $OUTPUT
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*') #Unique key: --
           echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
       - name: Publish preview urls
