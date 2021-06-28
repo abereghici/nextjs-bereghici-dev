@@ -535,6 +535,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "sharp",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "slash",
       "allowedCategories": ["platform"]
     },
