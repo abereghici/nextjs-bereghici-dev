@@ -110,7 +110,7 @@ jobs:
           mkdir .netlify
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
-          OUTPUT="$(npm run netlify:deploy $IS_PROD --auth ${{ secrets.NETLIFY_AUTH_TOKEN }} --site ${{ secrets[matrix.site-id] }} )"
+          OUTPUT="$(npm run netlify:deploy $IS_PROD --auth $NETLIFY_AUTH_TOKEN --site $NETLIFY_SITE_ID )"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
       - name: Publish preview urls

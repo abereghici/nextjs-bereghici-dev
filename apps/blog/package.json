@@ -6,7 +6,7 @@
     "build": "next build",
     "start": "next start",
     "export": "next export",
-    "netlify:deploy": "netlify deploy --json --build --debug",
+    "netlify:deploy": "netlify deploy --json --build",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
     "typecheck": "bereghici-scripts typecheck"
   },
