@@ -99,8 +99,9 @@ jobs:
           cd apps/blog
           mkdir .netlify
           echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js netlify:build
-          node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js netlify:deploy --prod
+          npm run netlify:link
+          npm run netlify:build
+          npm run netlify:deploy --prod
       # Create release tag
       - name: Create tag
         run: |
