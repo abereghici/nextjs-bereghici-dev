@@ -75,10 +75,6 @@
       "allowedCategories": ["platform", "tools"]
     },
     {
-      "name": "@netlify/plugin-nextjs",
-      "allowedCategories": ["apps"]
-    },
-    {
       "name": "@pmmmwh/react-refresh-webpack-plugin",
       "allowedCategories": ["platform"]
     },
