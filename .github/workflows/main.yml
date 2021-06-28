@@ -107,11 +107,7 @@ jobs:
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
         run: |
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-
-          npm install @netlify/plugin-nextjs --save
-
           node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js netlify:build
-
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(node $GITHUB_WORKSPACE/common/scripts/install-run-rushx.js netlify:deploy $IS_PROD)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
