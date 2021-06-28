@@ -2,5 +2,9 @@
   command = "npm run build"
   publish = "out"
 
-[build.environment]
-  NODE_VERSION = "14"
+  [build.environment]
+    NODE_VERSION = "14"
+    AWS_LAMBDA_JS_RUNTIME = "nodejs14.x"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
