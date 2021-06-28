@@ -1,3 +1,9 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+[build.environment]
+  NODE_VERSION = "14"
+
+[[plugins]]
+  package = "@netlify/plugin-functions-install-core"
