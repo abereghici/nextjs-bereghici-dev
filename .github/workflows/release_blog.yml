@@ -94,12 +94,11 @@ jobs:
           node common/scripts/install-run-rush.js install
       # Build app
       - name: Build blog app
+        working-directory: apps/blog
         run: |
-          node common/scripts/install-run-rush.js build --verbose --to-except @bereghici/blog-app
-          cd apps/blog
-          mkdir .netlify
-          echo "{\"siteId\": \"${NETLIFY_SITE_ID}\"}" > .netlify/state.json
-          npm run netlify:deploy --prod
+          node  $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except @bereghici/blog-app
+          npx netlify-cli build
+          npx netlify-cli deploy --prod
       # Create release tag
       - name: Create tag
         run: |
