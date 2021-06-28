@@ -115,6 +115,7 @@ jobs:
           rm -rf package-lock.json
           npm uninstall sharp
           npm install --arch=x64 --platform=linux --target=10.15.0 sharp
+          cd ../../
           IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npm run netlify:deploy $IS_PROD)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
