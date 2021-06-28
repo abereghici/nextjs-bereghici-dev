@@ -4,12 +4,12 @@
 
 [[redirects]]
   from = "http://development.bereghici.dev/*"
-  to = " https://development.bereghici.dev/*"
+  to = "https://development.bereghici.dev/*"
   status = 301
   force = true
 
 [[redirects]]
   from = "http://bereghici.dev/*"
-  to = " https://bereghici.dev/*"
+  to = "https://bereghici.dev/*"
   status = 301
   force = true
