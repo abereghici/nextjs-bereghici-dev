@@ -18,7 +18,7 @@
     "validate": "node src validate"
   },
   "files": [
-    "dist",
+    "src",
     "babel.js",
     "config.js",
     "eslint.js",

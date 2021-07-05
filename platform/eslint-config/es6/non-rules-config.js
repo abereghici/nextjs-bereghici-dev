@@ -7,7 +7,7 @@ module.exports = {
     babelOptions: {
       presets: [require.resolve('@babel/preset-react')],
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2021,
     sourceType: 'module',
     requireConfigFile: false,
   },
@@ -17,8 +17,11 @@ module.exports = {
       files: ['**/*.ts?(x)'],
       parser: '@typescript-eslint/parser',
       parserOptions: {
-        ecmaVersion: 2018,
+        ecmaVersion: 2021,
         sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
       plugins: ['@typescript-eslint'],
       rules: {},

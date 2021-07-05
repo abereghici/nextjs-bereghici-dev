@@ -39,11 +39,17 @@ function resolveBin(
     // ignore _error
   }
   try {
-    const modPkgPath = require.resolve(`${modName}/package.json`);
-    const modPkgDir = path.dirname(modPkgPath);
-    const { bin } = require(modPkgPath);
+    //const modPkgPath = require.resolve(`${modName}/package.json`);
+    //const modPkgDir = path.dirname(modPkgPath);
+    const { packageJson: modPkgPath, path: modPkgDir } = readPkgUp.sync({
+      cwd: path.join(__dirname, `../node_modules/${modName}/package.json`),
+    });
+    const { bin } = modPkgPath;
     const binPath = typeof bin === 'string' ? bin : bin[executable];
-    const fullPathToBin = path.join(modPkgDir, binPath);
+    const fullPathToBin = path.join(
+      modPkgDir.replace('package.json', ''),
+      binPath
+    );
     if (fullPathToBin === pathFromWhich) {
       return executable;
     }

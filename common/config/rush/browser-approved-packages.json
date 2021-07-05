@@ -44,11 +44,11 @@
     },
     {
       "name": "@babel/runtime",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "@bereghici/bereghici-scripts",
-      "allowedCategories": ["apps", "platform"]
+      "allowedCategories": ["apps", "packages", "platform"]
     },
     {
       "name": "@bereghici/build-tools",
@@ -65,6 +65,10 @@
     {
       "name": "@bereghici/eslint-config",
       "allowedCategories": ["apps", "packages", "platform"]
+    },
+    {
+      "name": "@bereghici/icons",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "@bereghici/stylelint-config",
@@ -121,6 +125,18 @@
     {
       "name": "@storybook/react",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "@svgr/core",
+      "allowedCategories": ["packages"]
+    },
+    {
+      "name": "@svgr/plugin-prettier",
+      "allowedCategories": ["packages"]
+    },
+    {
+      "name": "@svgr/plugin-svgo",
+      "allowedCategories": ["packages"]
     },
     {
       "name": "@svgr/webpack",
@@ -224,7 +240,7 @@
     },
     {
       "name": "camelcase",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "case-sensitive-paths-webpack-plugin",
@@ -232,7 +248,7 @@
     },
     {
       "name": "chalk",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "concurrently",
@@ -336,7 +352,7 @@
     },
     {
       "name": "fs-extra",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "fsevents",
@@ -344,7 +360,7 @@
     },
     {
       "name": "glob",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "html-webpack-plugin",
@@ -467,6 +483,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "prettier",
+      "allowedCategories": ["packages"]
+    },
+    {
       "name": "prompts",
       "allowedCategories": ["platform"]
     },
@@ -512,7 +532,7 @@
     },
     {
       "name": "rimraf",
-      "allowedCategories": ["platform"]
+      "allowedCategories": ["packages", "platform"]
     },
     {
       "name": "rollup",

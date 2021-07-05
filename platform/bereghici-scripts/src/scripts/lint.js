@@ -46,7 +46,7 @@ const files = parsedArgs._;
 const relativeEslintNodeModules = 'node_modules/@bereghici/eslint-config';
 
 const pluginsDirectory = useBuiltinConfig
-  ? `${here}/${relativeEslintNodeModules}`
+  ? `${hereRelative('../../')}${relativeEslintNodeModules}`
   : `${appDirectory}/${relativeEslintNodeModules}`;
 
 const resolvePluginsRelativeTo = [

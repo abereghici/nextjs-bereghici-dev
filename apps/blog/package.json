@@ -16,6 +16,7 @@
   "devDependencies": {
     "@bereghici/bereghici-scripts": "0.0.1",
     "@bereghici/eslint-config": "0.0.1",
+    "@bereghici/icons": "0.0.1",
     "@types/node": "~15.12.5",
     "@types/react": "17.0.11",
     "eslint-config-next": "11.0.1",

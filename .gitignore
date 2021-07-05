@@ -114,6 +114,8 @@ package-deps.json
 .nyc_output
 /**/lib
 /**/build
+/**/dist
+!platform/bereghici-scripts/src/scripts/build
 /**/test/output
 /generated-docs
 /out
