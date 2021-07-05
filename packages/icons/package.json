@@ -5,6 +5,8 @@
   "scripts": {
     "build": "bereghici-scripts build --bundle esm --environment BUILD_INPUT:src/*.tsx",
     "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
     "validate": "bereghici-scripts validate",
     "generate": "node ./generate.js"
   },

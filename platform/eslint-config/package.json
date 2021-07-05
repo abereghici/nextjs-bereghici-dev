@@ -12,8 +12,7 @@
     "find-new-rules:react": "eslint-find-rules --unused ./other/test/react/index.js",
     "lint": "eslint --config index.js .",
     "test": "npm-run-all --parallel lint find-new-rules",
-    "validate": "npm-run-all --parallel lint test",
-    "prepare": "husky install .config/husky"
+    "validate": "npm-run-all --parallel lint test"
   },
   "dependencies": {
     "@babel/core": "^7.14.3",

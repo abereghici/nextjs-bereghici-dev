@@ -46,8 +46,16 @@ test('resolveBrgScripts resolves to bereghici-scripts if not in the bereghici-sc
 });
 
 test(`resolveBin resolves to the full path when it's not in $PATH`, () => {
-  expect(require('../utils').resolveBin('cross-env')).toBe(
-    require.resolve('cross-env/src/bin/cross-env').replace(process.cwd(), '.')
+  mockPkg({
+    package: {
+      bin: {
+        'cross-env': 'src/bin/cross-env.js',
+      },
+    },
+    path: `cross-env/package.json`,
+  });
+  expect(require.resolve('cross-env/src/bin/cross-env')).toContain(
+    require('../utils').resolveBin('cross-env')
   );
 });
 
@@ -182,7 +190,7 @@ test('should generate typescript definitions into provided folder', async () => 
 });
 
 function mockPkg({ package: pkg = {}, path = '/blah/package.json' }) {
-  readPkgUpSyncMock.mockImplementationOnce(() => ({ packageJson: pkg, path }));
+  readPkgUpSyncMock.mockImplementation(() => ({ packageJson: pkg, path }));
 }
 
 function mockCosmiconfig(result = null) {

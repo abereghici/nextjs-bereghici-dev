@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
-    "typecheck": "bereghici-scripts typecheck"
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
   },
   "dependencies": {
     "next": "11.0.1",
