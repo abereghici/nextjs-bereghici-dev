@@ -185,6 +185,16 @@
       "shellCommand": "pretty-quick --staged"
     },
     {
+      "name": "validate",
+      "commandKind": "bulk",
+      "summary": "Run validate on each package",
+      "description": "Iterates through each package in the monorepo and runs the 'validate' script",
+      "enableParallelism": false,
+      "ignoreMissingScript": true,
+      "ignoreDependencyOrder": true,
+      "allowWarningsInSuccessfulBuild": true
+    },
+    {
       "name": "test",
       "commandKind": "bulk",
       "summary": "Run tests on each package",

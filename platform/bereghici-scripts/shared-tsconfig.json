@@ -1,6 +1,6 @@
 {
   "exclude": ["node_modules"],
-  "include": ["../../src/**/*"],
+  "include": ["../../../src/**/*"],
   "compilerOptions": {
     "isolatedModules": true,
     "esModuleInterop": true,
@@ -10,9 +10,9 @@
     "jsx": "react",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "baseUrl": "../../src",
+    "baseUrl": "../../../src",
     "paths": {
-      "*": ["*", "../tests/*"]
+      "*": ["*", "../../tests/*"]
     },
     "preserveWatchOutput": true
   }

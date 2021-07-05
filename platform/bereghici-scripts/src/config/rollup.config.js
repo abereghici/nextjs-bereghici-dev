@@ -155,7 +155,10 @@ module.exports = {
       babelHelpers: hasDep('@babel/runtime') ? 'runtime' : 'bundled',
       extensions,
     }),
-    replace(replacements),
+    replace({
+      ...replacements,
+      preventAssignment: true,
+    }),
     minify ? terser() : null,
     codeSplitting &&
       ((writes = 0) => ({

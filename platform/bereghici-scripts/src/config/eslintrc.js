@@ -1,6 +1,6 @@
 const { ifAnyDep } = require('../utils');
 
-module.exports = {
+const config = {
   extends: [
     '@bereghici/eslint-config',
     '@bereghici/eslint-config/jest',
@@ -9,3 +9,5 @@ module.exports = {
   ].filter(Boolean),
   rules: {},
 };
+
+module.exports = config;

@@ -47,6 +47,11 @@
       "packageName": "@bereghici/bereghici-scripts",
       "projectFolder": "platform/bereghici-scripts",
       "reviewCategory": "platform"
+    },
+    {
+      "packageName": "@bereghici/icons",
+      "projectFolder": "packages/icons",
+      "reviewCategory": "packages"
     }
   ]
 }

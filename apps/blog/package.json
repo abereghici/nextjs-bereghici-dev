@@ -6,7 +6,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
-    "typecheck": "bereghici-scripts typecheck"
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
   },
   "dependencies": {
     "next": "11.0.1",
@@ -16,6 +18,7 @@
   "devDependencies": {
     "@bereghici/bereghici-scripts": "0.0.1",
     "@bereghici/eslint-config": "0.0.1",
+    "@bereghici/icons": "0.0.1",
     "@types/node": "~15.12.5",
     "@types/react": "17.0.11",
     "eslint-config-next": "11.0.1",

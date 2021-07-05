@@ -21,6 +21,7 @@ Array [
 Usage: ../ [script] [--flags]
 
 Available Scripts:
+  build
   lint
   pre-commit
   test
