@@ -10,14 +10,13 @@ module.exports = {
     'import/no-namespace': 'off',
     'import/no-nodejs-modules': 'off',
     'import/order': [
-      'warn',
+      'error',
       {
         groups: [
-          'builtin',
-          ['external', 'internal'],
-          'parent',
-          ['sibling', 'index'],
+          ['builtin', 'external', 'internal'],
+          ['parent', 'index', 'sibling'],
         ],
+        'newlines-between': 'always',
       },
     ],
   },

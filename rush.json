@@ -52,6 +52,16 @@
       "packageName": "@bereghici/icons",
       "projectFolder": "packages/icons",
       "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.tokens",
+      "projectFolder": "packages/design-system/tokens",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.core",
+      "projectFolder": "packages/design-system/core",
+      "reviewCategory": "packages"
     }
   ]
 }

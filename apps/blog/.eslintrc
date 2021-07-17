@@ -4,6 +4,7 @@
     "next/core-web-vitals",
     "@bereghici/eslint-config",
     "@bereghici/eslint-config/react",
+    "@bereghici/eslint-config/emotion",
     "@bereghici/eslint-config/jest",
     "@bereghici/eslint-config/jsx-a11y"
   ],
