@@ -23,6 +23,8 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <link href={primaryFontUrl} rel="preload" as="style" />
           <link href={monoFontUrl} rel="preload" as="style" />
+          <link rel="stylesheet" href={primaryFontUrl} />
+          <link rel="stylesheet" href={monoFontUrl} />
         </Head>
         <body>
           <Main />

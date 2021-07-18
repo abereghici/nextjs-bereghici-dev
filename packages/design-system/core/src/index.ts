@@ -4,3 +4,5 @@ export * from './block';
 export * from './typography';
 export * from './responsive-container';
 export * from './link';
+export * from './button';
+export * from './divider';

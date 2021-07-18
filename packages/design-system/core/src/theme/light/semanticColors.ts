@@ -57,6 +57,48 @@ const semanticColors: SemanticColors = {
   linkVisited: colors.gray700,
   linkHover: colors.gray600,
   linkActive: colors.gray500,
+
+  // Buttons
+  buttonPrimaryFill: colors.black,
+  buttonPrimaryText: colors.white,
+  buttonPrimaryHover: colors.gray700,
+  buttonPrimaryActive: colors.gray600,
+  buttonPrimarySelectedFill: colors.gray600,
+  buttonPrimarySelectedText: colors.white,
+  buttonPrimarySpinnerForeground: colors.gray50,
+  buttonPrimarySpinnerBackground: colors.gray500,
+
+  buttonSecondaryFill: colors.gray100,
+  buttonSecondaryText: colors.black,
+  buttonSecondaryHover: colors.gray200,
+  buttonSecondaryActive: colors.gray300,
+  buttonSecondarySelectedFill: colors.gray300,
+  buttonSecondarySelectedText: colors.black,
+  buttonSecondarySpinnerForeground: colors.gray700,
+  buttonSecondarySpinnerBackground: colors.gray300,
+
+  buttonTertiaryFill: 'transparent',
+  buttonTertiaryText: colors.black,
+  buttonTertiaryHover: colors.gray50,
+  buttonTertiaryActive: colors.gray100,
+  buttonTertiarySelectedFill: colors.gray100,
+  buttonTertiarySelectedText: colors.black,
+  buttonTertiarySpinnerForeground: colors.gray700,
+  buttonTertiarySpinnerBackground: colors.gray300,
+
+  buttonMinimalFill: 'transparent',
+  buttonMinimalText: colors.black,
+  buttonMinimalHover: colors.gray50,
+  buttonMinimalActive: colors.gray100,
+  buttonMinimalSelectedFill: colors.gray100,
+  buttonMinimalSelectedText: colors.black,
+  buttonMinimalSpinnerForeground: colors.gray700,
+  buttonMinimalSpinnerBackground: colors.gray300,
+
+  buttonDisabledFill: colors.gray50,
+  buttonDisabledText: colors.gray400,
+  buttonDisabledSpinnerForeground: colors.gray400,
+  buttonDisabledSpinnerBackground: colors.gray200,
 };
 
 export default semanticColors;

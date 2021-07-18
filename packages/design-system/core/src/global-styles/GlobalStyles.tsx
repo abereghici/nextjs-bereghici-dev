@@ -14,6 +14,7 @@ export const GlobalStyles = () => {
           color: theme.colors.contentPrimary,
           padding: 0,
           margin: 0,
+          minHeight: '100vh',
           ...theme.typography.font300,
         },
       }}

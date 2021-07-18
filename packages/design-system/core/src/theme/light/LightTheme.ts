@@ -17,7 +17,6 @@ export const LightTheme: Theme = {
   animation,
   layout,
   borders,
-  direction: 'auto',
   lighting,
   mediaQuery,
   sizing,

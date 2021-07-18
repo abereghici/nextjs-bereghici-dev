@@ -16,7 +16,6 @@ export const DarkTheme: Theme = {
   colors: semanticColors,
   animation,
   borders,
-  direction: 'auto',
   lighting,
   mediaQuery,
   layout,

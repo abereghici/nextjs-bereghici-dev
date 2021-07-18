@@ -63,11 +63,48 @@ export type SemanticColors = {
   linkVisited: string;
   linkHover: string;
   linkActive: string;
+
+  // Buttons
+  buttonPrimaryFill: string;
+  buttonPrimaryText: string;
+  buttonPrimaryHover: string;
+  buttonPrimaryActive: string;
+  buttonPrimarySelectedText: string;
+  buttonPrimarySelectedFill: string;
+  buttonPrimarySpinnerForeground: string;
+  buttonPrimarySpinnerBackground: string;
+  buttonSecondaryFill: string;
+  buttonSecondaryText: string;
+  buttonSecondaryHover: string;
+  buttonSecondaryActive: string;
+  buttonSecondarySelectedText: string;
+  buttonSecondarySelectedFill: string;
+  buttonSecondarySpinnerForeground: string;
+  buttonSecondarySpinnerBackground: string;
+  buttonTertiaryFill: string;
+  buttonTertiaryText: string;
+  buttonTertiaryHover: string;
+  buttonTertiaryActive: string;
+  buttonTertiarySelectedText: string;
+  buttonTertiarySelectedFill: string;
+  buttonTertiarySpinnerForeground: string;
+  buttonTertiarySpinnerBackground: string;
+  buttonMinimalFill: string;
+  buttonMinimalText: string;
+  buttonMinimalHover: string;
+  buttonMinimalActive: string;
+  buttonMinimalSelectedText: string;
+  buttonMinimalSelectedFill: string;
+  buttonMinimalSpinnerForeground: string;
+  buttonMinimalSpinnerBackground: string;
+  buttonDisabledFill: string;
+  buttonDisabledText: string;
+  buttonDisabledSpinnerForeground: string;
+  buttonDisabledSpinnerBackground: string;
 };
 
 export interface Theme {
   name: string;
-  direction: 'auto' | 'ltr' | 'rtl';
   layout: Layout;
   mediaQuery: MediaQuery;
   colors: SemanticColors;
