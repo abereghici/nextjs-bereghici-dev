@@ -1,8 +1,4 @@
-import {
-  ResponsiveContainer,
-  Block,
-  Divider,
-} from '@bereghici/design-system.core';
+import { ResponsiveContainer, Block } from '@bereghici/design-system.core';
 import styled from '@emotion/styled';
 
 import { Logo } from '../logo';
@@ -10,8 +6,9 @@ import { ThemeToggle } from '../theme-toggle';
 
 const StyledHeader = styled.header(({ theme }) => ({
   paddingTop: theme.sizing.scale600,
-  marginBottom: theme.sizing.scale600,
+  paddingBottom: theme.sizing.scale600,
   background: theme.colors.backgroundPrimary,
+  borderBottom: `1px solid ${theme.colors.borderOpaque}`,
 }));
 
 export const Header = () => {
@@ -22,12 +19,10 @@ export const Header = () => {
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-        paddingBottom="scale700"
       >
         <Logo />
         <ThemeToggle />
       </Block>
-      <Divider />
     </StyledHeader>
   );
 };

@@ -24,7 +24,7 @@ export const Page = ({ title, description, path, children }: Props) => {
     <PageWrapper>
       <Meta path={path} title={title} description={description} />
       <Header />
-      <Block as="main" flex="1">
+      <Block as="main" flex="1" backgroundColor="backgroundSecondary">
         <ResponsiveContainer as="section">{children}</ResponsiveContainer>
       </Block>
       <Footer />

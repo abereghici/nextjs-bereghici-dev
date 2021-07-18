@@ -16,6 +16,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       onClick,
       children,
+      ...rest
     } = props;
 
     const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -47,6 +48,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         // Applies last to override passed in onClick
         onClick={handleOnClick}
+        {...rest}
       >
         {isLoading ? (
           <React.Fragment>
