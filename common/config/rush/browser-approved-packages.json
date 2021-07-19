@@ -107,6 +107,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@next/bundle-analyzer",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@pmmmwh/react-refresh-webpack-plugin",
       "allowedCategories": ["platform"]
     },
