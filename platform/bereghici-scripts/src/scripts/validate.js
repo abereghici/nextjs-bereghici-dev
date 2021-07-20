@@ -1,4 +1,5 @@
 const spawn = require('cross-spawn');
+
 const {
   parseEnv,
   resolveBin,
@@ -17,7 +18,6 @@ const useDefaultScripts = typeof validateScripts !== 'string';
 
 const scripts = useDefaultScripts
   ? {
-      build: ifScript('build', 'npm run build --silent'),
       lint: preCommit ? null : ifScript('lint', 'npm run lint --silent'),
       test: preCommit
         ? null
