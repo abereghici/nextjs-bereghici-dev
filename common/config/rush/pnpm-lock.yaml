@@ -17,6 +17,7 @@ specifiers:
   '@emotion/react': ^11.1.5
   '@emotion/styled': ^11.1.5
   '@microsoft/rush-lib': ^5.47.0
+  '@next/bundle-analyzer': ~11.0.1
   '@rollup/plugin-babel': ^5.3.0
   '@rollup/plugin-commonjs': ^19.0.0
   '@rollup/plugin-json': ^4.1.0
@@ -118,6 +119,7 @@ dependencies:
   '@emotion/react': 11.4.0_81862478866c67faf6c62f3dd0cd029f
   '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
   '@microsoft/rush-lib': 5.47.0
+  '@next/bundle-analyzer': 11.0.1
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.14.6+rollup@2.52.6
   '@rollup/plugin-commonjs': 19.0.0_rollup@2.52.6
   '@rollup/plugin-json': 4.1.0_rollup@2.52.6
@@ -5761,6 +5763,10 @@ packages:
     resolution: {integrity: sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==}
     dev: false
 
+  /gsap/3.7.1:
+    resolution: {integrity: sha512-4qxuaC2yFWRjMRof5tI/7c9/+L4xMsCoqHrZAmuh+IbOokTnZyoeF0VgvcVHq3uo+/VJZCs7PTvjrFasfGl+ww==}
+    dev: false
+
   /gzip-size/6.0.0:
     resolution: {integrity: sha512-ax7ZYomf6jqPTQ4+XCpUGyXKHk5WweS+e05MBO4/y3WJ5RkmPXNKvX+bx1behVILVwr6JSQvZAku021CHPXG3Q==}
     engines: {node: '>=10'}
@@ -11010,7 +11016,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.14.6+eslint@7.29.0:
-    resolution: {integrity: sha512-HwLR12/osKDfU2zYd3NAMNbxAS+bXu3L6x3SzUjGNWEM7U7iSw+ASbYg9vv6VgwnVcwGiU06GGvt+Uuqe8o63g==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-mb0rnqVQ7PU3EzOKv5BdftsaL92R+lhCH2SP8JqJzrMH+tcbQ+dfSTLYkJw7V/89/AAPBSdL/aB+HcO6qdMAAg==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -11023,6 +11029,7 @@ packages:
       '@types/node': 15.12.5
       '@types/react': 17.0.11
       eslint-config-next: 11.0.1_f85342bb4b367bcef089c6ee57d23e7b
+      gsap: 3.7.1
       next: 11.0.1_f31b35bdaa3b7c2fce82404f09d2dac4
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2

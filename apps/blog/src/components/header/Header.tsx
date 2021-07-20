@@ -1,14 +1,12 @@
 import { ResponsiveContainer, Block } from '@bereghici/design-system.core';
 import styled from '@emotion/styled';
 
-import { Logo } from '../logo';
+import { Background } from './Background';
 import { ThemeToggle } from '../theme-toggle';
 
 const StyledHeader = styled.header(({ theme }) => ({
-  paddingTop: theme.sizing.scale600,
-  paddingBottom: theme.sizing.scale600,
-  background: theme.colors.backgroundPrimary,
-  borderBottom: `1px solid ${theme.colors.borderOpaque}`,
+  background: theme.colors.headerBackground,
+  marginBottom: `-${theme.sizing.scale200}`,
 }));
 
 export const Header = () => {
@@ -17,12 +15,14 @@ export const Header = () => {
       <Block
         as={ResponsiveContainer}
         display="flex"
-        justifyContent="space-between"
-        alignItems="center"
+        justifyContent="flex-end"
+        paddingTop="scale700"
       >
-        <Logo />
         <ThemeToggle />
       </Block>
+      <ResponsiveContainer>
+        <Background />
+      </ResponsiveContainer>
     </StyledHeader>
   );
 };

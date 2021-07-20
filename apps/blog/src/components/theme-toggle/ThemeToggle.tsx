@@ -17,7 +17,7 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <Button variant="tertiary" shape="circle" onClick={onToggle}>
+    <Button variant="secondary" shape="circle" onClick={onToggle}>
       {theme.name === 'dark-theme' ? <Sun /> : <Moon />}
     </Button>
   );

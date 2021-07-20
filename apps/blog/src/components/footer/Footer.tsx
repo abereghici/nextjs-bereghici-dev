@@ -8,7 +8,7 @@ import {
 } from '@bereghici/design-system.core';
 
 const StyledFooter = styled.footer(({ theme }) => ({
-  background: theme.colors.backgroundTertiary,
+  background: theme.colors.backgroundPrimary,
   border: `1px solid ${theme.colors.borderOpaque}`,
 }));
 
@@ -35,7 +35,7 @@ export const Footer = () => {
               size="compact"
             >
               Github
-            </Button>
+            </Button>{' '}
             <Button
               as="a"
               href="https://twitter.com/alexandru.brg"
@@ -48,7 +48,7 @@ export const Footer = () => {
               Twitter
             </Button>
           </Block>
-          <Block>
+          <Block marginTop="scale800">
             © 2021-present Bereghici Alexandru. All Rights Reserved.
           </Block>
         </Block>

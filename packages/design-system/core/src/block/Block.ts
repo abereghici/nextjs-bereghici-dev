@@ -183,6 +183,8 @@ export type Display =
   | 'table'
   | 'unset';
 
+export type Position = 'absolute' | 'fixed' | 'relative' | 'static' | 'sticky';
+
 export interface BlockProps {
   color?: keyof SemanticColors;
   backgroundColor?: keyof SemanticColors;
@@ -214,6 +216,7 @@ export interface BlockProps {
   display?: Display;
   /** available values: https://developer.mozilla.org/en-US/docs/Web/CSS/flex */
   flex?: Flex;
+  position?: Position;
 }
 
 export const Block = styled('div', {
@@ -245,6 +248,7 @@ export const Block = styled('div', {
     justifyContent,
     justifyItems,
     justifySelf,
+    position,
   }) => {
     const getFont = (f: keyof Typography | undefined) =>
       f ? theme.typography[f] : undefined;
@@ -278,6 +282,7 @@ export const Block = styled('div', {
       justifyContent,
       justifyItems,
       justifySelf,
+      position,
     };
   }
 );
