@@ -160,7 +160,13 @@ export const Background = (props: React.SVGProps<SVGSVGElement>) => {
             y="39.1"
             x="422.64999"
           />
-          <text y="170" x="445" fontSize="50px" fill="#FFFFFF">
+          <text
+            y="170"
+            x="445"
+            fontSize="50px"
+            fontWeight="bold"
+            fill="#FFFFFF"
+          >
             bereghici
             <tspan fill="#BE5532">.dev</tspan>
           </text>

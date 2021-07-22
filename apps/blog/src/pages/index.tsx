@@ -1,4 +1,6 @@
 import { Page } from '../components/page';
+import { ArticleList } from '../components/article-list';
+import { ArticleCard } from '../components/article-card';
 
 export default function Home() {
   return (
@@ -7,7 +9,9 @@ export default function Home() {
       title="Alexandru Bereghici"
       description="Friendly tutorials for developers. Focus on React, CSS, and more!"
     >
-      Something awesome is in the work!
+      <ArticleList>
+        <ArticleCard />
+      </ArticleList>
     </Page>
   );
 }

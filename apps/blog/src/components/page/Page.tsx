@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { Block, ResponsiveContainer } from '@bereghici/design-system.core';
+import { Block } from '@bereghici/design-system.core';
 
 import { Header } from '../header';
 import { Footer } from '../footer';
@@ -13,7 +13,7 @@ interface Props {
   path: string;
 }
 
-const PageWrapper = styled.div({
+const Wrapper = styled.div({
   display: 'flex',
   flexDirection: 'column',
   minHeight: '100vh',
@@ -21,13 +21,13 @@ const PageWrapper = styled.div({
 
 export const Page = ({ title, description, path, children }: Props) => {
   return (
-    <PageWrapper>
+    <Wrapper>
       <Meta path={path} title={title} description={description} />
       <Header />
       <Block as="main" flex="1" backgroundColor="backgroundSecondary">
-        <ResponsiveContainer as="section">{children}</ResponsiveContainer>
+        {children}
       </Block>
       <Footer />
-    </PageWrapper>
+    </Wrapper>
   );
 };
