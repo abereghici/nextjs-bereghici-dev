@@ -42,7 +42,7 @@ function resolveBin(
     const { packageJson: modPkgPath, path: modPkgDir } = readPkgUp.sync({
       cwd: require.resolve(`${modName}`),
     });
-    console.log({ modPkgDir });
+
     const { bin } = modPkgPath;
     const binPath = typeof bin === 'string' ? bin : bin[executable];
     const fullPathToBin = path.join(
@@ -209,8 +209,10 @@ function getRollupInputs() {
 function getRollupOutput(format = process.env.BUILD_FORMAT) {
   const minify = parseEnv('BUILD_MINIFY', false);
   const filenameSuffix = process.env.BUILD_FILENAME_SUFFIX || '';
+  const pkgName = pkg.name.split('/').pop();
+
   const filename = [
-    pkg.name,
+    pkgName,
     filenameSuffix,
     `.${format}`,
     minify ? '.min' : null,

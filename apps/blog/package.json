@@ -5,18 +5,24 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "bereghici-scripts lint './**/*.{js,jsx,ts,tsx}'",
+    "lint": "bereghici-scripts lint './src/**/*.{js,jsx,ts,tsx}'",
     "pre-commit": "bereghici-scripts pre-commit",
     "typecheck": "bereghici-scripts typecheck",
     "validate": "bereghici-scripts validate"
   },
   "dependencies": {
+    "@emotion/is-prop-valid": "~1.1.0",
+    "@emotion/react": "^11.1.5",
+    "@emotion/styled": "^11.1.5",
     "next": "11.0.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "@next/bundle-analyzer": "~11.0.1",
+    "gsap": "~3.7.1"
   },
   "devDependencies": {
     "@bereghici/bereghici-scripts": "0.0.1",
+    "@bereghici/design-system.core": "0.0.1",
     "@bereghici/eslint-config": "0.0.1",
     "@bereghici/icons": "0.0.1",
     "@types/node": "~15.12.5",

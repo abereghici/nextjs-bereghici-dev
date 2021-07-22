@@ -10,6 +10,7 @@
     "jsx": "react",
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
+    "lib": ["es2021", "dom"],
     "baseUrl": "../../../src",
     "paths": {
       "*": ["*", "../../tests/*"]
