@@ -391,6 +391,10 @@
       "allowedCategories": ["packages", "platform"]
     },
     {
+      "name": "gsap",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "html-webpack-plugin",
       "allowedCategories": ["platform"]
     },
