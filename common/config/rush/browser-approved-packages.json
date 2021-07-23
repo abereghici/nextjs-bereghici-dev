@@ -79,6 +79,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/storage",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
       "name": "@bereghici/stylelint-config",
       "allowedCategories": ["apps", "packages"]
     },
@@ -433,6 +437,10 @@
     {
       "name": "jest-watch-typeahead",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "js-cookie",
+      "allowedCategories": ["packages"]
     },
     {
       "name": "lint-staged",

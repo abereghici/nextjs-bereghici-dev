@@ -114,7 +114,7 @@ export const Background = (props: React.SVGProps<SVGSVGElement>) => {
             id="svg_1"
             height="380"
             width="1160"
-            fill={theme.colors.headerBackground}
+            fill={theme.colors.headerPrimaryBackground}
             x="0"
           />
         </g>

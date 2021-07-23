@@ -5,11 +5,11 @@ import { Background } from './Background';
 import { ThemeToggle } from '../theme-toggle';
 
 const StyledHeader = styled.header(({ theme }) => ({
-  background: theme.colors.headerBackground,
+  background: theme.colors.headerPrimaryBackground,
   marginBottom: `-${theme.sizing.scale200}`,
 }));
 
-export const Header = () => {
+export const PrimaryHeader = () => {
   return (
     <StyledHeader>
       <Block

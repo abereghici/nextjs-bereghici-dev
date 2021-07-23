@@ -1,6 +1,7 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
 import { Link, Button } from '@bereghici/design-system.core';
+import NextLink from 'next/link';
 
 const Container = styled.article(({ theme }) => ({
   padding: theme.sizing.scale800,
@@ -19,7 +20,7 @@ const Header = styled.header(({ theme }) => ({
 
 const Title = styled(Link)(({ theme }) => ({
   ...theme.typography.HeadingSmall,
-  paddingBottom: theme.sizing.scale400,
+  marginBottom: theme.sizing.scale400,
   fontWeight: 700,
   textDecoration: 'none',
   cursor: 'pointer',
@@ -28,12 +29,12 @@ const Title = styled(Link)(({ theme }) => ({
 
 const PublishTime = styled.time(({ theme }) => ({
   ...theme.typography.MonoParagraphXSmall,
-  color: theme.colors.contentTertiary,
+  color: theme.colors.contentSecondary,
 }));
 
 const EstimateReadingTime = styled.p(({ theme }) => ({
   ...theme.typography.MonoParagraphXSmall,
-  color: theme.colors.contentTertiary,
+  color: theme.colors.contentSecondary,
 }));
 
 const Summary = styled.summary(({ theme }) => ({
@@ -46,9 +47,11 @@ export const ArticleCard = () => {
     <ListItem>
       <Container>
         <Header>
-          <Title>Demystifying styled-components</Title>
+          <NextLink href="/blog/" passHref>
+            <Title>Demystifying styled-components</Title>
+          </NextLink>
           <PublishTime dateTime="2021-07-07">7 July 2021</PublishTime>
-          <EstimateReadingTime color="contentTertiary">
+          <EstimateReadingTime>
             Approximate reading time: 1 minute(s)
           </EstimateReadingTime>
         </Header>
@@ -61,9 +64,11 @@ export const ArticleCard = () => {
           styled-components works by building our own mini-version.
         </Summary>
 
-        <Button variant="primary" shape="pill" size="mini" href="/">
-          Read More
-        </Button>
+        <NextLink href="/blog/" passHref>
+          <Button variant="primary" shape="pill" size="mini">
+            Read More
+          </Button>
+        </NextLink>
       </Container>
     </ListItem>
   );

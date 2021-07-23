@@ -101,8 +101,10 @@ const semanticColors: SemanticColors = {
   buttonDisabledSpinnerBackground: colors.gray200,
 
   // Header
-  headerBackground: colors.yellow300,
-  headerBackgroundInverse: colors.gray900,
+  headerPrimaryBackground: colors.yellow300,
+  headerPrimaryBackgroundInverse: colors.gray900,
+  headerSecondaryBackground: colors.white,
+  headerSecondaryBackgroundInverse: colors.gray900,
 };
 
 export default semanticColors;

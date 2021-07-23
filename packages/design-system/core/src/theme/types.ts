@@ -103,8 +103,10 @@ export type SemanticColors = {
   buttonDisabledSpinnerBackground: string;
 
   // Header
-  headerBackground: string;
-  headerBackgroundInverse: string;
+  headerPrimaryBackground: string;
+  headerPrimaryBackgroundInverse: string;
+  headerSecondaryBackground: string;
+  headerSecondaryBackgroundInverse: string;
 };
 
 export interface Theme {

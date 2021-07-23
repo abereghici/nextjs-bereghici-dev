@@ -30,6 +30,7 @@ specifiers:
   '@rush-temp/design-system.tokens': file:./projects/design-system.tokens.tgz
   '@rush-temp/eslint-config': file:./projects/eslint-config.tgz
   '@rush-temp/icons': file:./projects/icons.tgz
+  '@rush-temp/storage': file:./projects/storage.tgz
   '@svgr/core': ^5.5.0
   '@svgr/plugin-prettier': ^5.5.0
   '@svgr/plugin-svgo': ^5.5.0
@@ -38,6 +39,7 @@ specifiers:
   '@testing-library/react': ^11.2.3
   '@testing-library/user-event': ^13.1.9
   '@types/jest': ^26.0.23
+  '@types/js-cookie': 2.2.6
   '@types/node': ~15.12.5
   '@types/react': 17.0.11
   '@types/react-dom': ^16.9.11
@@ -74,12 +76,14 @@ specifiers:
   eslint-plugin-testing-library: ^4.6.0
   fs-extra: ^9.0.1
   glob: ^7.1.7
+  gsap: ~3.7.1
   is-ci: ^3.0.0
   jest: ^27.0.4
   jest-in-case: ^1.0.2
   jest-serializer-path: ^0.1.15
   jest-snapshot-serializer-raw: ^1.2.0
   jest-watch-typeahead: ^0.6.4
+  js-cookie: 2.2.1
   lint-staged: ^11.0.0
   lodash.camelcase: ^4.3.0
   lodash.has: ^4.5.2
@@ -132,6 +136,7 @@ dependencies:
   '@rush-temp/design-system.tokens': file:projects/design-system.tokens.tgz
   '@rush-temp/eslint-config': file:projects/eslint-config.tgz
   '@rush-temp/icons': file:projects/icons.tgz
+  '@rush-temp/storage': file:projects/storage.tgz
   '@svgr/core': 5.5.0
   '@svgr/plugin-prettier': 5.5.0
   '@svgr/plugin-svgo': 5.5.0
@@ -140,6 +145,7 @@ dependencies:
   '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
   '@testing-library/user-event': 13.1.9_@testing-library+dom@7.31.2
   '@types/jest': 26.0.23
+  '@types/js-cookie': 2.2.6
   '@types/node': 15.12.5
   '@types/react': 17.0.11
   '@types/react-dom': 16.9.14
@@ -176,12 +182,14 @@ dependencies:
   eslint-plugin-testing-library: 4.6.0_eslint@7.29.0
   fs-extra: 9.1.0
   glob: 7.1.7
+  gsap: 3.7.1
   is-ci: 3.0.0
   jest: 27.0.6
   jest-in-case: 1.0.2
   jest-serializer-path: 0.1.15
   jest-snapshot-serializer-raw: 1.2.0
   jest-watch-typeahead: 0.6.4_jest@27.0.6
+  js-cookie: 2.2.1
   lint-staged: 11.0.0
   lodash.camelcase: 4.3.0
   lodash.has: 4.5.2
@@ -2725,6 +2733,10 @@ packages:
     dependencies:
       jest-diff: 26.6.2
       pretty-format: 26.6.2
+    dev: false
+
+  /@types/js-cookie/2.2.6:
+    resolution: {integrity: sha512-+oY0FDTO2GYKEV0YPvSshGq9t7YozVkgvXLty7zogQNuCxBhT9/3INX9Q7H1aRZ4SUDRXAKlJuA4EA5nTt7SNw==}
     dev: false
 
   /@types/json-schema/7.0.7:
@@ -7034,6 +7046,10 @@ packages:
     resolution: {integrity: sha1-o6vicYryQaKykE+EpiWXDzia4yo=}
     dev: false
 
+  /js-cookie/2.2.1:
+    resolution: {integrity: sha512-HvdH2LzI/EAZcUwA8+0nKNtWHqS+ZmijLA30RwZA0bo7ToCckjK5MkGhjED9KoRcXO6BaGI3I9UIzSA1FKFPOQ==}
+    dev: false
+
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: false
@@ -11145,4 +11161,15 @@ packages:
       typescript: 4.3.5
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  file:projects/storage.tgz:
+    resolution: {integrity: sha512-jF1b/JWgfStNQjuY+ux5qh2fSbYCaH7BdunVTgSC+qWSHGDM7ryOJXQTPmL7FoDb6t1v1uVS5baIZknDF2BKAQ==, tarball: file:projects/storage.tgz}
+    name: '@rush-temp/storage'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@types/js-cookie': 2.2.6
+      js-cookie: 2.2.1
+      typescript: 4.3.5
     dev: false

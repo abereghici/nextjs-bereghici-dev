@@ -29,10 +29,10 @@ const monoFontFamily = '"Roboto Mono", "Lucida Console", Monaco, monospace';
 // Allow design system consumers to access font settings but control how and
 // where they load the font.
 export const primaryFontUrl =
-  'https://fonts.googleapis.com/css?family=Roboto:400,700,800,900&display=swap';
+  'https://fonts.googleapis.com/css?family=Roboto:400,500,700,800,900&display=swap';
 
 export const monoFontUrl =
-  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,800,900&display=swap';
+  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700,800,900&display=swap';
 
 export interface Typography {
   font100: Font;
