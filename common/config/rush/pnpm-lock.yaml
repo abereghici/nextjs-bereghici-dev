@@ -8569,6 +8569,15 @@ packages:
       vm-browserify: 1.1.2
     dev: false
 
+  /node-loader/2.0.0:
+    resolution: {integrity: sha512-I5VN34NO4/5UYJaUBtkrODPWxbobrE4hgDqPrjB25yPkonFhCmZ146vTH+Zg417E9Iwoh1l/MbRs1apc5J295Q==}
+    engines: {node: '>= 10.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      loader-utils: 2.0.0
+    dev: false
+
   /node-modules-regexp/1.0.0:
     resolution: {integrity: sha1-jZ2+KJZKSsVxLpExZCEHxx6Q7EA=}
     engines: {node: '>=0.10.0'}
@@ -11874,7 +11883,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.14.6+eslint@7.29.0:
-    resolution: {integrity: sha512-9XoF6geTZRwFvhUJRjXdbgMa5KdMreOcoZKUTyTSqK4xqI2d1l/TAy2BnZzGDkeGP8/LuJbuincWRn3Vn1GBIg==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-90ky02r6d20zU3y1XC07WmcGeqqJ9pv84UPwAc4RVPnkD08sA595wNUJxF5bwBxkckqevTzgxV6TIRTIhTjS0w==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -11897,6 +11906,7 @@ packages:
       mdx-prism: 0.3.3
       next: 11.0.1_f31b35bdaa3b7c2fce82404f09d2dac4
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
+      node-loader: 2.0.0
       prism-react-renderer: 1.2.1_react@17.0.2
       prismjs: 1.24.1
       react: 17.0.2

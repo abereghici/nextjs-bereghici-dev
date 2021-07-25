@@ -511,6 +511,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "node-loader",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "npm-dts-webpack-plugin",
       "allowedCategories": ["platform"]
     },
