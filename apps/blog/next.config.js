@@ -83,12 +83,5 @@ module.exports = withMDX(
         },
       ];
     },
-    webpack(config) {
-      config.module.rules.push({
-        test: /\.node$/,
-        loader: 'node-loader',
-      });
-      return config;
-    },
   })
 );
