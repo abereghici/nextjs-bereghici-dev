@@ -88,7 +88,6 @@ module.exports = withMDX(
         test: /\.node$/,
         loader: 'node-loader',
       });
-
       return config;
     },
   })
