@@ -8,8 +8,8 @@ import {
 import { ArticleType } from 'shared/types';
 import { getFileBySlug, getFiles } from 'shared/utils/mdx';
 import { SecondaryLayout } from 'components/layout';
-import { FullArticleContainer } from 'components/article';
 import components from 'components/mdx-components';
+import { BlogView } from 'views';
 
 type Props = {
   source: MDXRemoteSerializeResult;
@@ -25,7 +25,7 @@ export default function ArticlePage({ source, meta }: Props) {
         description: meta.description,
       }}
     >
-      <FullArticleContainer>
+      <BlogView>
         <HeadingXXLarge>
           <b>{meta.title}</b>
         </HeadingXXLarge>
@@ -35,7 +35,7 @@ export default function ArticlePage({ source, meta }: Props) {
           </ParagraphXSmall>
         </Block>
         <MDXRemote {...source} components={components} />
-      </FullArticleContainer>
+      </BlogView>
     </SecondaryLayout>
   );
 }

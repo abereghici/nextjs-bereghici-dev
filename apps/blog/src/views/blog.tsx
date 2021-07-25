@@ -34,11 +34,7 @@ const Container = styled.div(({ theme }) => ({
   },
 }));
 
-export const FullArticleContainer = ({
-  children,
-}: {
-  children: React.ReactNode;
-}) => {
+export const BlogView = ({ children }: { children: React.ReactNode }) => {
   return (
     <ResponsiveContainer as="section">
       <Container>{children}</Container>
