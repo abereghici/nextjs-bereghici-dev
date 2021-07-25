@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ThemeContext } from '@emotion/react';
-import { localStorage } from '@bereghici/storage';
+import { cookieStorage } from '@bereghici/storage';
 
 import { LightTheme } from './light';
 import { DarkTheme } from './dark';
@@ -27,14 +27,14 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [currentTheme, setCurrentTheme] = React.useState<Theme>(LightTheme);
 
   React.useEffect(() => {
-    const savedTheme = localStorage.get<string>(THEME_STORAGE_KEY);
+    const savedTheme = cookieStorage.get(THEME_STORAGE_KEY) ?? LightTheme.name;
     if (savedTheme !== LightTheme.name) {
       setCurrentTheme(getCurrentTheme(savedTheme));
     }
   }, []);
 
   React.useEffect(() => {
-    localStorage.set(THEME_STORAGE_KEY, currentTheme.name);
+    cookieStorage.set(THEME_STORAGE_KEY, currentTheme.name);
   }, [currentTheme]);
 
   return (

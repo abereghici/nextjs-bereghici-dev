@@ -4,6 +4,7 @@ import { ButtonProps } from './types';
 import { BaseButton } from './ButtonBase';
 import { ButtonInternals } from './ButtonInternals';
 import { LoadingSpinner, LoadingSpinnerContainer } from './LoadingSpinner';
+import { isFocusVisible, forkFocus, forkBlur } from '../utils/focusVisible';
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (props, ref) => {
@@ -19,12 +20,26 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ...rest
     } = props;
 
+    const [focusState, setFocusState] = React.useState(false);
+
     const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
       if (isLoading) {
         event.preventDefault();
         return;
       }
       onClick?.(event);
+    };
+
+    const handleFocus = (event: React.FocusEvent) => {
+      if (isFocusVisible(event)) {
+        setFocusState(true);
+      }
+    };
+
+    const handleBlur = () => {
+      if (focusState) {
+        setFocusState(false);
+      }
     };
 
     return (
@@ -46,8 +61,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         variant={variant}
         shape={shape}
         disabled={disabled}
+        focusVisible={focusState}
         // Applies last to override passed in onClick
         onClick={handleOnClick}
+        onFocus={forkFocus({ ...props }, handleFocus)}
+        onBlur={forkBlur({ ...props }, handleBlur)}
         {...rest}
       >
         {isLoading ? (

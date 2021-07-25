@@ -84,7 +84,7 @@ export const Logo = (props: React.SVGProps<SVGSVGElement>) => {
         <text
           y="355"
           x="220"
-          fontSize="170px"
+          fontSize="150px"
           fontWeight="bold"
           fill={theme.colors.contentPrimary}
         >

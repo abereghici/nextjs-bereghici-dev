@@ -4,13 +4,11 @@ import { Block } from '@bereghici/design-system.core';
 
 import { PrimaryHeader } from './header';
 import { Footer } from './footer';
-import { Meta } from './meta';
+import { Meta, MetaProps } from './meta';
 
 interface Props {
   children: React.ReactNode;
-  title: string;
-  description: string;
-  path: string;
+  meta: MetaProps;
 }
 
 const Wrapper = styled.div({
@@ -19,15 +17,10 @@ const Wrapper = styled.div({
   minHeight: '100vh',
 });
 
-export const PrimaryLayout = ({
-  title,
-  description,
-  path,
-  children,
-}: Props) => {
+export const PrimaryLayout = ({ meta, children }: Props) => {
   return (
     <Wrapper>
-      <Meta path={path} title={title} description={description} />
+      <Meta {...meta} />
       <PrimaryHeader />
       <Block as="main" flex="1" backgroundColor="backgroundSecondary">
         {children}

@@ -6,9 +6,10 @@ import type {
   Sizing,
   Lighting,
   Borders,
+  ColorTokens,
 } from '@bereghici/design-system.tokens';
 
-export type SemanticColors = {
+export type SemanticColors = ColorTokens & {
   // Background
   backgroundPrimary: string;
   backgroundSecondary: string;

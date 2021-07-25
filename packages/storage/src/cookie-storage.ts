@@ -3,7 +3,7 @@ import * as Cookies from 'js-cookie';
 type Options = Cookies.CookieAttributes;
 
 const cookieStorage = {
-  set(key: string, value: string, options: Options): string | undefined {
+  set(key: string, value: string, options?: Options): string | undefined {
     return Cookies.set(key, value, options);
   },
 

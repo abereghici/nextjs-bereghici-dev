@@ -4,6 +4,7 @@ import { hexToRgba } from '../../utils/colors';
 import type { SemanticColors } from '../types';
 
 const semanticColors: SemanticColors = {
+  ...colors,
   backgroundPrimary: colors.white,
   backgroundSecondary: colors.gray50,
   backgroundTertiary: colors.gray100,

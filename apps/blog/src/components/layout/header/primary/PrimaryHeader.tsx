@@ -1,5 +1,5 @@
-import { ResponsiveContainer, Block } from '@bereghici/design-system.core';
 import styled from '@emotion/styled';
+import { ResponsiveContainer, Block } from '@bereghici/design-system.core';
 
 import { Background } from './Background';
 import { ThemeToggle } from '../theme-toggle';

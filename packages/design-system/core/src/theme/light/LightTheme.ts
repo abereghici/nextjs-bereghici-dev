@@ -9,11 +9,11 @@ import {
 } from '@bereghici/design-system.tokens';
 
 import { Theme } from '../types';
-import semanticColors from './semanticColors';
+import palette from './palette';
 
 export const LightTheme: Theme = {
   name: 'light-theme',
-  colors: semanticColors,
+  colors: palette,
   animation,
   layout,
   borders,

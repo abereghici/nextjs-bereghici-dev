@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useTheme } from '@emotion/react';
 import { gsap, Elastic, Back, Linear } from 'gsap';
+import { sessionStorage } from '@bereghici/storage';
 
 const table = '#table_legs, #table';
 const lampLeg = '#lamp > .lamp-leg';
@@ -15,11 +16,13 @@ const computer = '#computer > *';
 const keyboard = '#keyboard > *';
 const asset = '#computer_mouse > * , #coffee_mug > *';
 
-export const Background = (props: React.SVGProps<SVGSVGElement>) => {
+type Props = React.SVGProps<SVGSVGElement>;
+
+export const Background = (props: Props) => {
   const theme = useTheme();
 
-  React.useEffect(() => {
-    gsap
+  const animateBackground = () => {
+    return gsap
       .timeline()
       .from(table, {
         duration: 0.2,
@@ -79,7 +82,11 @@ export const Background = (props: React.SVGProps<SVGSVGElement>) => {
         ease: Linear.easeInOut,
         stagger: 0.05,
       })
-      .from(asset, { duration: 0.5, opacity: 0, stagger: 0.05 })
+      .from(asset, { duration: 0.5, opacity: 0, stagger: 0.05 });
+  };
+
+  const turnLightOn = (timeline?: gsap.core.Timeline) => {
+    (timeline ?? gsap.timeline())
       .to(
         lampLight,
         { duration: 0.2, opacity: 0.8, ease: Elastic.easeOut, delay: 0.5 },
@@ -96,6 +103,18 @@ export const Background = (props: React.SVGProps<SVGSVGElement>) => {
       )
       .to(lampLine, { duration: 0.1, opacity: 1 }, 'b-=0.05')
       .to(lampLine, { duration: 0.1, opacity: 0.5 }, 'c-=0.05');
+  };
+
+  React.useEffect(() => {
+    const bgSessionKey = `ignore-bg-animation`;
+    const ignoreBgAnimation = sessionStorage.get(bgSessionKey);
+
+    if (ignoreBgAnimation) {
+      turnLightOn();
+    } else {
+      turnLightOn(animateBackground());
+      sessionStorage.set(bgSessionKey, true);
+    }
   }, []);
 
   return (
@@ -162,8 +181,8 @@ export const Background = (props: React.SVGProps<SVGSVGElement>) => {
           />
           <text
             y="170"
-            x="445"
-            fontSize="50px"
+            x="433"
+            fontSize="48px"
             fontWeight="bold"
             fill="#FFFFFF"
           >

@@ -1,7 +1,8 @@
 import * as React from 'react';
+import NextLink from 'next/link';
 import styled from '@emotion/styled';
 import { Link, Button } from '@bereghici/design-system.core';
-import NextLink from 'next/link';
+import { ArticleType } from 'shared/types';
 
 const Container = styled.article(({ theme }) => ({
   padding: theme.sizing.scale800,
@@ -30,11 +31,13 @@ const Title = styled(Link)(({ theme }) => ({
 const PublishTime = styled.time(({ theme }) => ({
   ...theme.typography.MonoParagraphXSmall,
   color: theme.colors.contentSecondary,
+  margin: 0,
 }));
 
 const EstimateReadingTime = styled.p(({ theme }) => ({
   ...theme.typography.MonoParagraphXSmall,
   color: theme.colors.contentSecondary,
+  margin: 0,
 }));
 
 const Summary = styled.summary(({ theme }) => ({
@@ -42,29 +45,29 @@ const Summary = styled.summary(({ theme }) => ({
   marginBottom: theme.sizing.scale600,
 }));
 
-export const ArticleCard = () => {
+type Props = {
+  article: ArticleType;
+};
+
+export const ArticleCard = ({ article }: Props) => {
+  const link = `/blog/${article.slug}`;
+
   return (
     <ListItem>
       <Container>
         <Header>
-          <NextLink href="/blog/" passHref>
-            <Title>Demystifying styled-components</Title>
+          <NextLink href={link} passHref>
+            <Title>{article.title}</Title>
           </NextLink>
-          <PublishTime dateTime="2021-07-07">7 July 2021</PublishTime>
-          <EstimateReadingTime>
-            Approximate reading time: 1 minute(s)
-          </EstimateReadingTime>
+          <PublishTime dateTime={article.date}>
+            Published: {article.date}
+          </PublishTime>
+          <EstimateReadingTime>{article.readingTime}</EstimateReadingTime>
         </Header>
 
-        <Summary>
-          For so many React devs, styled-components seems kinda magical. It
-          isn't at all clear how it uses traditional CSS features
-          under-the-hood, and that lack of clarity can cause real problems when
-          things go awry. In this post, we'll learn exactly how
-          styled-components works by building our own mini-version.
-        </Summary>
+        <Summary>{article.description}</Summary>
 
-        <NextLink href="/blog/" passHref>
+        <NextLink href={link} passHref>
           <Button variant="primary" shape="pill" size="mini">
             Read More
           </Button>
