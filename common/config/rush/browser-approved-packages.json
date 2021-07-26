@@ -79,6 +79,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/storage",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
       "name": "@bereghici/stylelint-config",
       "allowedCategories": ["apps", "packages"]
     },
@@ -99,6 +103,14 @@
       "allowedCategories": ["apps", "packages"]
     },
     {
+      "name": "@mdx-js/loader",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@mdx-js/react",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@microsoft/rush-lib",
       "allowedCategories": ["platform", "tools"]
     },
@@ -108,6 +120,10 @@
     },
     {
       "name": "@next/bundle-analyzer",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@next/mdx",
       "allowedCategories": ["apps"]
     },
     {
@@ -271,6 +287,10 @@
       "allowedCategories": ["packages", "platform"]
     },
     {
+      "name": "caniuse-lite",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "case-sensitive-paths-webpack-plugin",
       "allowedCategories": ["platform"]
     },
@@ -301,6 +321,10 @@
     {
       "name": "css-loader",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "date-fns",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "doctoc",
@@ -391,6 +415,10 @@
       "allowedCategories": ["packages", "platform"]
     },
     {
+      "name": "gray-matter",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "gsap",
       "allowedCategories": ["apps"]
     },
@@ -435,6 +463,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "js-cookie",
+      "allowedCategories": ["packages"]
+    },
+    {
       "name": "lint-staged",
       "allowedCategories": ["platform"]
     },
@@ -449,6 +481,10 @@
     {
       "name": "lodash.omit",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "mdx-prism",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "mini-css-extract-plugin",
@@ -471,7 +507,15 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "next-mdx-remote",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "next-on-netlify",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "node-loader",
       "allowedCategories": ["apps"]
     },
     {
@@ -519,6 +563,10 @@
       "allowedCategories": ["packages"]
     },
     {
+      "name": "prismjs",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "prompts",
       "allowedCategories": ["platform"]
     },
@@ -549,6 +597,46 @@
     {
       "name": "read-pkg-up",
       "allowedCategories": ["platform"]
+    },
+    {
+      "name": "reading-time",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "rehype",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "rehype-autolink-headings",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "rehype-slug",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-autolink-headings",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-code-titles",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-frontmatter",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-parse",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-slug",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "remark-stringify",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "require-dir",

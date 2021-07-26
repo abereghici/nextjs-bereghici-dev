@@ -10,49 +10,61 @@ export const BaseButton = styled.button<{
   isLoading: boolean;
   isSelected: boolean;
   disabled: boolean;
-}>(({ size, variant, shape, isLoading, isSelected, disabled, theme }) => {
-  return {
-    display: 'inline-flex',
-    // need to maintain button width while showing loading spinner
-    flexDirection: isLoading ? 'column' : 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderLeftWidth: 0,
-    borderTopWidth: 0,
-    borderRightWidth: 0,
-    borderBottomWidth: 0,
-    borderLeftStyle: 'none',
-    borderTopStyle: 'none',
-    borderRightStyle: 'none',
-    borderBottomStyle: 'none',
-    outline: 'none',
-    textDecoration: 'none',
-    WebkitAppearance: 'none',
-    transitionProperty: 'background',
-    transitionDuration: theme.animation.timing200,
-    transitionTimingFunction: theme.animation.linearCurve,
-    cursor: 'pointer',
-    ':disabled': {
-      cursor: 'not-allowed',
-      backgroundColor: theme.colors.buttonDisabledFill,
-      color: theme.colors.buttonDisabledText,
-    },
-    marginLeft: 0,
-    marginTop: 0,
-    marginRight: 0,
-    marginBottom: 0,
-    ...getFontStyles({ theme, size }),
-    ...getBorderRadiiStyles({ theme, size, shape }),
-    ...getPaddingStyles({ theme, size, shape }),
-    // Variant style override
-    ...getVariantStyles({ theme, variant, isLoading, isSelected, disabled }),
-    ...getShapeStyles({ shape, size }),
+  focusVisible: boolean;
+}>(
+  ({
+    size,
+    variant,
+    shape,
+    isLoading,
+    isSelected,
+    focusVisible,
+    disabled,
+    theme,
+  }) => {
+    return {
+      display: 'inline-flex',
+      // need to maintain button width while showing loading spinner
+      flexDirection: isLoading ? 'column' : 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderLeftWidth: 0,
+      borderTopWidth: 0,
+      borderRightWidth: 0,
+      borderBottomWidth: 0,
+      borderLeftStyle: 'none',
+      borderTopStyle: 'none',
+      borderRightStyle: 'none',
+      borderBottomStyle: 'none',
+      outline: 'none',
+      textDecoration: 'none',
+      WebkitAppearance: 'none',
+      transitionProperty: 'background',
+      transitionDuration: theme.animation.timing200,
+      transitionTimingFunction: theme.animation.linearCurve,
+      cursor: 'pointer',
+      ':disabled': {
+        cursor: 'not-allowed',
+        backgroundColor: theme.colors.buttonDisabledFill,
+        color: theme.colors.buttonDisabledText,
+      },
+      marginLeft: 0,
+      marginTop: 0,
+      marginRight: 0,
+      marginBottom: 0,
+      ...getFontStyles({ theme, size }),
+      ...getBorderRadiiStyles({ theme, size, shape }),
+      ...getPaddingStyles({ theme, size, shape }),
+      // Variant style override
+      ...getVariantStyles({ theme, variant, isLoading, isSelected, disabled }),
+      ...getShapeStyles({ shape, size }),
 
-    ':focus-visible': {
-      boxShadow: `inset 0 0 0 3px ${theme.colors.contentAccent}`,
-    },
-  };
-});
+      boxShadow: focusVisible
+        ? `inset 0 0 0 3px ${theme.colors.contentAccent}`
+        : 'none',
+    };
+  }
+);
 
 function getFontStyles({ theme, size }: { theme: Theme; size: Size }) {
   switch (size) {

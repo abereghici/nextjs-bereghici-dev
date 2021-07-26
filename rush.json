@@ -54,6 +54,11 @@
       "reviewCategory": "packages"
     },
     {
+      "packageName": "@bereghici/storage",
+      "projectFolder": "packages/storage",
+      "reviewCategory": "packages"
+    },
+    {
       "packageName": "@bereghici/design-system.tokens",
       "projectFolder": "packages/design-system/tokens",
       "reviewCategory": "packages"

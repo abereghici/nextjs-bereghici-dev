@@ -21,18 +21,18 @@ export type FontTokens = {
 
 export const fontTokens: FontTokens = {
   primaryFontFamily:
-    '"Roboto", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif',
+    '"Inter", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif',
 };
 
-const monoFontFamily = '"Roboto Mono", "Lucida Console", Monaco, monospace';
+const monoFontFamily = '"Ubuntu Mono", "Lucida Console", Monaco, monospace';
 
 // Allow design system consumers to access font settings but control how and
 // where they load the font.
 export const primaryFontUrl =
-  'https://fonts.googleapis.com/css?family=Roboto:400,700,800,900&display=swap';
+  'https://fonts.googleapis.com/css?family=Inter:400,500,700,800,900&display=swap';
 
 export const monoFontUrl =
-  'https://fonts.googleapis.com/css?family=Roboto+Mono:400,700,800,900&display=swap';
+  'https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,500,700,800,900&display=swap';
 
 export interface Typography {
   font100: Font;

@@ -1,17 +1,35 @@
-import { Page } from '../components/page';
-import { ArticleList } from '../components/article-list';
-import { ArticleCard } from '../components/article-card';
+import { GetStaticProps } from 'next';
+import { ArticleType } from 'shared/types';
+import { getAllFilesFrontMatter } from 'shared/utils/mdx';
 
-export default function Home() {
+import { PrimaryLayout } from '../components/layout';
+import { ArticleList, ArticleCard } from '../components/article';
+
+type Props = {
+  articles: ArticleType[];
+};
+
+export default function Home({ articles }: Props) {
   return (
-    <Page
-      path="/"
-      title="Alexandru Bereghici"
-      description="Friendly tutorials for developers. Focus on React, CSS, and more!"
+    <PrimaryLayout
+      meta={{
+        path: '/',
+        title: 'Alexandru Bereghici',
+        description:
+          'Friendly tutorials for developers. Focus on React, CSS, and more!',
+      }}
     >
       <ArticleList>
-        <ArticleCard />
+        {articles.map(article => (
+          <ArticleCard key={article.title} article={article} />
+        ))}
       </ArticleList>
-    </Page>
+    </PrimaryLayout>
   );
 }
+
+export const getStaticProps: GetStaticProps = async () => {
+  const articles = await getAllFilesFrontMatter('blog');
+
+  return { props: { articles } };
+};

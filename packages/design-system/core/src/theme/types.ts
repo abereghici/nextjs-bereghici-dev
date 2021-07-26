@@ -6,9 +6,10 @@ import type {
   Sizing,
   Lighting,
   Borders,
+  ColorTokens,
 } from '@bereghici/design-system.tokens';
 
-export type SemanticColors = {
+export type SemanticColors = ColorTokens & {
   // Background
   backgroundPrimary: string;
   backgroundSecondary: string;
@@ -103,8 +104,10 @@ export type SemanticColors = {
   buttonDisabledSpinnerBackground: string;
 
   // Header
-  headerBackground: string;
-  headerBackgroundInverse: string;
+  headerPrimaryBackground: string;
+  headerPrimaryBackgroundInverse: string;
+  headerSecondaryBackground: string;
+  headerSecondaryBackgroundInverse: string;
 };
 
 export interface Theme {
