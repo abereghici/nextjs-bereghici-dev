@@ -287,6 +287,10 @@
       "allowedCategories": ["packages", "platform"]
     },
     {
+      "name": "caniuse-lite",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "case-sensitive-paths-webpack-plugin",
       "allowedCategories": ["platform"]
     },
