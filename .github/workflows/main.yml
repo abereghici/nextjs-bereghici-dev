@@ -109,12 +109,12 @@ jobs:
         run: |
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           npx netlify-cli build
-          IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
-          OUTPUT="$(npx netlify-cli deploy $IS_PROD)"
+          PROD_FLAG="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
+          OUTPUT="$(npx netlify-cli deploy $PROD_FLAG)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
 
-          if [[  github.event_name == 'pull_request' ]]; then
+          if [[  {{ github.event_name == 'pull_request' }} ]]; then
             echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
           else
             echo "::set-output name=NETLIFY_URL::$NETLIFY_LIVE_URL"
