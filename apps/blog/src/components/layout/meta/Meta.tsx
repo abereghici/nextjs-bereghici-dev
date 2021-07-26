@@ -12,8 +12,6 @@ export interface MetaProps {
   };
   type?: string;
   updatedAt?: string;
-  index?: boolean;
-  follow?: boolean;
   locale?: string;
   twitter?: string;
 }
@@ -29,23 +27,17 @@ export const Meta: FC<MetaProps> = ({
   type = 'website',
   image,
   updatedAt,
-  index = true,
-  follow = true,
   locale = process.env.SITE_LOCALE,
   twitter = 'alexandrubrg',
   children,
 }) => {
   const canonicalUrl = `${process.env.SITE_BASEURL as string}${path}`;
 
-  const indexString = index ? 'index' : 'noindex';
-  const followString = follow ? 'follow' : 'nofollow';
-
   return (
     <Head>
       {/* SEO */}
       <title>{`${title} · ${siteName}`}</title>
       {description && <meta name="description" content={description} />}
-      <meta name="robots" content={`${indexString} ${followString}`} />
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Facebook */}

@@ -9,6 +9,7 @@ export type Shape = 'circle' | 'default' | 'pill' | 'round' | 'square';
 export interface ButtonProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   as?: React.ElementType<any> | undefined;
+  rel?: string;
   href?: string;
   target?: string;
   children: React.ReactNode;

@@ -103,6 +103,7 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
+          SITE_BASEURL: 'https://development.bereghici.dev'
         id: netlify
         working-directory: ${{ matrix.app-dir }}
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}

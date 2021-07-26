@@ -33,6 +33,7 @@ export const Footer = () => {
               variant="secondary"
               shape="pill"
               size="compact"
+              rel="noopener"
             >
               Github
             </Button>{' '}
@@ -44,6 +45,7 @@ export const Footer = () => {
               variant="secondary"
               shape="pill"
               size="compact"
+              rel="noopener"
             >
               Twitter
             </Button>

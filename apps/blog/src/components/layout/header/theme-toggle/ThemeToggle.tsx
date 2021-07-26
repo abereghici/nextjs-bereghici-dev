@@ -18,7 +18,14 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <Button variant="secondary" shape="circle" onClick={onToggle}>
+    <Button
+      aria-label={`Activate ${
+        theme.name === 'dark-theme' ? 'dark' : 'light'
+      } theme`}
+      variant="secondary"
+      shape="circle"
+      onClick={onToggle}
+    >
       {theme.name === 'dark-theme' ? <Sun /> : <Moon />}
     </Button>
   );
