@@ -103,18 +103,19 @@ jobs:
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets[matrix.site-id] }}
+          IS_PR: ${{ github.event_name == 'pull_request' }}
         id: netlify
         working-directory: ${{ matrix.app-dir }}
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
         run: |
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           npx netlify-cli build
-          IS_PROD="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
+          IS_PROD="${{ $IS_PR && '' || '--prod' }}"
           OUTPUT="$(npx netlify-cli deploy $IS_PROD)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
-          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com") #Unique key: don't containr -- and app.netlify.com
+          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
 
-          if [[ $IS_PROD = true ]]; then
+          if [[ $IS_PR = true ]]; then
             echo "::set-output name=NETLIFY_URL::$NETLIFY_LIVE_URL"
           else
             echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
