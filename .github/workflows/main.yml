@@ -114,7 +114,12 @@ jobs:
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com") #Unique key: don't containr -- and app.netlify.com
 
-          DEPLOYED_URL="${{ $NETLIFY_LIVE_URL != '' && $NETLIFY_LIVE_URL || $NETLIFY_URL }}"
+          if [[ $NETLIFY_LIVE_URL != '' ]]; then
+              DEPLOYED_URL = $NETLIFY_LIVE_URL
+          else
+               DEPLOYED_URL = $NETLIFY_URL
+          fi
+
           echo "::set-output name=NETLIFY_URL::$DEPLOYED_URL"
 
       - name: Publish preview urls
