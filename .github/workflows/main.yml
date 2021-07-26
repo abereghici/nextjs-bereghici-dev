@@ -114,7 +114,10 @@ jobs:
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
 
-          if [[  ${{ github.event_name == 'pull_request' }}  ]]; then
+          echo $NETLIFY_URL
+          echo $NETLIFY_LIVE_URL
+
+          if [[  "${{ github.event_name }}" == "pull_request"  ]]; then
             echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
           else
             echo "::set-output name=NETLIFY_URL::$NETLIFY_LIVE_URL"
