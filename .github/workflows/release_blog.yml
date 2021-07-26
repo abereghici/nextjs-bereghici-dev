@@ -72,7 +72,6 @@ jobs:
     env:
       NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
       NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-      SITE_BASEURL: 'https://bereghici.dev'
     steps:
       # Get code from repo
       - name: Clone Repository (Latest)

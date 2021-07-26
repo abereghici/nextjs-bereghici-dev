@@ -54,10 +54,6 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
   },
-  {
-    key: 'X-Robots-Tag',
-    value: 'all',
-  },
 ];
 
 module.exports = withMDX(
@@ -77,6 +73,7 @@ module.exports = withMDX(
     env: {
       SITE_NAME: 'bereghici.dev',
       SITE_LOCALE: 'en',
+      SITE_BASEURL: 'https://bereghici.dev',
     },
     async headers() {
       return [
