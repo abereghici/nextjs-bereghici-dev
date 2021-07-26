@@ -158,7 +158,7 @@ export default {
   h4: HeadingMedium,
   h5: HeadingSmall,
   h6: HeadingXSmall,
-  img: Image,
+  Image,
   a: Link,
   pre: Pre,
   code: Code,
