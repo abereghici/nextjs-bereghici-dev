@@ -54,6 +54,10 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
   },
+  {
+    key: 'X-Robots-Tag',
+    value: 'all',
+  },
 ];
 
 module.exports = withMDX(
