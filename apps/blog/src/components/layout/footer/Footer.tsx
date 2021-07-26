@@ -38,7 +38,7 @@ export const Footer = () => {
             </Button>{' '}
             <Button
               as="a"
-              href="https://twitter.com/alexandru.brg"
+              href="https://twitter.com/alexandrubrg"
               target="_blank"
               startEnhancer={<TwitterIcon />}
               variant="secondary"
