@@ -114,6 +114,7 @@ jobs:
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
           NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.com")
 
+          echo $OUTPUT
           echo $NETLIFY_URL
           echo $NETLIFY_LIVE_URL
 
