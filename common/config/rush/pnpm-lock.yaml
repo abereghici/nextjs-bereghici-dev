@@ -4052,6 +4052,10 @@ packages:
     resolution: {integrity: sha512-1uoSZ1Pq1VpH0WerIMqwptXHNNGfdl7d1cJUFs80CwQ/lVzdhTvsFZCeNFslze7AjsQnb4C85tzclPa1VShbeQ==}
     dev: false
 
+  /caniuse-lite/1.0.30001247:
+    resolution: {integrity: sha512-4rS7co+7+AoOSPRPOPUt5/GdaqZc0EsUpWk66ofE3HJTAajUK2Ss2VwoNzVN69ghg8lYYlh0an0Iy4LIHHo9UQ==}
+    dev: false
+
   /ccount/1.1.0:
     resolution: {integrity: sha512-vlNK021QdI7PNeiUh/lKkC/mNHHfV0m/Ad5JoI0TYtlBnJAslM/JIkm/tGC88bkLIwO6OQ5uV6ztS6kVAtCDlg==}
     dev: false
@@ -11883,7 +11887,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.14.6+eslint@7.29.0:
-    resolution: {integrity: sha512-90ky02r6d20zU3y1XC07WmcGeqqJ9pv84UPwAc4RVPnkD08sA595wNUJxF5bwBxkckqevTzgxV6TIRTIhTjS0w==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-njAC1yQJl9ZBRB26hwnDbjpsRJ0EzVVPT0/ErJXru2jBRKT2ol5PDifkTgw45mtuwbLJc9BXsFF7lapc/Dpncg==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -11899,6 +11903,7 @@ packages:
       '@types/node': 15.12.5
       '@types/prismjs': 1.16.6
       '@types/react': 17.0.11
+      caniuse-lite: 1.0.30001247
       date-fns: 2.22.1
       eslint-config-next: 11.0.1_f85342bb4b367bcef089c6ee57d23e7b
       gray-matter: 4.0.3
