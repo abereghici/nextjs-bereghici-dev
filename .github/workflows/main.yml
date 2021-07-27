@@ -112,11 +112,7 @@ jobs:
           PROD_FLAG="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npx netlify-cli deploy $PROD_FLAG)"
           NETLIFY_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*(--)[a-zA-Z0-9./?=_-]*')
-          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Eov "netlify.app|netlify.com")
-
-          echo $OUTPUT
-          echo $NETLIFY_URL
-          echo $NETLIFY_LIVE_URL
+          NETLIFY_LIVE_URL=$(echo "$OUTPUT" | grep -Eo '(http|https)://[a-zA-Z0-9./?=_-]*' | grep -Ev 'netlify.app|netlify.com')
 
           if [[  "${{ github.event_name }}" == "pull_request"  ]]; then
             echo "::set-output name=NETLIFY_URL::$NETLIFY_URL"
