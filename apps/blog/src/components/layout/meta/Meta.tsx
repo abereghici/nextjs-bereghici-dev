@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import Head from 'next/head';
+import { config } from 'config';
 
 export interface MetaProps {
   title: string;
@@ -23,15 +24,15 @@ export const Meta: FC<MetaProps> = ({
   title,
   description,
   path,
-  siteName = process.env.SITE_NAME as string,
+  siteName = config.appName,
   type = 'website',
   image,
   updatedAt,
-  locale = process.env.SITE_LOCALE,
+  locale = config.appLocale,
   twitter = 'alexandrubrg',
   children,
 }) => {
-  const canonicalUrl = `${process.env.SITE_BASEURL as string}${path}`;
+  const canonicalUrl = `${config.appBaseUrl}${path}`;
 
   return (
     <Head>
