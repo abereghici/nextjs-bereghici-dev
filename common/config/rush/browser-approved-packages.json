@@ -59,12 +59,48 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/design-system.block",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
+      "name": "@bereghici/design-system.button",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@bereghici/design-system.core",
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@bereghici/design-system.global-styles",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@bereghici/design-system.link",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@bereghici/design-system.primitives",
+      "allowedCategories": ["packages"]
+    },
+    {
+      "name": "@bereghici/design-system.responsive-container",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@bereghici/design-system.theme",
+      "allowedCategories": ["apps", "packages"]
+    },
+    {
       "name": "@bereghici/design-system.tokens",
       "allowedCategories": ["apps", "packages"]
+    },
+    {
+      "name": "@bereghici/design-system.typography",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@bereghici/design-system.utils",
+      "allowedCategories": ["packages"]
     },
     {
       "name": "@bereghici/detect-changed-projects-tool",

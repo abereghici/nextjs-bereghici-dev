@@ -59,13 +59,48 @@
       "reviewCategory": "packages"
     },
     {
-      "packageName": "@bereghici/design-system.tokens",
-      "projectFolder": "packages/design-system/tokens",
+      "packageName": "@bereghici/design-system.primitives",
+      "projectFolder": "packages/design-system/primitives",
       "reviewCategory": "packages"
     },
     {
-      "packageName": "@bereghici/design-system.core",
-      "projectFolder": "packages/design-system/core",
+      "packageName": "@bereghici/design-system.utils",
+      "projectFolder": "packages/design-system/utils",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.global-styles",
+      "projectFolder": "packages/design-system/global-styles",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.theme",
+      "projectFolder": "packages/design-system/theme",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.block",
+      "projectFolder": "packages/design-system/block",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.responsive-container",
+      "projectFolder": "packages/design-system/responsive-container",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.link",
+      "projectFolder": "packages/design-system/link",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.button",
+      "projectFolder": "packages/design-system/button",
+      "reviewCategory": "packages"
+    },
+    {
+      "packageName": "@bereghici/design-system.typography",
+      "projectFolder": "packages/design-system/typography",
       "reviewCategory": "packages"
     }
   ]

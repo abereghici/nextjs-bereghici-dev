@@ -1,32 +1,24 @@
 import * as React from 'react';
-import { useTheme } from '@emotion/react';
-import {
-  useChangeTheme,
-  DarkTheme,
-  LightTheme,
-  Button,
-} from '@bereghici/design-system.core';
+import { useThemeName } from '@bereghici/design-system.theme';
+import { Button } from '@bereghici/design-system.button';
 import Sun from '@bereghici/icons/Sun';
 import Moon from '@bereghici/icons/Moon';
 
 export const ThemeToggle = () => {
-  const theme = useTheme();
-  const changeTheme = useChangeTheme();
+  const [themeName, setThemeName] = useThemeName();
 
   const onToggle = () => {
-    changeTheme(t => (t === DarkTheme ? LightTheme : DarkTheme));
+    setThemeName(themeName === 'dark' ? 'light' : 'dark');
   };
 
   return (
     <Button
-      aria-label={`Activate ${
-        theme.name === 'dark-theme' ? 'dark' : 'light'
-      } theme`}
+      aria-label={`Activate ${themeName === 'dark' ? 'dark' : 'light'} theme`}
       variant="secondary"
       shape="circle"
       onClick={onToggle}
     >
-      {theme.name === 'dark-theme' ? <Sun /> : <Moon />}
+      {themeName === 'dark' ? <Sun /> : <Moon />}
     </Button>
   );
 };

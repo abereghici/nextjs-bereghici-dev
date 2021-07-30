@@ -5,6 +5,8 @@
     "target": "es5",
     "isolatedModules": true,
     "esModuleInterop": true,
+    "declaration": true,
+    "declarationMap": true,
     "moduleResolution": "node",
     "noEmit": true,
     "strict": true,

@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useTheme } from '@emotion/react';
 import { gsap, Elastic } from 'gsap';
+import { theme } from '@bereghici/design-system.theme';
 
 const lampLeg = '#lamp > .lamp-leg';
 const lampbt = '#lamp-bottom';
@@ -12,8 +12,6 @@ const lampCircle = '#lamp-circle';
 const lampHead = '#lamp-head';
 
 export const Logo = (props: React.SVGProps<SVGSVGElement>) => {
-  const theme = useTheme();
-
   React.useEffect(() => {
     gsap
       .timeline()

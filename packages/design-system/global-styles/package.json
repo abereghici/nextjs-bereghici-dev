@@ -1,0 +1,30 @@
+{
+  "name": "@bereghici/design-system.global-styles",
+  "version": "0.0.1",
+  "description": "Design system global-styles",
+  "module": "dist/design-system.global-styles.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "bereghici-scripts build --bundle esm",
+    "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "@emotion/react": "^11.1.5"
+  },
+  "devDependencies": {
+    "@bereghici/bereghici-scripts": "0.0.1",
+    "@bereghici/eslint-config": "0.0.1",
+    "@bereghici/design-system.theme": "0.0.1",
+    "react": "^17.0.2",
+    "@types/react": "17.0.11",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "typescript": "^4.3.2"
+  }
+}

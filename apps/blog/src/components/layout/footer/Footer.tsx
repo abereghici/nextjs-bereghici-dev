@@ -1,16 +1,15 @@
 import styled from '@emotion/styled';
 import GithubIcon from '@bereghici/icons/Github';
 import TwitterIcon from '@bereghici/icons/Twitter';
-import {
-  ResponsiveContainer,
-  Block,
-  Button,
-} from '@bereghici/design-system.core';
+import { Button } from '@bereghici/design-system.button';
+import { Block } from '@bereghici/design-system.block';
+import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
+import { theme } from '@bereghici/design-system.theme';
 
-const StyledFooter = styled.footer(({ theme }) => ({
+const StyledFooter = styled.footer({
   background: theme.colors.backgroundPrimary,
   border: `1px solid ${theme.colors.borderOpaque}`,
-}));
+});
 
 export const Footer = () => {
   return (

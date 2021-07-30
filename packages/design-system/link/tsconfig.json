@@ -1,0 +1,3 @@
+{
+  "extends": "./node_modules/@bereghici/bereghici-scripts/shared-tsconfig.json"
+}

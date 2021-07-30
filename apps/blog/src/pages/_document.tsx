@@ -5,7 +5,12 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document';
-import { primaryFontUrl, monoFontUrl } from '@bereghici/design-system.core';
+import {
+  primaryFontUrl,
+  monoFontUrl,
+  DetectThemeScript,
+} from '@bereghici/design-system.theme';
+
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -27,6 +32,7 @@ class MyDocument extends Document {
           <link rel="stylesheet" href={monoFontUrl} />
         </Head>
         <body>
+          <DetectThemeScript />
           <Main />
           <NextScript />
         </body>

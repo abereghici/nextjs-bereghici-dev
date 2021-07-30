@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { Block } from '@bereghici/design-system.core';
+import { Block } from '@bereghici/design-system.block';
 
 import { PrimaryHeader } from './header';
 import { Footer } from './footer';
