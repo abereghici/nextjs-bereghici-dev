@@ -3,6 +3,7 @@ import { gsap, Elastic, Back, Linear } from 'gsap';
 import { sessionStorage } from '@bereghici/storage';
 import { theme } from '@bereghici/design-system.theme';
 
+const svg = '#svg';
 const table = '#table_legs, #table';
 const lampLeg = '#lamp > .lamp-leg';
 const lampbt = '#lamp-bottom';
@@ -16,12 +17,11 @@ const computer = '#computer > *';
 const keyboard = '#keyboard > *';
 const asset = '#computer_mouse > * , #coffee_mug > *';
 
-type Props = React.SVGProps<SVGSVGElement>;
-
-export const Background = (props: Props) => {
+export const Background = () => {
   const animateBackground = () => {
     return gsap
       .timeline()
+      .from(svg, { autoAlpha: 0 })
       .from(table, {
         duration: 0.2,
         position: 0.1,
@@ -84,7 +84,10 @@ export const Background = (props: Props) => {
   };
 
   const turnLightOn = (timeline?: gsap.core.Timeline) => {
-    (timeline ?? gsap.timeline())
+    (
+      timeline ??
+      gsap.timeline().from(svg, { duration: 1, autoAlpha: 0, delay: 0.5 })
+    )
       .to(
         lampLight,
         { duration: 0.2, opacity: 0.8, ease: Elastic.easeOut, delay: 0.5 },
@@ -121,7 +124,8 @@ export const Background = (props: Props) => {
       xmlSpace="preserve"
       version="1.1"
       viewBox="0 0 1160 380"
-      {...props}
+      id="svg"
+      style={{ visibility: 'hidden' }}
     >
       <g>
         <g stroke="null" id="background">
