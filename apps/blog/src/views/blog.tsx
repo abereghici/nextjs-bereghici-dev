@@ -1,8 +1,9 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { ResponsiveContainer } from '@bereghici/design-system.core';
+import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
+import { theme } from '@bereghici/design-system.theme';
 
-const Container = styled.div(({ theme }) => ({
+const Container = styled.div({
   padding: theme.sizing.scale800,
   marginTop: theme.sizing.scale800,
   marginBottom: theme.sizing.scale800,
@@ -32,7 +33,7 @@ const Container = styled.div(({ theme }) => ({
     visibility: 'visible',
     textDecoration: 'none',
   },
-}));
+});
 
 export const BlogView = ({ children }: { children: React.ReactNode }) => {
   return (

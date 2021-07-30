@@ -29,8 +29,15 @@ specifiers:
   '@rush-temp/affected-packages': file:./projects/affected-packages.tgz
   '@rush-temp/bereghici-scripts': file:./projects/bereghici-scripts.tgz
   '@rush-temp/blog-app': file:./projects/blog-app.tgz
-  '@rush-temp/design-system.core': file:./projects/design-system.core.tgz
-  '@rush-temp/design-system.tokens': file:./projects/design-system.tokens.tgz
+  '@rush-temp/design-system.block': file:./projects/design-system.block.tgz
+  '@rush-temp/design-system.button': file:./projects/design-system.button.tgz
+  '@rush-temp/design-system.global-styles': file:./projects/design-system.global-styles.tgz
+  '@rush-temp/design-system.link': file:./projects/design-system.link.tgz
+  '@rush-temp/design-system.primitives': file:./projects/design-system.primitives.tgz
+  '@rush-temp/design-system.responsive-container': file:./projects/design-system.responsive-container.tgz
+  '@rush-temp/design-system.theme': file:./projects/design-system.theme.tgz
+  '@rush-temp/design-system.typography': file:./projects/design-system.typography.tgz
+  '@rush-temp/design-system.utils': file:./projects/design-system.utils.tgz
   '@rush-temp/eslint-config': file:./projects/eslint-config.tgz
   '@rush-temp/icons': file:./projects/icons.tgz
   '@rush-temp/storage': file:./projects/storage.tgz
@@ -39,14 +46,10 @@ specifiers:
   '@svgr/plugin-svgo': ^5.5.0
   '@testing-library/dom': ^7.31.2
   '@testing-library/jest-dom': ^5.13.0
-  '@testing-library/react': ^11.2.3
-  '@testing-library/user-event': ^13.1.9
   '@types/jest': ^26.0.23
   '@types/js-cookie': 2.2.6
   '@types/node': ~15.12.5
   '@types/react': 17.0.11
-  '@types/react-dom': ^16.9.11
-  '@types/testing-library__jest-dom': ^5.14.0
   '@typescript-eslint/eslint-plugin': ^4.26.0
   '@typescript-eslint/parser': ^4.26.0
   arrify: ^2.0.1
@@ -150,8 +153,15 @@ dependencies:
   '@rush-temp/affected-packages': file:projects/affected-packages.tgz
   '@rush-temp/bereghici-scripts': file:projects/bereghici-scripts.tgz
   '@rush-temp/blog-app': file:projects/blog-app.tgz_@babel+core@7.14.6+eslint@7.29.0
-  '@rush-temp/design-system.core': file:projects/design-system.core.tgz_7696be6e606b593379418ce9e2e1910e
-  '@rush-temp/design-system.tokens': file:projects/design-system.tokens.tgz
+  '@rush-temp/design-system.block': file:projects/design-system.block.tgz_d6b7c096e121a412ea01168ec6aec5d6
+  '@rush-temp/design-system.button': file:projects/design-system.button.tgz_@babel+core@7.14.6
+  '@rush-temp/design-system.global-styles': file:projects/design-system.global-styles.tgz_@babel+core@7.14.6
+  '@rush-temp/design-system.link': file:projects/design-system.link.tgz_d6b7c096e121a412ea01168ec6aec5d6
+  '@rush-temp/design-system.primitives': file:projects/design-system.primitives.tgz_81862478866c67faf6c62f3dd0cd029f
+  '@rush-temp/design-system.responsive-container': file:projects/design-system.responsive-container.tgz_d6b7c096e121a412ea01168ec6aec5d6
+  '@rush-temp/design-system.theme': file:projects/design-system.theme.tgz_@babel+core@7.14.6
+  '@rush-temp/design-system.typography': file:projects/design-system.typography.tgz
+  '@rush-temp/design-system.utils': file:projects/design-system.utils.tgz
   '@rush-temp/eslint-config': file:projects/eslint-config.tgz
   '@rush-temp/icons': file:projects/icons.tgz
   '@rush-temp/storage': file:projects/storage.tgz
@@ -160,14 +170,10 @@ dependencies:
   '@svgr/plugin-svgo': 5.5.0
   '@testing-library/dom': 7.31.2
   '@testing-library/jest-dom': 5.14.1
-  '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
-  '@testing-library/user-event': 13.1.9_@testing-library+dom@7.31.2
   '@types/jest': 26.0.23
   '@types/js-cookie': 2.2.6
   '@types/node': 15.12.5
   '@types/react': 17.0.11
-  '@types/react-dom': 16.9.14
-  '@types/testing-library__jest-dom': 5.14.0
   '@typescript-eslint/eslint-plugin': 4.28.1_74bb32bcd57afca1d87dd73da921fdac
   '@typescript-eslint/parser': 4.28.1_eslint@7.29.0
   arrify: 2.0.1
@@ -2764,29 +2770,6 @@ packages:
       redent: 3.0.0
     dev: false
 
-  /@testing-library/react/11.2.7_react-dom@17.0.2+react@17.0.2:
-    resolution: {integrity: sha512-tzRNp7pzd5QmbtXNG/mhdcl7Awfu/Iz1RaVHY75zTdOkmHCuzMhRL83gWHSgOAcjS3CCbyfwUHMZgRJb4kAfpA==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '*'
-      react-dom: '*'
-    dependencies:
-      '@babel/runtime': 7.14.6
-      '@testing-library/dom': 7.31.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-    dev: false
-
-  /@testing-library/user-event/13.1.9_@testing-library+dom@7.31.2:
-    resolution: {integrity: sha512-NZr0zL2TMOs2qk+dNlqrAdbaRW5dAmYwd1yuQ4r7HpkVEOj0MWuUjDWwKhcLd/atdBy8ZSMHSKp+kXSQe47ezg==}
-    engines: {node: '>=10', npm: '>=6'}
-    peerDependencies:
-      '@testing-library/dom': '>=7.21.4'
-    dependencies:
-      '@babel/runtime': 7.14.6
-      '@testing-library/dom': 7.31.2
-    dev: false
-
   /@textlint/ast-node-types/4.4.3:
     resolution: {integrity: sha512-qi2jjgO6Tn3KNPGnm6B7p6QTEPvY95NFsIAaJuwbulur8iJUEenp1OnoUfiDaC/g2WPPEFkcfXpmnu8XEMFo2A==}
     dev: false
@@ -2960,20 +2943,6 @@ packages:
 
   /@types/q/1.5.4:
     resolution: {integrity: sha512-1HcDas8SEj4z1Wc696tH56G8OlRaH/sqZOynNNB+HF0WOeXPaxTtbYzJY2oEfiUxjSKjhCKr+MvR7dCHcEelug==}
-    dev: false
-
-  /@types/react-dom/16.9.14:
-    resolution: {integrity: sha512-FIX2AVmPTGP30OUJ+0vadeIFJJ07Mh1m+U0rxfgyW34p3rTlXI+nlenvAxNn4BP36YyI9IJ/+UJ7Wu22N1pI7A==}
-    dependencies:
-      '@types/react': 16.14.11
-    dev: false
-
-  /@types/react/16.14.11:
-    resolution: {integrity: sha512-Don0MtsZZ3fjwTJ2BsoqkyOy7e176KplEAKOpr/4XDdzinlyJBn9yfsKn5mcSgn4kh1B22+3tBnzBC1z63ybtQ==}
-    dependencies:
-      '@types/prop-types': 15.7.3
-      '@types/scheduler': 0.16.1
-      csstype: 3.0.8
     dev: false
 
   /@types/react/17.0.11:
@@ -11887,7 +11856,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.14.6+eslint@7.29.0:
-    resolution: {integrity: sha512-njAC1yQJl9ZBRB26hwnDbjpsRJ0EzVVPT0/ErJXru2jBRKT2ol5PDifkTgw45mtuwbLJc9BXsFF7lapc/Dpncg==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-0fe1WPkoq15caWkWz5OXnQSscfqvH4kfJOjY3JM7GC0aTBFaiyTcMUWhLlsaqXMXyurZ57S7ATIsL16y69GZZw==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -11939,43 +11908,139 @@ packages:
       - webpack
     dev: false
 
-  file:projects/design-system.core.tgz_7696be6e606b593379418ce9e2e1910e:
-    resolution: {integrity: sha512-Eq0IU+leqb0ltps/8IZcOKjgIDG8lrUlfiQXEDB8cpsjj+JG+qesrMdLGeCS2jbq/rKjuvbaESFc8rM5oJyuyg==, tarball: file:projects/design-system.core.tgz}
-    id: file:projects/design-system.core.tgz
-    name: '@rush-temp/design-system.core'
+  file:projects/design-system.block.tgz_d6b7c096e121a412ea01168ec6aec5d6:
+    resolution: {integrity: sha512-/bf7vn2cHgIOZe0EHJrg3Ka7YWCia8LrK/AJTbkkaTjAOjkQFZjV1G86SPCQKHgUnyRMrvEs1IXp3/G05wP/rQ==, tarball: file:projects/design-system.block.tgz}
+    id: file:projects/design-system.block.tgz
+    name: '@rush-temp/design-system.block'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@emotion/is-prop-valid': 1.1.0
+      '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@emotion/react'
+    dev: false
+
+  file:projects/design-system.button.tgz_@babel+core@7.14.6:
+    resolution: {integrity: sha512-DXkHWkbfIZtP04i/CLTEpHogGSdG+2ucaYZxko5wputnyw6H3m/8OjFNds+OUVao0vB+HFI7tRuGHRD/Qfvhfg==, tarball: file:projects/design-system.button.tgz}
+    id: file:projects/design-system.button.tgz
+    name: '@rush-temp/design-system.button'
     version: 0.0.0
     dependencies:
       '@babel/runtime': 7.14.6
       '@emotion/is-prop-valid': 1.1.0
       '@emotion/react': 11.4.0_81862478866c67faf6c62f3dd0cd029f
       '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
-      '@testing-library/jest-dom': 5.14.1
-      '@testing-library/react': 11.2.7_react-dom@17.0.2+react@17.0.2
-      '@testing-library/user-event': 13.1.9_@testing-library+dom@7.31.2
       '@types/react': 17.0.11
-      '@types/react-dom': 16.9.14
-      '@types/testing-library__jest-dom': 5.14.0
-      jest: 27.0.6
       react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
       typescript: 4.3.5
     transitivePeerDependencies:
       - '@babel/core'
-      - '@testing-library/dom'
-      - bufferutil
-      - canvas
-      - node-notifier
-      - supports-color
-      - ts-node
-      - utf-8-validate
     dev: false
 
-  file:projects/design-system.tokens.tgz:
-    resolution: {integrity: sha512-xgEln/G+dOk7RKKLsLGNxR0KK82sqeWAGOmntqUgOOiulsuO3Sjg78iX1J8TK6Wjn2pqLTonoqivyO7pmjNrUQ==, tarball: file:projects/design-system.tokens.tgz}
-    name: '@rush-temp/design-system.tokens'
+  file:projects/design-system.global-styles.tgz_@babel+core@7.14.6:
+    resolution: {integrity: sha512-s9Zx90XddKxdMDnLgVn+aaQuusNukPT5DaiE5Jgg2Vz6wIi0oWghMxQjj9OXNvNbPtAcIaxcme3Ell6xjenecg==, tarball: file:projects/design-system.global-styles.tgz}
+    id: file:projects/design-system.global-styles.tgz
+    name: '@rush-temp/design-system.global-styles'
     version: 0.0.0
     dependencies:
       '@babel/runtime': 7.14.6
+      '@emotion/react': 11.4.0_81862478866c67faf6c62f3dd0cd029f
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+    dev: false
+
+  file:projects/design-system.link.tgz_d6b7c096e121a412ea01168ec6aec5d6:
+    resolution: {integrity: sha512-nireInVfybGKJBX01++2PkplZiiczH0AfidnaxJzua2X/ToHJfPge/RpeQBS8l01J6bltWl6wTfELH+O+MBnHQ==, tarball: file:projects/design-system.link.tgz}
+    id: file:projects/design-system.link.tgz
+    name: '@rush-temp/design-system.link'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@emotion/is-prop-valid': 1.1.0
+      '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@emotion/react'
+    dev: false
+
+  file:projects/design-system.primitives.tgz_81862478866c67faf6c62f3dd0cd029f:
+    resolution: {integrity: sha512-eQ0N89uenaqukXl9rV5njgjTVjE3Inv+ZW7RR2TNxnK4L5UBShRlnTFnNhP+P5VyAGPj+DO1Ci3CcuGxPxfBKg==, tarball: file:projects/design-system.primitives.tgz}
+    id: file:projects/design-system.primitives.tgz
+    name: '@rush-temp/design-system.primitives'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@emotion/react': 11.4.0_81862478866c67faf6c62f3dd0cd029f
+      '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@types/react'
+      - react
+    dev: false
+
+  file:projects/design-system.responsive-container.tgz_d6b7c096e121a412ea01168ec6aec5d6:
+    resolution: {integrity: sha512-7FC0dvct/8tFJRjuHjJqFMYbbmas2R7pxXuSWwMFu5SR5A08ja4wUqos+GXN3fRXOfYJlasx8y5Wdt12RHcXFQ==, tarball: file:projects/design-system.responsive-container.tgz}
+    id: file:projects/design-system.responsive-container.tgz
+    name: '@rush-temp/design-system.responsive-container'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@emotion/react'
+    dev: false
+
+  file:projects/design-system.theme.tgz_@babel+core@7.14.6:
+    resolution: {integrity: sha512-GewGUV59S1wtwZwqs4U8XaZUf62xx906HrfnVxSMPHKmclJijLnmdAuseWfl1xaWZjkgHj3nTudgoIMNjheEaw==, tarball: file:projects/design-system.theme.tgz}
+    id: file:projects/design-system.theme.tgz
+    name: '@rush-temp/design-system.theme'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@emotion/react': 11.4.0_81862478866c67faf6c62f3dd0cd029f
+      '@emotion/styled': 11.3.0_9040e47581cdc4ea30d85a9c9daeae52
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    transitivePeerDependencies:
+      - '@babel/core'
+    dev: false
+
+  file:projects/design-system.typography.tgz:
+    resolution: {integrity: sha512-BmWzb/OeIeW1QLXwZV4evGxSzau+UtzZ6aXQoxK2H0IrlA6HVJivFYZqu2zzbM1Y7XeAR6Cx/aNiZL6uM5urEw==, tarball: file:projects/design-system.typography.tgz}
+    name: '@rush-temp/design-system.typography'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@types/react': 17.0.11
+      react: 17.0.2
+      typescript: 4.3.5
+    dev: false
+
+  file:projects/design-system.utils.tgz:
+    resolution: {integrity: sha512-Wo3DlHcy5xSEYhi4fENyp9bwNt3ZK18+Y/9q8GjdPVxR2AqUdlBOMwMMCyxaK3jaSaTO0r4b5UtjAdnEbbMd2Q==, tarball: file:projects/design-system.utils.tgz}
+    name: '@rush-temp/design-system.utils'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.14.6
+      '@types/react': 17.0.11
+      react: 17.0.2
       typescript: 4.3.5
     dev: false
 

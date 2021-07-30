@@ -3,8 +3,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import {
   HeadingXXLarge,
   ParagraphXSmall,
-  Block,
-} from '@bereghici/design-system.core';
+} from '@bereghici/design-system.typography';
+import { Block } from '@bereghici/design-system.block';
 import { ArticleType } from 'shared/types';
 import { getFileBySlug, getFiles } from 'shared/utils/mdx';
 import { SecondaryLayout } from 'components/layout';

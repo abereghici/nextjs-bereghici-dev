@@ -1,5 +1,6 @@
 const spawn = require('cross-spawn');
 const yargsParser = require('yargs-parser');
+
 const { hasAnyDep, resolveBin, hasFile } = require('../utils');
 
 let args = process.argv.slice(2);

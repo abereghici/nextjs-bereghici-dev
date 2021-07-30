@@ -1,0 +1,39 @@
+{
+  "name": "@bereghici/design-system.utils",
+  "version": "0.0.1",
+  "description": "Design system utils",
+  "type": "module",
+  "exports": {
+    ".": "./dist",
+    "./*": "./dist/esm/*.js"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/*",
+        "dist/esm/*"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "bereghici-scripts build --bundle esm --environment BUILD_INPUT:src/*.ts",
+    "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0"
+  },
+  "devDependencies": {
+    "@bereghici/bereghici-scripts": "0.0.1",
+    "@bereghici/eslint-config": "0.0.1",
+    "typescript": "^4.3.2",
+    "@types/react": "17.0.11",
+    "react": "^17.0.2"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "typescript": "^4.3.2"
+  }
+}

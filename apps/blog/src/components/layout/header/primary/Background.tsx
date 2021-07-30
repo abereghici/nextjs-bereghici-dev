@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { useTheme } from '@emotion/react';
 import { gsap, Elastic, Back, Linear } from 'gsap';
 import { sessionStorage } from '@bereghici/storage';
+import { theme } from '@bereghici/design-system.theme';
 
 const table = '#table_legs, #table';
 const lampLeg = '#lamp > .lamp-leg';
@@ -19,8 +19,6 @@ const asset = '#computer_mouse > * , #coffee_mug > *';
 type Props = React.SVGProps<SVGSVGElement>;
 
 export const Background = (props: Props) => {
-  const theme = useTheme();
-
   const animateBackground = () => {
     return gsap
       .timeline()

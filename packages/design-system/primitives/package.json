@@ -1,0 +1,26 @@
+{
+  "name": "@bereghici/design-system.primitives",
+  "version": "0.0.1",
+  "description": "Design system primitives",
+  "module": "dist/design-system.primitives.esm.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "bereghici-scripts build --bundle esm",
+    "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",
+    "pre-commit": "bereghici-scripts pre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.14.0",
+    "@emotion/react": "^11.1.5"
+  },
+  "devDependencies": {
+    "@bereghici/bereghici-scripts": "0.0.1",
+    "@bereghici/eslint-config": "0.0.1",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
