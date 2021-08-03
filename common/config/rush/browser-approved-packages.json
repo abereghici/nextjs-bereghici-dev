@@ -747,6 +747,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "swr",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "terser-webpack-plugin",
       "allowedCategories": ["platform"]
     },

@@ -12,7 +12,7 @@ export function ViewCounter({ slug }: { slug: string }) {
     fetcher
   );
 
-  const views = Number(data?.total);
+  const views = Number(data?.total ?? 0);
 
   React.useEffect(() => {
     const registerView = () =>
