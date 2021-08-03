@@ -132,7 +132,7 @@ jobs:
       - name: Generate Lighthouse Report
         id: lighthouse_report
         if: ${{ steps.netlify.outputs.netlify_url }}
-        uses: abereghici/lighthouse-action@undefined_comments_url_fix
+        uses: justinribeiro/lighthouse-action@v2.0.0
         with:
           url: ${{ steps.netlify.outputs.netlify_url }}
           secret: ${{ secrets.GITHUB_TOKEN }}

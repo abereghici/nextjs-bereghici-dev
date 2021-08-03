@@ -80,6 +80,7 @@ module.exports = withMDX(
           contextRegExp: /./,
         })
       );
+
       return config;
     },
   })
