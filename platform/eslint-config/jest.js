@@ -72,6 +72,12 @@ const rules = {
   'jest/valid-expect': 'error',
   'jest/valid-expect-in-promise': 'error',
   'jest/valid-title': 'warn',
+  'jest/max-nested-describe': [
+    'error',
+    {
+      max: 2,
+    },
+  ],
 
   ...(hasJestDom
     ? {
@@ -116,6 +122,7 @@ const rules = {
         'testing-library/prefer-user-event': 'error',
         'testing-library/prefer-wait-for': 'error',
         'testing-library/render-result-naming-convention': 'error',
+        'testing-library/prefer-query-by-disappearance': 'error',
       }
     : null),
 };
