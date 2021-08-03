@@ -46,7 +46,8 @@ export const Pre = styled.pre({
   msOverflowStyle: 'none',
   scrollbarWidth: 'none',
   padding: theme.sizing.scale400,
-  border: `1px solid ${theme.colors.borderOpaque}`,
+  ...theme.borders.border100,
+  borderRadius: theme.borders.radius200,
   backgroundColor: theme.colors.backgroundSecondary,
   ...theme.typography.MonoLabelXSmall,
   [`[class*='language-']`]: {

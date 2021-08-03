@@ -9,6 +9,7 @@ import { ArticleType } from 'shared/types';
 import { getFileBySlug, getFiles } from 'shared/utils/mdx';
 import { SecondaryLayout } from 'components/layout';
 import components from 'components/mdx-components';
+import { ViewCounter } from 'components/view-counter';
 import { BlogView } from 'views';
 
 type Props = {
@@ -29,9 +30,12 @@ export default function ArticlePage({ source, meta }: Props) {
         <HeadingXXLarge>
           <b>{meta.title}</b>
         </HeadingXXLarge>
-        <Block display="flex">
+        <Block display="flex" justifyContent="space-between">
           <ParagraphXSmall>
             {meta.date} • {meta.readingTime}
+          </ParagraphXSmall>
+          <ParagraphXSmall>
+            <ViewCounter slug={meta.slug} />
           </ParagraphXSmall>
         </Block>
         <MDXRemote {...source} components={components} />

@@ -567,6 +567,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "planetscale-node",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "pnp-webpack-plugin",
       "allowedCategories": ["platform"]
     },

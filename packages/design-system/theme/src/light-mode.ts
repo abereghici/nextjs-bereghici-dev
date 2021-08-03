@@ -52,8 +52,8 @@ export const lightMode = css({
   [`--borderPositive`]: colors.green200,
   [`--border100Color`]: `hsla(0, 0%, 0%, 0.04)`,
   [`--border200Color`]: `hsla(0, 0%, 0%, 0.08)`,
-  [`--border300Color`]: `hsla(0, 0%, 0%, 0.012)`,
-  [`--border400Color`]: `hsla(0, 0%, 0%, 0.016)`,
+  [`--border300Color`]: `hsla(0, 0%, 0%, 0.12)`,
+  [`--border400Color`]: `hsla(0, 0%, 0%, 0.16)`,
   [`--border500Color`]: `hsla(0, 0%, 0%, 0.20)`,
   [`--border600Color`]: `hsla(0, 0%, 0%, 0.24)`,
 

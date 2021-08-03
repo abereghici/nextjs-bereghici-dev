@@ -8,8 +8,8 @@ const Container = styled.div({
   marginTop: theme.sizing.scale800,
   marginBottom: theme.sizing.scale800,
   background: theme.colors.backgroundPrimary,
-  border: `1px solid ${theme.colors.borderOpaque}`,
-  borderRadius: theme.sizing.scale400,
+  ...theme.borders.border300,
+  borderRadius: theme.borders.radius300,
   [`.remark-code-title`]: {
     ...theme.typography.MonoLabelXSmall,
   },

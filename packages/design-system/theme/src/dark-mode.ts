@@ -53,8 +53,8 @@ export const darkMode = css({
   [`--borderInverseSelected`]: colors.gray900,
   [`--border100Color`]: `hsla(0, 0%, 100%, 0.04)`,
   [`--border200Color`]: `hsla(0, 0%, 100%, 0.08)`,
-  [`--border300Color`]: `hsla(0, 0%, 100%, 0.012)`,
-  [`--border400Color`]: `hsla(0, 0%, 100%, 0.016)`,
+  [`--border300Color`]: `hsla(0, 0%, 100%, 0.12)`,
+  [`--border400Color`]: `hsla(0, 0%, 100%, 0.16)`,
   [`--border500Color`]: `hsla(0, 0%, 100%, 0.20)`,
   [`--border600Color`]: `hsla(0, 0%, 100%, 0.24)`,
 

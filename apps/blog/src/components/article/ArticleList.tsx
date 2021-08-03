@@ -8,6 +8,9 @@ const Container = styled(ResponsiveContainer)({
     marginTop: theme.sizing.scale800,
     marginBottom: theme.sizing.scale800,
   },
+  [theme.mediaQueries.mobile]: {
+    margin: 0,
+  },
 });
 
 export const ArticleList = ({ children }: { children: React.ReactNode }) => {

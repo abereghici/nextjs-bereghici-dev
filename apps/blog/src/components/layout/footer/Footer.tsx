@@ -8,7 +8,7 @@ import { theme } from '@bereghici/design-system.theme';
 
 const StyledFooter = styled.footer({
   background: theme.colors.backgroundPrimary,
-  border: `1px solid ${theme.colors.borderOpaque}`,
+  ...theme.borders.border300,
 });
 
 export const Footer = () => {

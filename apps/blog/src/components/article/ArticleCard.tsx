@@ -9,8 +9,8 @@ import { ArticleType } from 'shared/types';
 const Container = styled.article({
   padding: theme.sizing.scale800,
   background: theme.colors.backgroundPrimary,
-  border: `1px solid ${theme.colors.borderOpaque}`,
-  borderRadius: theme.sizing.scale400,
+  ...theme.borders.border300,
+  borderRadius: theme.borders.radius300,
 });
 
 const ListItem = styled.li(() => ({
