@@ -3,3 +3,7 @@
   publish = "out"
 [functions]
   node_bundler = "esbuild"
+[[headers]]
+  for = "https://development.bereghici.dev/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
