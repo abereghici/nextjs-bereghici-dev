@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import NextLink from 'next/link';
 import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
-import { Button } from '@bereghici/design-system.button';
+import { Link } from '@bereghici/design-system.link';
 import { theme } from '@bereghici/design-system.theme';
 
 import { ThemeToggle } from '../theme-toggle';
@@ -25,9 +25,9 @@ export const SecondaryHeader = () => {
     <StyledHeader>
       <Container>
         <NextLink href="/" passHref>
-          <Button variant="minimal" shape="pill" size="compact">
+          <Link>
             <Logo />
-          </Button>
+          </Link>
         </NextLink>
         <ThemeToggle />
       </Container>

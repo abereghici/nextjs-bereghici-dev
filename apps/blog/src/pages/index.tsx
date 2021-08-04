@@ -15,8 +15,11 @@ export default function Home({ articles }: Props) {
       meta={{
         path: '/',
         title: 'Alexandru Bereghici',
-        description:
-          'Friendly tutorials for developers. Focus on React, CSS, and more!',
+        description: 'Software engineer specializing in JavaScript ecosystem ',
+        image: {
+          src: '/static/images/avatar.jpeg',
+          alt: 'Alexandru Bereghici',
+        },
       }}
     >
       <ArticleList>
