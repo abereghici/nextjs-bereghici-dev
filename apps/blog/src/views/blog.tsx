@@ -8,6 +8,7 @@ const Container = styled.div({
   marginTop: theme.sizing.scale800,
   marginBottom: theme.sizing.scale800,
   background: theme.colors.backgroundPrimary,
+  wordBreak: 'break-word',
   ...theme.borders.border300,
   borderRadius: theme.borders.radius300,
   [`.remark-code-title`]: {
