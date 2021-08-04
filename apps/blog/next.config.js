@@ -73,7 +73,11 @@ module.exports = withMDX(
         },
       ];
     },
-    webpack: (config, { webpack }) => {
+    webpack: (config, { webpack, isServer }) => {
+      if (isServer) {
+        require('./scripts/generate-sitemap');
+      }
+
       config.plugins.push(
         new webpack.IgnorePlugin({
           resourceRegExp: /^cardinal$/,

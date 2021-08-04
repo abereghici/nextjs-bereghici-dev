@@ -83,6 +83,7 @@ specifiers:
   eslint-plugin-testing-library: ^4.6.0
   fs-extra: ^9.0.1
   glob: ^7.1.7
+  globby: 11.0.4
   gray-matter: 4.0.3
   gsap: ~3.7.1
   is-ci: ^3.0.0
@@ -209,6 +210,7 @@ dependencies:
   eslint-plugin-testing-library: 4.10.1_eslint@7.32.0
   fs-extra: 9.1.0
   glob: 7.1.7
+  globby: 11.0.4
   gray-matter: 4.0.3
   gsap: 3.7.1
   is-ci: 3.0.0
@@ -11886,7 +11888,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.14.8+eslint@7.32.0:
-    resolution: {integrity: sha512-jcQrzXGxV5mOr4/pVboWiP76xpxrIX36pc+igRcjEFdzHNcucE3eqa/YtE10NHIbcMab+uxavTip3NhR7SBPzQ==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-ybacS+1Rp2JGdwDSMC9GxsS9jeJTBN8Fo4dSyr4Y96cWSuCwWrajKfjgo2+jgTHTw3djCwEcLTWpRADI/9vSLA==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -11902,12 +11904,14 @@ packages:
       '@types/react': 17.0.11
       date-fns: 2.23.0
       eslint-config-next: 11.0.1_364f6739f1a077bdf2998405af31cd57
+      globby: 11.0.4
       gray-matter: 4.0.3
       gsap: 3.7.1
       mdx-prism: 0.3.3
       next: 11.0.1_f31b35bdaa3b7c2fce82404f09d2dac4
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
       planetscale-node: 0.1.0
+      prettier: 2.3.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       reading-time: 1.3.0
