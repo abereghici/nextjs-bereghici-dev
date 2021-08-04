@@ -1,3 +1,6 @@
+import { replaceObjectValuesWithOwnKeysAsCSSVars } from './utils';
+import { rawLightPalette } from './light-palette';
+
 export type Palette = {
   // Background
   backgroundPrimary: string;
@@ -47,6 +50,12 @@ export type Palette = {
   borderNegative: string;
   borderWarning: string;
   borderPositive: string;
+  border100Color: string;
+  border200Color: string;
+  border300Color: string;
+  border400Color: string;
+  border500Color: string;
+  border600Color: string;
 
   // Links
   linkText: string;
@@ -108,117 +117,7 @@ export type Palette = {
   syntaxText: string;
 };
 
-export const palette: Palette = {
-  // Background
-  backgroundPrimary: `var(--backgroundPrimary)`,
-  backgroundSecondary: `var(--backgroundSecondary)`,
-  backgroundTertiary: `var(--backgroundTertiary)`,
-  backgroundInversePrimary: `var(--backgroundInversePrimary)`,
-  backgroundInverseSecondary: `var(--backgroundInverseSecondary)`,
-  backgroundStateDisabled: `var(--backgroundStateDisabled)`,
-  backgroundOverlayDark: `var(--backgroundOverlayDark)`,
-  backgroundOverlayLight: `var(--backgroundOverlayLight)`,
-  backgroundAccent: `var(--backgroundAccent)`,
-  backgroundNegative: `var(--backgroundNegative)`,
-  backgroundWarning: `var(--backgroundWarning)`,
-  backgroundPositive: `var(--backgroundPositive)`,
-  backgroundLightAccent: `var(--backgroundLightAccent)`,
-  backgroundLightPositive: `var(--backgroundLightPositive)`,
-  backgroundLightNegative: `var(--backgroundLightNegative)`,
-  backgroundLightWarning: `var(--backgroundLightWarning)`,
-  backgroundAlwaysDark: `var(--backgroundAlwaysDark)`,
-  backgroundAlwaysLight: `var(--backgroundAlwaysLight)`,
-
-  // Content
-  contentPrimary: `var(--contentPrimary)`,
-  contentSecondary: `var(--contentSecondary)`,
-  contentTertiary: `var(--contentTertiary)`,
-  contentInversePrimary: `var(--contentInversePrimary)`,
-  contentInverseSecondary: `var(--contentInverseSecondary)`,
-  contentInverseTertiary: `var(--contentInverseTertiary)`,
-  contentStateDisabled: `var(--contentStateDisabled)`,
-  contentAccent: `var(--contentAccent)`,
-  contentOnColor: `var(--contentOnColor)`,
-  contentOnColorInverse: `var(--contentOnColorInverse)`,
-  contentNegative: `var(--contentNegative)`,
-  contentWarning: `var(--contentWarning)`,
-  contentPositive: `var(--contentPositive)`,
-
-  // Border
-  borderStateDisabled: `var(--borderStateDisabled)`,
-  borderAccent: `var(--borderAccent)`,
-  borderAccentLight: `var(--borderAccentLight)`,
-  borderNegative: `var(--borderNegative)`,
-  borderWarning: `var(--borderWarning)`,
-  borderPositive: `var(--borderPositive)`,
-  borderOpaque: `var(--borderOpaque)`,
-  borderTransparent: `var(--borderTransparent)`,
-  borderSelected: `var(--borderSelected)`,
-  borderInverseOpaque: `var(--borderInverseOpaque)`,
-  borderInverseTransparent: `var(--borderInverseTransparent)`,
-  borderInverseSelected: `var(--borderInverseSelected)`,
-
-  // Links
-  linkText: `var(--linkText)`,
-  linkVisited: `var(--linkVisited)`,
-  linkHover: `var(--linkHover)`,
-  linkActive: `var(--linkActive)`,
-
-  // Buttons
-  buttonPrimaryFill: `var(--buttonPrimaryFill)`,
-  buttonPrimaryText: `var(--buttonPrimaryText)`,
-  buttonPrimaryHover: `var(--buttonPrimaryHover)`,
-  buttonPrimaryActive: `var(--buttonPrimaryActive)`,
-  buttonPrimarySelectedText: `var(--buttonPrimarySelectedText)`,
-  buttonPrimarySelectedFill: `var(--buttonPrimarySelectedFill)`,
-  buttonPrimarySpinnerForeground: `var(--buttonPrimarySpinnerForeground)`,
-  buttonPrimarySpinnerBackground: `var(--buttonPrimarySpinnerBackground)`,
-
-  buttonSecondaryFill: `var(--buttonSecondaryFill)`,
-  buttonSecondaryText: `var(--buttonSecondaryText)`,
-  buttonSecondaryHover: `var(--buttonSecondaryHover)`,
-  buttonSecondaryActive: `var(--buttonSecondaryActive)`,
-  buttonSecondarySelectedText: `var(--buttonSecondarySelectedText)`,
-  buttonSecondarySelectedFill: `var(--buttonSecondarySelectedFill)`,
-  buttonSecondarySpinnerForeground: `var(--buttonSecondarySpinnerForeground)`,
-  buttonSecondarySpinnerBackground: `var(--buttonSecondarySpinnerBackground)`,
-
-  buttonTertiaryFill: `var(--buttonTertiaryFill)`,
-  buttonTertiaryText: `var(--buttonTertiaryText)`,
-  buttonTertiaryHover: `var(--buttonTertiaryHover)`,
-  buttonTertiaryActive: `var(--buttonTertiaryActive)`,
-  buttonTertiarySelectedText: `var(--buttonTertiarySelectedText)`,
-  buttonTertiarySelectedFill: `var(--buttonTertiarySelectedFill)`,
-  buttonTertiarySpinnerForeground: `var(--buttonTertiarySpinnerForeground)`,
-  buttonTertiarySpinnerBackground: `var(--buttonTertiarySpinnerBackground)`,
-
-  buttonMinimalFill: `var(--buttonMinimalFill)`,
-  buttonMinimalText: `var(--buttonMinimalText)`,
-  buttonMinimalHover: `var(--buttonMinimalHover)`,
-  buttonMinimalActive: `var(--buttonMinimalActive)`,
-  buttonMinimalSelectedText: `var(--buttonMinimalSelectedText)`,
-  buttonMinimalSelectedFill: `var(--buttonMinimalSelectedFill)`,
-  buttonMinimalSpinnerForeground: `var(--buttonMinimalSpinnerForeground)`,
-  buttonMinimalSpinnerBackground: `var(--buttonMinimalSpinnerBackground)`,
-
-  buttonDisabledFill: `var(--buttonDisabledFill)`,
-  buttonDisabledText: `var(--buttonDisabledText)`,
-  buttonDisabledSpinnerForeground: `var(--buttonDisabledSpinnerForeground)`,
-  buttonDisabledSpinnerBackground: `var(--buttonDisabledSpinnerBackground)`,
-
-  // Header
-  headerPrimaryBackground: `var(--headerPrimaryBackground)`,
-  headerPrimaryBackgroundInverse: `var(--headerPrimaryBackgroundInverse)`,
-  headerSecondaryBackground: `var(--headerSecondaryBackground)`,
-  headerSecondaryBackgroundInverse: `var(--headerSecondaryBackgroundInverse)`,
-
-  // Codeblock
-  syntaxComment: `var(--syntaxComment)`,
-  syntaxVar: `var(--syntaxVar)`,
-  syntaxStr: `var(--syntaxStr)`,
-  syntaxAtrName: `var(--syntaxAtrName)`,
-  syntaxRegex: `var(--syntaxRegex)`,
-  syntaxAtrValue: `var(--syntaxAtrValue)`,
-  syntaxFunction: `var(--syntaxFunction)`,
-  syntaxText: `var(--syntaxText)`,
-};
+// Create css variables from light palette.
+export const palette = replaceObjectValuesWithOwnKeysAsCSSVars(
+  rawLightPalette
+) as Palette;

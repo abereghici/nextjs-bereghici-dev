@@ -3,15 +3,15 @@ import { Global, SerializedStyles } from '@emotion/react';
 import { localStorage } from '@bereghici/storage';
 
 import { THEME_STORAGE_KEY, THEME_DATA_ATTRIBUTE } from './constants';
-import { darkMode } from './dark-mode';
-import { lightMode } from './light-mode';
+import { darkPalette } from './dark-palette';
+import { lightPalette } from './light-palette';
 import { theme } from './theme';
 
 type ThemeTypes = 'dark' | 'light';
 
-const modes: Record<ThemeTypes, SerializedStyles> = {
-  dark: darkMode,
-  light: lightMode,
+const palettes: Record<ThemeTypes, SerializedStyles> = {
+  dark: darkPalette,
+  light: lightPalette,
 };
 
 const ThemeContext =
@@ -41,7 +41,7 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Global
-        styles={Object.entries(modes).map(([mode, cssVars]) => ({
+        styles={Object.entries(palettes).map(([mode, cssVars]) => ({
           [`body[${THEME_DATA_ATTRIBUTE}=${mode}]`]: cssVars,
         }))}
       />
