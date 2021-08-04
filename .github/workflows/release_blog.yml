@@ -33,6 +33,7 @@ jobs:
         run: |
           node common/scripts/install-run-rush.js change -v
           node common/scripts/install-run-rush.js install
+          node common/scripts/install-run-rush.js build
       # Run eslint to check all packages
       - name: Lint packages
         run: node common/scripts/install-run-rush.js lint
