@@ -31,19 +31,19 @@ const Title = styled(Link)({
 });
 
 const PublishTime = styled.time({
-  ...theme.typography.MonoParagraphXSmall,
+  ...theme.typography.MonoParagraphMedium,
   color: theme.colors.contentSecondary,
   margin: 0,
 });
 
 const EstimateReadingTime = styled.p({
-  ...theme.typography.MonoParagraphXSmall,
+  ...theme.typography.MonoParagraphMedium,
   color: theme.colors.contentSecondary,
   margin: 0,
 });
 
 const Summary = styled.summary({
-  ...theme.typography.ParagraphSmall,
+  ...theme.typography.ParagraphMedium,
   marginBottom: theme.sizing.scale600,
 });
 
@@ -70,7 +70,7 @@ export const ArticleCard = ({ article }: Props) => {
         <Summary>{article.description}</Summary>
 
         <NextLink href={link} passHref>
-          <Button variant="primary" shape="pill" size="mini">
+          <Button variant="primary" shape="pill" size="compact">
             Read More
           </Button>
         </NextLink>
