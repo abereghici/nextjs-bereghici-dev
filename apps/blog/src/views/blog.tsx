@@ -2,6 +2,14 @@ import * as React from 'react';
 import styled from '@emotion/styled';
 import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
 import { theme } from '@bereghici/design-system.theme';
+import { ArticleType } from 'shared/types';
+import { SecondaryLayout } from 'components/layout';
+import {
+  HeadingXXLarge,
+  ParagraphXSmall,
+} from '@bereghici/design-system.typography';
+import { Block } from '@bereghici/design-system.block';
+import { ViewCounter } from 'components/view-counter';
 
 const Container = styled.div({
   padding: theme.sizing.scale800,
@@ -36,10 +44,34 @@ const Container = styled.div({
   },
 });
 
-export const BlogView = ({ children }: { children: React.ReactNode }) => {
+type Props = {
+  article: ArticleType;
+  children: React.ReactNode;
+};
+
+export const BlogView = ({ article, children }: Props) => {
   return (
-    <ResponsiveContainer as="section">
-      <Container>{children}</Container>
-    </ResponsiveContainer>
+    <SecondaryLayout
+      meta={{
+        path: `/blog/${article.slug}`,
+        title: article.title,
+        description: article.description,
+      }}
+    >
+      <ResponsiveContainer as="section">
+        <Container>
+          <HeadingXXLarge>{article.title}</HeadingXXLarge>
+          <Block display="flex" justifyContent="space-between">
+            <ParagraphXSmall>
+              {article.date} • {article.readingTime}
+            </ParagraphXSmall>
+            <ParagraphXSmall>
+              <ViewCounter slug={article.slug} />
+            </ParagraphXSmall>
+          </Block>
+          {children}
+        </Container>
+      </ResponsiveContainer>
+    </SecondaryLayout>
   );
 };

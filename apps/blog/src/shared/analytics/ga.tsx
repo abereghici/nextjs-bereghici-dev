@@ -1,15 +1,13 @@
 import Script from 'next/script';
 import { config } from 'config';
 
-export const GAScript = () => {
+export const GoogleAnalyticsScript = () => {
   return (
     <>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${config.googleAnalytics}`}
-        strategy="lazyOnload"
       />
       <Script
-        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `window.dataLayer = window.dataLayer || [];
       function gtag() {

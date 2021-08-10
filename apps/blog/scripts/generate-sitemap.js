@@ -3,16 +3,14 @@ const globby = require('globby');
 const prettier = require('prettier');
 
 (async () => {
-  const prettierConfig = await prettier.resolveConfig(
-    '../../../.prettierrc.js'
-  );
+  const prettierConfig = await prettier.resolveConfig('./.prettierrc.js');
   const pages = await globby([
-    'src/pages/*.js',
+    'src/pages/*.tsx',
     'src/data/**/*.mdx',
     '!src/data/*.mdx',
-    '!src/pages/_*.js',
+    '!src/pages/_*.tsx',
     '!src/pages/api',
-    '!src/pages/404.js',
+    '!src/pages/404.tsx',
   ]);
 
   const sitemap = `
@@ -23,12 +21,14 @@ const prettier = require('prettier');
                 const path = page
                   .replace('src/pages', '')
                   .replace('src/data', '')
-                  .replace('.js', '')
+                  .replace('.tsx', '')
                   .replace('.mdx', '');
                 const route = path === '/index' ? '' : path;
                 return `
                         <url>
-                            <loc>${`https://bereghici.dev${route}`}</loc>
+                            <loc>
+                              ${`${process.env.NEXT_PUBLIC_SITE_BASEURL}${route}`}
+                            </loc>
                         </url>
                     `;
               })

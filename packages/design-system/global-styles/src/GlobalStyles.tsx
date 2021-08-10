@@ -9,6 +9,9 @@ export const GlobalStyles = () => {
         '*': {
           boxSizing: 'border-box',
         },
+        html: {
+          fontSize: '100%',
+        },
         body: {
           background: theme.colors.backgroundPrimary,
           color: theme.colors.contentPrimary,

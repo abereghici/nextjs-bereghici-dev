@@ -49,7 +49,7 @@ export const Pre = styled.pre({
   ...theme.borders.border100,
   borderRadius: theme.borders.radius200,
   backgroundColor: theme.colors.backgroundSecondary,
-  ...theme.typography.MonoLabelXSmall,
+  ...theme.typography.MonoParagraphSmall,
   [`[class*='language-']`]: {
     color: theme.colors.syntaxText,
   },
@@ -62,7 +62,7 @@ export const InlineCode = styled.code({
   padding: theme.sizing.scale200,
   borderRadius: theme.sizing.scale100,
   backgroundColor: theme.colors.backgroundSecondary,
-  ...theme.typography.MonoLabelXSmall,
+  ...theme.typography.MonoParagraphSmall,
 });
 
 export const Code = styled.code({
