@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import GithubIcon from '@bereghici/icons/Github';
+import LinkedinIcon from '@bereghici/icons/Linkedin';
 import TwitterIcon from '@bereghici/icons/Twitter';
 import { Button } from '@bereghici/design-system.button';
 import { Block } from '@bereghici/design-system.block';
@@ -47,6 +48,18 @@ export const Footer = () => {
               rel="noopener"
             >
               Twitter
+            </Button>{' '}
+            <Button
+              as="a"
+              href="https://www.linkedin.com/in/alexandrubereghici"
+              target="_blank"
+              startEnhancer={<LinkedinIcon />}
+              variant="secondary"
+              shape="pill"
+              size="compact"
+              rel="noopener"
+            >
+              Linkedin
             </Button>
           </Block>
           <Block marginTop="scale800">
