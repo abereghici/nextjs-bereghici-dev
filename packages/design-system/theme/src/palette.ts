@@ -102,19 +102,7 @@ export type Palette = {
   buttonDisabledSpinnerBackground: string;
 
   // Header
-  headerPrimaryBackground: string;
-  headerPrimaryBackgroundInverse: string;
-  headerSecondaryBackground: string;
-  headerSecondaryBackgroundInverse: string;
-
-  syntaxComment: string;
-  syntaxVar: string;
-  syntaxStr: string;
-  syntaxAtrName: string;
-  syntaxRegex: string;
-  syntaxAtrValue: string;
-  syntaxFunction: string;
-  syntaxText: string;
+  headerBackground: string;
 };
 
 // Create css variables from light palette.

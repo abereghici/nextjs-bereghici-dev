@@ -50,9 +50,6 @@ export const Pre = styled.pre({
   borderRadius: theme.borders.radius200,
   backgroundColor: theme.colors.backgroundSecondary,
   ...theme.typography.MonoParagraphSmall,
-  [`[class*='language-']`]: {
-    color: theme.colors.syntaxText,
-  },
   [`::-webkit-scrollbar`]: {
     display: 'none',
   },
@@ -61,62 +58,11 @@ export const Pre = styled.pre({
 export const InlineCode = styled.code({
   padding: theme.sizing.scale200,
   borderRadius: theme.sizing.scale100,
-  backgroundColor: theme.colors.backgroundSecondary,
   ...theme.typography.MonoParagraphSmall,
 });
 
 export const Code = styled.code({
-  color: theme.colors.contentPrimary,
   whiteSpace: 'pre-wrap',
-  [`.token.comment,
-    .token.punctuation
-    .token.prolog,
-    .token.doctype,
-    .token.cdata`]: {
-    color: theme.colors.syntaxComment,
-  },
-  [`.token.property,
-    .token.tag,
-    .token.boolean,
-    .token.number,
-    .token.constant,
-    .token.symbol,
-    .token.deleted`]: {
-    color: theme.colors.syntaxVar,
-  },
-  [`.token.selector,
-    .token.string,
-    .token.char,
-    .token.builtin,
-    .token.inserted`]: {
-    color: theme.colors.syntaxStr,
-  },
-  [`.token.attr-name`]: {
-    color: theme.colors.syntaxAtrName,
-  },
-  [`.token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string,
-    .token.regex,
-    .token.important,
-    .token.variable
-`]: {
-    color: theme.colors.syntaxRegex,
-  },
-  [`.token.atrule,
-    .token.attr-value,
-    .token.keyword`]: {
-    color: theme.colors.syntaxAtrValue,
-  },
-  [`.token.function,
-    .token.class-name`]: {
-    color: theme.colors.syntaxFunction,
-  },
-  [`[class*='language-']`]: {
-    color: theme.colors.syntaxText,
-  },
 });
 
 export default {

@@ -1,5 +1,5 @@
 import { ArticleType } from 'shared/types';
-import { PrimaryLayout } from 'components/layout';
+import { Layout } from 'components/layout';
 import { ArticleList, ArticleCard } from 'components/article';
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 
 export function HomeView({ articles }: Props) {
   return (
-    <PrimaryLayout
+    <Layout
       meta={{
         path: '/',
         title: 'Alexandru Bereghici',
@@ -24,6 +24,6 @@ export function HomeView({ articles }: Props) {
           <ArticleCard key={article.title} article={article} />
         ))}
       </ArticleList>
-    </PrimaryLayout>
+    </Layout>
   );
 }

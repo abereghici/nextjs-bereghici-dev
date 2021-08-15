@@ -1,5 +1,5 @@
 export type ArticleType = {
-  date?: string;
+  date: string;
   description?: string;
   image?: string;
   slug: string;

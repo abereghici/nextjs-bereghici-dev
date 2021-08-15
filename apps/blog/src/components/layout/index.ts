@@ -1,2 +1,1 @@
-export { PrimaryLayout } from './PrimaryLayout';
-export { SecondaryLayout } from './SecondaryLayout';
+export { Layout } from './Layout';

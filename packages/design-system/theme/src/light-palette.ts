@@ -109,20 +109,7 @@ export const rawLightPalette: Palette = {
   buttonDisabledSpinnerBackground: colors.gray200,
 
   // Header
-  headerPrimaryBackground: colors.yellow300,
-  headerPrimaryBackgroundInverse: colors.gray900,
-  headerSecondaryBackground: colors.white,
-  headerSecondaryBackgroundInverse: colors.gray900,
-
-  // Syntax
-  syntaxComment: colors.gray700,
-  syntaxVar: colors.green500,
-  syntaxStr: colors.purple400,
-  syntaxAtrName: colors.orange600,
-  syntaxRegex: colors.yellow500,
-  syntaxAtrValue: colors.blue500,
-  syntaxFunction: colors.red400,
-  syntaxText: colors.gray800,
+  headerBackground: hexToRgba(colors.white, '0.6') as string,
 };
 
 export const lightPalette = css({

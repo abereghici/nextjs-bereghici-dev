@@ -3,13 +3,22 @@ import styled from '@emotion/styled';
 import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
 import { theme } from '@bereghici/design-system.theme';
 import { ArticleType } from 'shared/types';
-import { SecondaryLayout } from 'components/layout';
+import { Layout } from 'components/layout';
 import {
   HeadingXXLarge,
-  ParagraphXSmall,
+  ParagraphSmall,
 } from '@bereghici/design-system.typography';
 import { Block } from '@bereghici/design-system.block';
+import { Link } from '@bereghici/design-system.link';
 import { ViewCounter } from 'components/view-counter';
+
+const editUrl = (slug: string): string =>
+  `https://github.com/abereghici/bereghici.dev/edit/main/apps/blog/src/data/blog/${slug}.mdx`;
+
+const discussUrl = (slug: string): string =>
+  `https://mobile.twitter.com/search?q=${encodeURIComponent(
+    `https://bereghici.dev/blog/${slug}`
+  )}`;
 
 const Container = styled.div({
   padding: theme.sizing.scale800,
@@ -51,7 +60,7 @@ type Props = {
 
 export const BlogView = ({ article, children }: Props) => {
   return (
-    <SecondaryLayout
+    <Layout
       meta={{
         path: `/blog/${article.slug}`,
         title: article.title,
@@ -62,16 +71,35 @@ export const BlogView = ({ article, children }: Props) => {
         <Container>
           <HeadingXXLarge>{article.title}</HeadingXXLarge>
           <Block display="flex" justifyContent="space-between">
-            <ParagraphXSmall>
+            <ParagraphSmall>
               {article.date} • {article.readingTime}
-            </ParagraphXSmall>
-            <ParagraphXSmall>
+            </ParagraphSmall>
+            <ParagraphSmall>
               <ViewCounter slug={article.slug} />
-            </ParagraphXSmall>
+            </ParagraphSmall>
           </Block>
           {children}
+          <Block display="flex" marginTop="scale1200" justifyContent="flex-end">
+            <Link
+              animateUnderline
+              href={discussUrl(article.slug)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Discuss on Twitter
+            </Link>
+            <Block marginLeft="scale400" marginRight="scale400">{` • `}</Block>
+            <Link
+              animateUnderline
+              href={editUrl(article.slug)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Edit on Github
+            </Link>
+          </Block>
         </Container>
       </ResponsiveContainer>
-    </SecondaryLayout>
+    </Layout>
   );
 };

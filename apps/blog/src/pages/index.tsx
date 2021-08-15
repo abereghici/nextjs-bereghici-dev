@@ -12,7 +12,13 @@ export default function Home({ articles }: Props) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const articles = await getAllFilesFrontMatter('blog');
+  const articles = (
+    (await getAllFilesFrontMatter('blog')) as ArticleType[]
+  ).sort((article1: ArticleType, article2: ArticleType) => {
+    return (
+      new Date(article2.date).getTime() - new Date(article1.date).getTime()
+    );
+  });
 
   return { props: { articles } };
 };

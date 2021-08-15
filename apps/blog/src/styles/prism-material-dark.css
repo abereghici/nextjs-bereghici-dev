@@ -1,0 +1,206 @@
+body[data-theme='dark'] code[class*='language-'],
+body[data-theme='dark'] pre[class*='language-'] {
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+body[data-theme='dark'] code[class*='language-']::-moz-selection,
+body[data-theme='dark'] pre[class*='language-']::-moz-selection,
+body[data-theme='dark'] code[class*='language-'] ::-moz-selection,
+body[data-theme='dark'] pre[class*='language-'] ::-moz-selection {
+  background: #363636;
+}
+
+body[data-theme='dark'] code[class*='language-']::selection,
+body[data-theme='dark'] pre[class*='language-']::selection,
+body[data-theme='dark'] code[class*='language-'] ::selection,
+body[data-theme='dark'] pre[class*='language-'] ::selection {
+  background: #363636;
+}
+
+body[data-theme='dark'] :not(pre) > code[class*='language-'] {
+  white-space: normal;
+  border-radius: 0.2em;
+  padding: 0.1em;
+}
+
+body[data-theme='dark'] pre[class*='language-'] {
+  overflow: auto;
+  position: relative;
+  margin: 0.5em 0;
+  padding: 1.25em 1em;
+}
+
+body[data-theme='dark'] .language-css > code,
+body[data-theme='dark'] .language-sass > code,
+body[data-theme='dark'] .language-scss > code {
+  color: #fd9170;
+}
+
+body[data-theme='dark'] [class*='language-'] .namespace {
+  opacity: 0.8;
+}
+
+body[data-theme='dark'] .token.atrule {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.attr-name {
+  color: #ffcb6b;
+}
+
+body[data-theme='dark'] .token.attr-value {
+  color: #a5e844;
+}
+
+body[data-theme='dark'] .token.attribute {
+  color: #a5e844;
+}
+
+body[data-theme='dark'] .token.boolean {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.builtin {
+  color: #ffcb6b;
+}
+
+body[data-theme='dark'] .token.cdata {
+  color: #80cbc4;
+}
+
+.token.char {
+  color: #80cbc4;
+}
+
+body[data-theme='dark'] .token.class {
+  color: #ffcb6b;
+}
+
+body[data-theme='dark'] .token.class-name {
+  color: #f2ff00;
+}
+
+body[data-theme='dark'] .token.comment {
+  color: #616161;
+}
+
+.token.constant {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.deleted {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.doctype {
+  color: #616161;
+}
+
+body[data-theme='dark'] .token.entity {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.function {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.hexcode {
+  color: #f2ff00;
+}
+
+body[data-theme='dark'] .token.id {
+  color: #c792ea;
+  font-weight: bold;
+}
+
+body[data-theme='dark'] .token.important {
+  color: #c792ea;
+  font-weight: bold;
+}
+
+body[data-theme='dark'] .token.inserted {
+  color: #80cbc4;
+}
+
+body[data-theme='dark'] .token.keyword {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.number {
+  color: #fd9170;
+}
+
+body[data-theme='dark'] .token.operator {
+  color: #89ddff;
+}
+
+body[data-theme='dark'] .token.prolog {
+  color: #616161;
+}
+
+body[data-theme='dark'] .token.property {
+  color: #80cbc4;
+}
+
+body[data-theme='dark'] .token.pseudo-class {
+  color: #a5e844;
+}
+
+body[data-theme='dark'] .token.pseudo-element {
+  color: #a5e844;
+}
+
+body[data-theme='dark'] .token.punctuation {
+  color: #89ddff;
+}
+
+body[data-theme='dark'] .token.regex {
+  color: #f2ff00;
+}
+
+body[data-theme='dark'] .token.selector {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.string {
+  color: #a5e844;
+}
+
+body[data-theme='dark'] .token.symbol {
+  color: #c792ea;
+}
+
+body[data-theme='dark'] .token.tag {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.unit {
+  color: #fd9170;
+}
+
+body[data-theme='dark'] .token.url {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.variable {
+  color: #ff6666;
+}
+
+body[data-theme='dark'] .token.comment,
+body[data-theme='dark'] .token.prolog,
+body[data-theme='dark'] .token.doctype,
+body[data-theme='dark'] .token.cdata {
+  font-style: italic;
+}
