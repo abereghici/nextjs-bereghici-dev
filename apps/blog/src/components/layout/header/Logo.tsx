@@ -25,6 +25,8 @@ const Text = styled.span({
   margin: 0,
 });
 
+const logoText = 'bereghici@dev ~ %';
+
 export const Logo = () => {
   const textRef = React.useRef<HTMLSpanElement>(null);
   const cursorRef = React.useRef<HTMLSpanElement>(null);
@@ -41,13 +43,13 @@ export const Logo = () => {
     );
 
     if (short) {
-      textRef.current.innerText = 'bereghici@dev ~ %';
+      textRef.current.innerText = logoText;
       return;
     }
 
     gsap.to(textRef.current, {
       text: {
-        value: 'bereghici.dev',
+        value: logoText,
       },
       duration: 0.5,
       delay: 0.1,
