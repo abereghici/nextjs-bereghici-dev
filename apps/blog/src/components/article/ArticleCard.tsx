@@ -1,5 +1,6 @@
 import * as React from 'react';
 import NextLink from 'next/link';
+import NextImage from 'next/image';
 import styled from '@emotion/styled';
 import { theme } from '@bereghici/design-system.theme';
 import { Link } from '@bereghici/design-system.link';
@@ -47,6 +48,14 @@ const Summary = styled.summary({
   marginBottom: theme.sizing.scale600,
 });
 
+const ImageWrapper = styled.div({
+  position: 'relative',
+  width: '100%',
+  height: '300px',
+  marginBottom: theme.sizing.scale600,
+  background: theme.colors.backgroundAlwaysDark,
+});
+
 type Props = {
   article: ArticleType;
 };
@@ -67,6 +76,17 @@ export const ArticleCard = ({ article }: Props) => {
           <EstimateReadingTime>{article.readingTime}</EstimateReadingTime>
         </Header>
 
+        <ImageWrapper>
+          {article.image && (
+            <NextImage
+              src={article.image}
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL={article.image}
+            />
+          )}
+        </ImageWrapper>
         <Summary>{article.description}</Summary>
 
         <NextLink href={link} passHref>
