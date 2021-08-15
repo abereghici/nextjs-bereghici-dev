@@ -21,7 +21,7 @@ const Cursor = styled.span({
 });
 
 const Text = styled.span({
-  padding: `0 ${theme.sizing.scale400} 0 0`,
+  padding: `0 ${theme.sizing.scale600} 0 0`,
   margin: 0,
 });
 
@@ -41,7 +41,7 @@ export const Logo = () => {
     );
 
     if (short) {
-      textRef.current.innerText = 'bereghici.dev';
+      textRef.current.innerText = 'bereghici@dev ~ %';
       return;
     }
 
