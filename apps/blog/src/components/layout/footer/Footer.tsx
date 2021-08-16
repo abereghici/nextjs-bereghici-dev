@@ -17,13 +17,13 @@ const Container = styled.div({
   flexFlow: 'row wrap',
 
   [theme.mediaQueries.mobile]: {
-    [`& > *`]: {
+    [`& > a`]: {
       marginLeft: 0,
       marginBottom: theme.sizing.scale600,
     },
   },
 
-  [`& > *`]: {
+  [`& > a`]: {
     marginLeft: theme.sizing.scale600,
   },
 });
