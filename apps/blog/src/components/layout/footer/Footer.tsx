@@ -12,6 +12,22 @@ const StyledFooter = styled.footer({
   ...theme.borders.border300,
 });
 
+const Container = styled.div({
+  display: 'flex',
+  flexFlow: 'row wrap',
+
+  [theme.mediaQueries.mobile]: {
+    [`& > *`]: {
+      marginLeft: 0,
+      marginBottom: theme.sizing.scale600,
+    },
+  },
+
+  [`& > *`]: {
+    marginLeft: theme.sizing.scale600,
+  },
+});
+
 export const Footer = () => {
   return (
     <StyledFooter>
@@ -24,7 +40,7 @@ export const Footer = () => {
           alignItems="center"
           padding="scale600"
         >
-          <Block>
+          <Container>
             <Button
               as="a"
               href="https://github.com/abereghici"
@@ -36,7 +52,7 @@ export const Footer = () => {
               rel="noopener"
             >
               Github
-            </Button>{' '}
+            </Button>
             <Button
               as="a"
               href="https://twitter.com/alexandrubrg"
@@ -48,7 +64,7 @@ export const Footer = () => {
               rel="noopener"
             >
               Twitter
-            </Button>{' '}
+            </Button>
             <Button
               as="a"
               href="https://www.linkedin.com/in/alexandrubereghici"
@@ -61,7 +77,7 @@ export const Footer = () => {
             >
               Linkedin
             </Button>
-          </Block>
+          </Container>
           <Block marginTop="scale800">
             © 2021-present Bereghici Alexandru. All Rights Reserved.
           </Block>

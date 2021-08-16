@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { ArticleType } from 'shared/types';
-import { getFileBySlug, getFiles } from 'shared/utils/mdx';
+import { FileType, getFileBySlug, getFiles } from 'shared/mdx';
 import components from 'components/mdx-components';
 import { BlogView } from 'views';
 
@@ -19,7 +19,7 @@ export default function ArticlePage({ source, meta }: Props) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const posts = await getFiles('blog');
+  const posts = await getFiles(FileType.BLOG);
 
   return {
     paths: posts.map(p => ({
@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = await getFileBySlug('blog', params?.slug);
+  const post = await getFileBySlug<ArticleType>(FileType.BLOG, params?.slug);
 
   return { props: { ...post } };
 };
