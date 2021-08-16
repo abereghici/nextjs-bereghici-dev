@@ -79,6 +79,7 @@ export const ArticleCard = ({ article }: Props) => {
         <ImageWrapper>
           {article.image && (
             <NextImage
+              alt="Article cover image"
               src={article.image}
               layout="fill"
               objectFit="cover"
