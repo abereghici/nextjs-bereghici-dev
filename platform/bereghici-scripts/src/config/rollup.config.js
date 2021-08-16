@@ -13,6 +13,7 @@ const { terser } = require('rollup-plugin-terser');
 const nodeBuiltIns = require('rollup-plugin-node-builtins');
 const nodeGlobals = require('rollup-plugin-node-globals');
 const omit = require('lodash.omit');
+
 const {
   pkg,
   hasFile,

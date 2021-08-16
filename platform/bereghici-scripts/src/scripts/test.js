@@ -2,6 +2,7 @@ process.env.BABEL_ENV = 'test';
 process.env.NODE_ENV = 'test';
 
 const isCI = require('is-ci');
+
 const { hasPkgProp, parseEnv, hasFile } = require('../utils');
 
 const args = process.argv.slice(2);

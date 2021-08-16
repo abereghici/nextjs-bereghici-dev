@@ -14,7 +14,7 @@
     "build": "",
     "test": "node src test --watchAll=false",
     "test:update": "node src test --updateSnapshot",
-    "lint": "node src lint",
+    "lint": "node src lint src",
     "validate": "node src validate"
   },
   "files": [
