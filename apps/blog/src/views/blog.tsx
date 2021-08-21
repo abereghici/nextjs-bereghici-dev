@@ -11,6 +11,7 @@ import {
 import { Block } from '@bereghici/design-system.block';
 import { Link } from '@bereghici/design-system.link';
 import { ViewCounter } from 'components/view-counter';
+import { config } from 'config';
 
 const editUrl = (slug: string): string =>
   `https://github.com/abereghici/bereghici.dev/edit/main/apps/blog/src/data/blog/${slug}.mdx`;
@@ -67,7 +68,7 @@ export const BlogView = ({ article, children }: Props) => {
         description: article.description,
         image: article.image
           ? {
-              src: article.image,
+              src: `${config.appBaseUrl}${article.image}`,
               alt: article.title,
             }
           : undefined,
