@@ -76,6 +76,7 @@ module.exports = withMDX(
     webpack: (config, { webpack, isServer }) => {
       if (isServer) {
         require('./scripts/generate-sitemap');
+        require('./scripts/generate-rss.js');
       }
 
       config.plugins.push(

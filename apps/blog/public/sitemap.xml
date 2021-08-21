@@ -10,13 +10,31 @@
 
   <url>
     <loc>
-      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react-part-1
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react--eslint+lint-staged
     </loc>
   </url>
 
   <url>
     <loc>
-      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react-part-2
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react--github-actions+netlify
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react--repo-setup+import-projects+prettier
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react--vscode
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react--webpack+jest
     </loc>
   </url>
 

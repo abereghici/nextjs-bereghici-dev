@@ -715,6 +715,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "rss",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "sass-loader",
       "allowedCategories": ["platform"]
     },
