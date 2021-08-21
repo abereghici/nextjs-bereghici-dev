@@ -43,22 +43,18 @@ export const Link = ({
 };
 
 export const Pre = styled.pre({
-  msOverflowStyle: 'none',
-  scrollbarWidth: 'none',
   padding: theme.sizing.scale400,
   ...theme.borders.border100,
   borderRadius: theme.borders.radius200,
   backgroundColor: theme.colors.backgroundSecondary,
-  ...theme.typography.MonoParagraphSmall,
-  [`::-webkit-scrollbar`]: {
-    display: 'none',
-  },
+  ...theme.typography.MonoParagraphMedium,
 });
 
 export const InlineCode = styled.code({
   padding: theme.sizing.scale200,
   borderRadius: theme.sizing.scale100,
-  ...theme.typography.MonoParagraphSmall,
+  backgroundColor: theme.colors.backgroundTertiary,
+  ...theme.typography.MonoParagraphMedium,
 });
 
 export const Code = styled.code({

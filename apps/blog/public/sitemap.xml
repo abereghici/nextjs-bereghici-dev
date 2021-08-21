@@ -10,6 +10,18 @@
 
   <url>
     <loc>
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react-part-1
+    </loc>
+  </url>
+
+  <url>
+    <loc>
+      https://development.bereghici.dev/blog/build-a-scalable-front-end-with-rush-monorepo-and-react-part-2
+    </loc>
+  </url>
+
+  <url>
+    <loc>
       https://development.bereghici.dev/blog/react-versions-the-newest-features-of-react-16-6-explained-for-everyday-use
     </loc>
   </url>

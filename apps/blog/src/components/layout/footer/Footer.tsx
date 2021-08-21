@@ -4,6 +4,7 @@ import LinkedinIcon from '@bereghici/icons/Linkedin';
 import TwitterIcon from '@bereghici/icons/Twitter';
 import { Button } from '@bereghici/design-system.button';
 import { Block } from '@bereghici/design-system.block';
+import { Link } from '@bereghici/design-system.link';
 import { ResponsiveContainer } from '@bereghici/design-system.responsive-container';
 import { theme } from '@bereghici/design-system.theme';
 
@@ -79,7 +80,10 @@ export const Footer = () => {
             </Button>
           </Container>
           <Block marginTop="scale800">
-            © 2021-present Bereghici Alexandru. All Rights Reserved.
+            Contact me:{' '}
+            <Link href="mailto:alexandru.brg@gmail.com">
+              alexandru.brg@gmail.com
+            </Link>
           </Block>
         </Block>
       </ResponsiveContainer>
