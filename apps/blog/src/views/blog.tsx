@@ -65,6 +65,12 @@ export const BlogView = ({ article, children }: Props) => {
         path: `/blog/${article.slug}`,
         title: article.title,
         description: article.description,
+        image: article.image
+          ? {
+              src: article.image,
+              alt: article.title,
+            }
+          : undefined,
       }}
     >
       <ResponsiveContainer as="section">
