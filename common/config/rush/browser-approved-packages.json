@@ -555,6 +555,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "next-pwa",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "node-loader",
       "allowedCategories": ["apps"]
     },
