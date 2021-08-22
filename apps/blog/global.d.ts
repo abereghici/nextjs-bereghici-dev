@@ -4,3 +4,7 @@ declare module '@emotion/react' {
   export type Theme = BaseTheme;
   export * from '@emotion/react/types/index';
 }
+
+interface Window {
+  dataLayer?: Array<unknown> | null;
+}
