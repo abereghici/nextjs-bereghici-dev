@@ -5,9 +5,12 @@ const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
 
+const withPWA = require('next-pwa');
+
 // https://securityheaders.com
 const ContentSecurityPolicy = `
   default-src 'self';
+  worker-src 'self';
   script-src 'self' 'unsafe-eval' 'unsafe-inline' *.youtube.com *.twitter.com *.googletagmanager.com;
   child-src *.youtube.com *.google.com *.twitter.com;
   style-src 'self' 'unsafe-inline' *.googleapis.com;
@@ -56,37 +59,44 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withMDX(
-  withBundleAnalyzer({
-    reactStrictMode: true,
-    target: 'serverless',
-    images: {
-      domains: [
-        'pbs.twimg.com', // Twitter Profile Picture
-      ],
-    },
-    async headers() {
-      return [
-        {
-          source: '/(.*)',
-          headers: securityHeaders,
-        },
-      ];
-    },
-    webpack: (config, { webpack, isServer }) => {
-      if (isServer) {
-        require('./scripts/generate-sitemap');
-        require('./scripts/generate-rss.js');
-      }
+module.exports = withPWA({
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  },
+  ...withMDX(
+    withBundleAnalyzer({
+      reactStrictMode: true,
+      target: 'serverless',
+      images: {
+        domains: [
+          'pbs.twimg.com', // Twitter Profile Picture
+        ],
+      },
+      async headers() {
+        return [
+          {
+            source: '/(.*)',
+            headers: securityHeaders,
+          },
+        ];
+      },
+      webpack: (config, { webpack, isServer }) => {
+        if (isServer) {
+          require('./scripts/generate-sitemap');
+          require('./scripts/generate-rss.js');
+        }
 
-      config.plugins.push(
-        new webpack.IgnorePlugin({
-          resourceRegExp: /^cardinal$/,
-          contextRegExp: /./,
-        })
-      );
+        config.plugins.push(
+          new webpack.IgnorePlugin({
+            resourceRegExp: /^cardinal$/,
+            contextRegExp: /./,
+          })
+        );
 
-      return config;
-    },
-  })
-);
+        return config;
+      },
+    })
+  ),
+});

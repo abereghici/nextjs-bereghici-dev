@@ -25,7 +25,10 @@ class MyDocument extends Document {
             httpEquiv="Content-Security-Policy"
             content="upgrade-insecure-requests"
           />
+          <meta name="theme-color" content="#000" />
           <link rel="icon" href="/favicon.ico" />
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/icon.png" />
           <link href={primaryFontUrl} rel="preload" as="style" />
           <link href={monoFontUrl} rel="preload" as="style" />
           <link rel="stylesheet" href={primaryFontUrl} />
