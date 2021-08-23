@@ -1,1 +1,1 @@
-export * from './useGoogleAnalytics';
+export * from './google-analytics';
