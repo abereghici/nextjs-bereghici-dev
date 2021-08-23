@@ -5,11 +5,7 @@ import Document, {
   NextScript,
   DocumentContext,
 } from 'next/document';
-import {
-  primaryFontUrl,
-  monoFontUrl,
-  DetectThemeScript,
-} from '@bereghici/design-system.theme';
+import { DetectThemeScript } from '@bereghici/design-system.theme';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -29,10 +25,6 @@ class MyDocument extends Document {
           <link rel="icon" href="/favicon.ico" />
           <link rel="manifest" href="/manifest.json" />
           <link rel="apple-touch-icon" href="/icon.png" />
-          <link href={primaryFontUrl} rel="preload" as="style" />
-          <link href={monoFontUrl} rel="preload" as="style" />
-          <link rel="stylesheet" href={primaryFontUrl} />
-          <link rel="stylesheet" href={monoFontUrl} />
         </Head>
         <body>
           <DetectThemeScript />

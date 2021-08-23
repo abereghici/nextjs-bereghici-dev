@@ -4,7 +4,6 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 const withMDX = require('@next/mdx')({
   extension: /\.mdx?$/,
 });
-
 const withPWA = require('next-pwa');
 
 // https://securityheaders.com

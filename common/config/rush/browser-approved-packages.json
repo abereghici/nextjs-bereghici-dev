@@ -80,7 +80,7 @@
     },
     {
       "name": "@bereghici/design-system.primitives",
-      "allowedCategories": ["packages"]
+      "allowedCategories": ["apps", "packages"]
     },
     {
       "name": "@bereghici/design-system.responsive-container",

@@ -4,6 +4,10 @@
   "description": "Design system primitives",
   "module": "dist/design-system.primitives.esm.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "fonts"
+  ],
   "scripts": {
     "build": "bereghici-scripts build --bundle esm",
     "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",

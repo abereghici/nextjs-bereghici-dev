@@ -1,2 +1,5 @@
 @import './prism-material-dark';
 @import './prism-material-light';
+
+@import '~@bereghici/design-system.primitives/fonts/inter.css';
+@import '~@bereghici/design-system.primitives/fonts/ubuntu.css';
