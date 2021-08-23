@@ -2,16 +2,16 @@ import React from 'react';
 import { config } from 'config';
 import { importScript } from 'shared/utils/import-script';
 
+function gtag(...args: Array<unknown>) {
+  if (!window.dataLayer) {
+    window.dataLayer = [];
+  }
+
+  window.dataLayer.push(...args);
+}
+
 export const useGoogleAnalytics = () => {
   React.useEffect(() => {
-    function gtag(...args: Array<unknown>) {
-      if (!window.dataLayer) {
-        window.dataLayer = [];
-      }
-
-      window.dataLayer.push(...args);
-    }
-
     gtag('js', new Date());
 
     gtag('config', `${config.googleAnalytics}`, {

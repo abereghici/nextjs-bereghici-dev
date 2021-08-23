@@ -26,9 +26,11 @@ const importScript = (url: string): Promise<boolean> => {
   const script = getScript(url);
 
   const found = resolvers.get(script);
+
   if (found) {
     return found;
   }
+
   const resolved = new Promise<boolean>((resolve, reject) => {
     script.onload = () => resolve(true);
     script.onerror = reject;
