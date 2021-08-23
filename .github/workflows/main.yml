@@ -107,7 +107,7 @@ jobs:
         working-directory: ${{ matrix.app-dir }}
         if: ${{ contains(steps.changed_projects.outputs.projects, matrix.app) }}
         run: |
-          cp ./env_overrides/development.ini .env.production
+          cp ./env_overrides/development.ini .env.local
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
           npx netlify-cli build
           PROD_FLAG="${{ github.event_name == 'pull_request' && '' || '--prod' }}"

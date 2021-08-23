@@ -97,7 +97,7 @@ jobs:
       - name: Build blog app
         working-directory: apps/blog
         run: |
-          cp ./env_overrides/production.ini .env.production
+          cp ./env_overrides/production.ini .env.local
           node  $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except @bereghici/blog-app
           npx netlify-cli build
           npx netlify-cli deploy --prod
