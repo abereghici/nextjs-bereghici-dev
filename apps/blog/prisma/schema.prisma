@@ -1,0 +1,17 @@
+datasource db {
+  provider = "mysql"
+  url = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+  planetScaleMode = true
+}
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["planetScaleMode"]
+}
+
+model views {
+  id    BigInt @id @default(autoincrement())
+  slug  String @db.VarChar(1024)
+  count BigInt @default(0)
+}

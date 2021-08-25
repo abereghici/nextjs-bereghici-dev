@@ -1,21 +1,19 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { db } from 'shared/database';
+import { prisma } from 'shared/database';
 
 export default async function handler(
-  request: NextApiRequest,
+  _: NextApiRequest,
   response: NextApiResponse
 ) {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-    const [rows]: Array<Array<{ total: number }>> = await db.query(
-      `
-      SELECT SUM(count) as total
-      FROM views;
-    `,
-      []
-    );
+    const allViews = await prisma.views.aggregate({
+      _sum: {
+        count: true,
+      },
+    });
 
-    const total = rows[0].total;
+    const total = allViews._sum.count;
+
     return response.status(200).json({ total });
   } catch (e: unknown) {
     if (e instanceof Error) {

@@ -167,6 +167,10 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "@prisma/client",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@rollup/plugin-babel",
       "allowedCategories": ["platform"]
     },
@@ -547,6 +551,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "next-compose-plugins",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "next-mdx-remote",
       "allowedCategories": ["apps"]
     },
@@ -573,10 +581,6 @@
     {
       "name": "optimize-css-assets-webpack-plugin",
       "allowedCategories": ["platform"]
-    },
-    {
-      "name": "planetscale-node",
-      "allowedCategories": ["apps"]
     },
     {
       "name": "pnp-webpack-plugin",
@@ -609,6 +613,10 @@
     {
       "name": "prettier",
       "allowedCategories": ["apps", "packages"]
+    },
+    {
+      "name": "prisma",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "prismjs",

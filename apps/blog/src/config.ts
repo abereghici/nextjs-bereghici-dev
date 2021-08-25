@@ -1,4 +1,5 @@
 interface Config {
+  isProduction: boolean;
   appName: string;
   appLocale: string;
   appBaseUrl: string;
@@ -6,6 +7,7 @@ interface Config {
 }
 
 export const config: Config = {
+  isProduction: process.env.NODE_ENV === 'production',
   appName: process.env.NEXT_PUBLIC_SITE_NAME ?? '',
   appLocale: process.env.NEXT_PUBLIC_SITE_LOCALE ?? 'en',
   appBaseUrl: process.env.NEXT_PUBLIC_SITE_BASEURL ?? '',

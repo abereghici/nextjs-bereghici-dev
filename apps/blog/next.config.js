@@ -1,3 +1,4 @@
+const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
@@ -58,44 +59,40 @@ const securityHeaders = [
   },
 ];
 
-module.exports = withPWA({
+module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
   pwa: {
     dest: 'public',
     register: true,
     skipWaiting: true,
   },
-  ...withMDX(
-    withBundleAnalyzer({
-      reactStrictMode: true,
-      target: 'serverless',
-      images: {
-        domains: [
-          'pbs.twimg.com', // Twitter Profile Picture
-        ],
+  reactStrictMode: true,
+  target: 'serverless',
+  images: {
+    domains: [
+      'pbs.twimg.com', // Twitter Profile Picture
+    ],
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: securityHeaders,
       },
-      async headers() {
-        return [
-          {
-            source: '/(.*)',
-            headers: securityHeaders,
-          },
-        ];
-      },
-      webpack: (config, { webpack, isServer }) => {
-        if (isServer) {
-          require('./scripts/generate-sitemap');
-          require('./scripts/generate-rss.js');
-        }
+    ];
+  },
+  webpack: (config, { webpack, isServer }) => {
+    if (isServer) {
+      require('./scripts/generate-sitemap');
+      require('./scripts/generate-rss.js');
+    }
 
-        config.plugins.push(
-          new webpack.IgnorePlugin({
-            resourceRegExp: /^cardinal$/,
-            contextRegExp: /./,
-          })
-        );
+    config.plugins.push(
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^cardinal$/,
+        contextRegExp: /./,
+      })
+    );
 
-        return config;
-      },
-    })
-  ),
+    return config;
+  },
 });
