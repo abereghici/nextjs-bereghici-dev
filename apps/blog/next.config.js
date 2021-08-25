@@ -90,6 +90,10 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
       new webpack.IgnorePlugin({
         resourceRegExp: /^cardinal$/,
         contextRegExp: /./,
+      }),
+      new webpack.IgnorePlugin({
+        resourceRegExp: /^_http_common$/,
+        contextRegExp: /./,
       })
     );
 
