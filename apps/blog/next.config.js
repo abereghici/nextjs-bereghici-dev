@@ -60,6 +60,9 @@ const securityHeaders = [
 ];
 
 module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
+  future: {
+    webpack5: false,
+  },
   pwa: {
     dest: 'public',
     register: true,

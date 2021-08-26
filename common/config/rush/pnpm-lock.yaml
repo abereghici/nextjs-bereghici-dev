@@ -21,7 +21,7 @@ specifiers:
   '@microsoft/rush-lib': ^5.47.0
   '@next/bundle-analyzer': ~11.0.1
   '@next/mdx': 11.0.1
-  '@prisma/client': ~2.30.0
+  '@prisma/client': 2.30.0
   '@rollup/plugin-babel': ^5.3.0
   '@rollup/plugin-commonjs': ^19.0.0
   '@rollup/plugin-json': ^4.1.0
@@ -12394,7 +12394,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.15.0+eslint@7.32.0:
-    resolution: {integrity: sha512-sIuPBdJqfzdMuUEdEPg7trUVBrCXzm/u0uO58ZQHhBvNM5l6ZcRB8jPIcdPF2L9GN+2XvVfDCKVFc6b15US5Dg==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-tPl96e8+wN4OPiXYhKf6fLxCSB31sklndcBlXCkZY6zcpw2qEwOlaRLFHw9fxqdd5+hvk0XMaGQBIH22loVHDw==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
