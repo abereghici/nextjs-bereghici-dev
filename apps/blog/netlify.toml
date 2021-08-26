@@ -8,3 +8,4 @@
   for = "https://development.bereghici.dev/*"
   [headers.values]
     X-Robots-Tag = "noindex"
+
