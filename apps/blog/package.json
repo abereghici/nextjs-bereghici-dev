@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && prisma generate",
+    "build": "next build",
     "start": "next start",
     "lint": "bereghici-scripts lint './src/**/*.{js,jsx,ts,tsx}'",
     "pre-commit": "bereghici-scripts pre-commit",
