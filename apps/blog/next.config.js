@@ -87,6 +87,8 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
 
       // https://github.com/prisma/prisma/issues/6899
       config.externals.push('_http_common');
+      // https://github.com/prisma/prisma/issues/6051
+      config.externals.push('@prisma/client');
     }
 
     return config;
