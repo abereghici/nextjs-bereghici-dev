@@ -1,5 +1,5 @@
 /* eslint-disable no-extend-native */
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from 'generated/prisma/client';
 import { config } from 'config';
 /**
  * https://github.com/prisma/studio/issues/614
