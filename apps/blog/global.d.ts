@@ -1,6 +1,5 @@
 /* eslint-disable */
 import { PrismaClient } from '@prisma/client';
-
 declare module '@emotion/react' {
   import { Theme as BaseTheme } from '@bereghici/design-system.core/dist/theme';
 

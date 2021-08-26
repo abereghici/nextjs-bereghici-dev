@@ -34,7 +34,7 @@
     "next-pwa": "~5.3.1",
     "next-compose-plugins": "~2.2.1",
     "prisma": "2.30.0",
-    "@prisma/client": "~2.30.0"
+    "@prisma/client": "2.30.0"
   },
   "devDependencies": {
     "@bereghici/bereghici-scripts": "0.0.1",
