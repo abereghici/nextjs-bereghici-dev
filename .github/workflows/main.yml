@@ -109,8 +109,8 @@ jobs:
         run: |
           cp ./env_overrides/development.ini .env.local
           node $GITHUB_WORKSPACE/common/scripts/install-run-rush.js build --verbose --to-except ${{ matrix.app }}
-          ./node_modules/.bin/prisma generate
-          npx netlify-cli login
+          ./node_modules/.bin/prisma generate --schema=./prisma/schema.prisma
+          cp ./node_modules/prisma/query-engine-rhel-openssl-1.0.x ./node_modules/@prisma/client
           npx netlify-cli build
           PROD_FLAG="${{ github.event_name == 'pull_request' && '' || '--prod' }}"
           OUTPUT="$(npx netlify-cli deploy $PROD_FLAG)"
