@@ -80,22 +80,14 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
       },
     ];
   },
-  webpack: (config, { webpack, isServer }) => {
+  webpack: (config, { isServer }) => {
     if (isServer) {
       require('./scripts/generate-sitemap');
       require('./scripts/generate-rss.js');
-    }
 
-    config.plugins.push(
-      new webpack.IgnorePlugin({
-        resourceRegExp: /^cardinal$/,
-        contextRegExp: /./,
-      }),
-      new webpack.IgnorePlugin({
-        resourceRegExp: /^_http_common$/,
-        contextRegExp: /./,
-      })
-    );
+      // https://github.com/prisma/prisma/issues/6899
+      config.externals.push('_http_common');
+    }
 
     return config;
   },
