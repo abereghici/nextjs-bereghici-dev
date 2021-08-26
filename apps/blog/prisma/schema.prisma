@@ -9,6 +9,7 @@ generator client {
   provider = "prisma-client-js"
   previewFeatures = ["planetScaleMode"]
   binaryTargets = ["native", "rhel-openssl-1.0.x"]
+  output = "../node_modules/@prisma/client"
 }
 
 model views {
