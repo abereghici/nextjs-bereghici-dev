@@ -547,6 +547,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "next-compose-plugins",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "next-mdx-remote",
       "allowedCategories": ["apps"]
     },
