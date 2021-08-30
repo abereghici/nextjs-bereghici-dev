@@ -3,7 +3,7 @@
   publish = "out"
 [functions]
   node_bundler = "esbuild"
-  external_node_modules = ["@ampproject/toolbox-optimizer", "sharp", "next"]
+  external_node_modules = ["@ampproject/toolbox-optimizer", "sharp"]
 [[headers]]
   for = "https://development.bereghici.dev/*"
   [headers.values]
