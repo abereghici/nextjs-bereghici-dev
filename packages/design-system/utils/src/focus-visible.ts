@@ -28,8 +28,6 @@ const inputTypesWhitelist = [
  * Computes whether the given element should automatically trigger the
  * `focus-visible` class being added, i.e. whether it should always match
  * `:focus-visible` when focused.
- * @param {Element} node
- * @return {boolean}
  */
 function focusTriggersKeyboardModality(node: Element) {
   if (!(node instanceof HTMLElement)) {
@@ -64,7 +62,6 @@ function focusTriggersKeyboardModality(node: Element) {
  * If the most recent user interaction was via the keyboard;
  * and the key press did not include a meta, alt/option, or control key;
  * then the modality is keyboard. Otherwise, the modality is not keyboard.
- * @param {KeyboardEvent} event
  */
 function handleKeyDown(event: KeyboardEvent) {
   if (event.metaKey || event.altKey || event.ctrlKey) {
