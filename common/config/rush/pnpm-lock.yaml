@@ -21,7 +21,7 @@ specifiers:
   '@microsoft/rush-lib': ^5.47.0
   '@next/bundle-analyzer': ~11.0.1
   '@next/mdx': 11.0.1
-  '@prisma/client': 2.30.0
+  '@prisma/client': 2.30.2
   '@rollup/plugin-babel': ^5.3.0
   '@rollup/plugin-commonjs': ^19.0.0
   '@rollup/plugin-json': ^4.1.0
@@ -106,7 +106,7 @@ specifiers:
   next-pwa: ~5.3.1
   npm-run-all: ^4.1.5
   prettier: ^2.2.1
-  prisma: 2.30.0
+  prisma: 2.30.2
   react: ^17.0.2
   react-dom: ^17.0.2
   read-pkg-up: ^7.0.1
@@ -152,7 +152,7 @@ dependencies:
   '@microsoft/rush-lib': 5.52.0
   '@next/bundle-analyzer': 11.0.1
   '@next/mdx': 11.0.1_f56c41adb6190c4680be4a1c0222355d
-  '@prisma/client': 2.30.0_prisma@2.30.0
+  '@prisma/client': 2.30.2_prisma@2.30.2
   '@rollup/plugin-babel': 5.3.0_@babel+core@7.15.0+rollup@2.56.3
   '@rollup/plugin-commonjs': 19.0.2_rollup@2.56.3
   '@rollup/plugin-json': 4.1.0_rollup@2.56.3
@@ -237,7 +237,7 @@ dependencies:
   next-pwa: 5.3.1_@babel+core@7.15.0+next@11.1.0
   npm-run-all: 4.1.5
   prettier: 2.3.2
-  prisma: 2.30.0
+  prisma: 2.30.2
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
   read-pkg-up: 7.0.1
@@ -2524,8 +2524,8 @@ packages:
     resolution: {integrity: sha512-kHR9OHwP9WLpyC0i/WCAQCgf5hXkR9C+/21qxmrn+YwRlDRnBlqrcrFpXxhJTA9LDHJWa/FjoO2LJ12q8iWlEQ==}
     dev: false
 
-  /@prisma/client/2.30.0_prisma@2.30.0:
-    resolution: {integrity: sha512-tjJNHVfgyNOwS2F+AkjMMCJGPnXzHuUCrOnAMJyidAu4aNzxbJ8jWwjt96rRMpyrg9Hwen3xqqQ2oA+ikK7nhQ==}
+  /@prisma/client/2.30.2_prisma@2.30.2:
+    resolution: {integrity: sha512-cfS/1UWBRE4sq0z7spGLYqOE0oN2YJJvKtm+63o7h/BI6ji10VWla79aXBTXj3AImtfykNtC6OHtFVawEl/49w==}
     engines: {node: '>=12.2'}
     requiresBuild: true
     peerDependencies:
@@ -2534,16 +2534,16 @@ packages:
       prisma:
         optional: true
     dependencies:
-      '@prisma/engines-version': 2.30.0-28.60b19f4a1de4fe95741da371b4c44a92f4d1adcb
-      prisma: 2.30.0
+      '@prisma/engines-version': 2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20
+      prisma: 2.30.2
     dev: false
 
-  /@prisma/engines-version/2.30.0-28.60b19f4a1de4fe95741da371b4c44a92f4d1adcb:
-    resolution: {integrity: sha512-oThNpx7HtJ0eEmnvrWARYcNCs6dqFdAK3Smt2bJVDD6Go4HLuuhjx028osP+rHaFrGOTx7OslLZYtvvFlAXRDA==}
+  /@prisma/engines-version/2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20:
+    resolution: {integrity: sha512-/iDRgaoSQC77WN2oDsOM8dn61fykm6tnZUAClY+6p+XJbOEgZ9gy4CKuKTBgrjSGDVjtQ/S2KGcYd3Ring8xaw==}
     dev: false
 
-  /@prisma/engines/2.30.0-28.60b19f4a1de4fe95741da371b4c44a92f4d1adcb:
-    resolution: {integrity: sha512-LPKq88lIbYezvX0OOc1PU42hHdTsSMPJWmK8lusaHK7DaLHyXjDp/551LbsVapypbjW6N3Jx/If6GoMDASSMSw==}
+  /@prisma/engines/2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20:
+    resolution: {integrity: sha512-WPnA/IUrxDihrRhdP6+8KAVSwsc0zsh8ioPYsLJjOhzVhwpRbuFH2tJDRIAbc+qFh+BbTIZbeyBYt8fpNXaYQQ==}
     requiresBuild: true
     dev: false
 
@@ -9552,13 +9552,13 @@ packages:
       react-is: 17.0.2
     dev: false
 
-  /prisma/2.30.0:
-    resolution: {integrity: sha512-2XYpSibcVpMd1JDxYypGDU/JKq0W2f/HI1itdddr4Pfg+q6qxt/ItWKcftv4/lqN6u/BVlQ2gDzXVEjpHeO5kQ==}
+  /prisma/2.30.2:
+    resolution: {integrity: sha512-AoLz3CfD7XM+vfE7IWzxQq1O2+ZZ31+6yfabWeMr32wxdLLxSsGagW80LFgKIsZgWW6Ypwleu5ujyKNvO91WHA==}
     engines: {node: '>=12.2'}
     hasBin: true
     requiresBuild: true
     dependencies:
-      '@prisma/engines': 2.30.0-28.60b19f4a1de4fe95741da371b4c44a92f4d1adcb
+      '@prisma/engines': 2.30.1-2.b8c35d44de987a9691890b3ddf3e2e7effb9bf20
     dev: false
 
   /prismjs/1.23.0:
@@ -12394,7 +12394,7 @@ packages:
     dev: false
 
   file:projects/blog-app.tgz_@babel+core@7.15.0+eslint@7.32.0:
-    resolution: {integrity: sha512-tPl96e8+wN4OPiXYhKf6fLxCSB31sklndcBlXCkZY6zcpw2qEwOlaRLFHw9fxqdd5+hvk0XMaGQBIH22loVHDw==, tarball: file:projects/blog-app.tgz}
+    resolution: {integrity: sha512-VQ/ywRs1I6RGAXFNtk18ghLkU+yJ1od1XPV5A9hODjOzCW4ZpCuwuv9DC3oK6sR0yY5rufyu6NGldKKc6qUklw==, tarball: file:projects/blog-app.tgz}
     id: file:projects/blog-app.tgz
     name: '@rush-temp/blog-app'
     version: 0.0.0
@@ -12406,7 +12406,7 @@ packages:
       '@mdx-js/react': 1.6.22_react@17.0.2
       '@next/bundle-analyzer': 11.0.1
       '@next/mdx': 11.0.1_f56c41adb6190c4680be4a1c0222355d
-      '@prisma/client': 2.30.0_prisma@2.30.0
+      '@prisma/client': 2.30.2_prisma@2.30.2
       '@types/node': 15.12.5
       '@types/react': 17.0.11
       date-fns: 2.23.0
@@ -12420,7 +12420,7 @@ packages:
       next-mdx-remote: 3.0.4_react-dom@17.0.2+react@17.0.2
       next-pwa: 5.3.1_@babel+core@7.15.0+next@11.1.0
       prettier: 2.3.2
-      prisma: 2.30.0
+      prisma: 2.30.2
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
       reading-time: 1.3.0

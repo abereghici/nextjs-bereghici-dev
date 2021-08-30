@@ -20,6 +20,9 @@ export const GlobalStyles = () => {
           minHeight: '100vh',
           ...theme.typography.font300,
         },
+        [`:disabled, [disabled], [aria-disabled="true"]`]: {
+          cursor: `not-allowed`,
+        },
       }}
     />
   );

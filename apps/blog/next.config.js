@@ -66,7 +66,7 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
     skipWaiting: true,
   },
   reactStrictMode: true,
-  target: 'serverless',
+  target: 'experimental-serverless-trace',
   images: {
     domains: [
       'pbs.twimg.com', // Twitter Profile Picture

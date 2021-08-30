@@ -5,6 +5,10 @@ import styled from '@emotion/styled';
 import { theme } from '@bereghici/design-system.theme';
 import { Link } from '@bereghici/design-system.link';
 import { Button } from '@bereghici/design-system.button';
+import {
+  HeadingSmall,
+  ParagraphMedium,
+} from '@bereghici/design-system.typography';
 import { ArticleType } from 'shared/types';
 
 const Container = styled.article({
@@ -23,7 +27,6 @@ const Header = styled.header({
 });
 
 const Title = styled(Link)({
-  ...theme.typography.HeadingSmall,
   marginBottom: theme.sizing.scale400,
   fontWeight: 700,
   textDecoration: 'none',
@@ -41,11 +44,6 @@ const EstimateReadingTime = styled.p({
   ...theme.typography.MonoParagraphMedium,
   color: theme.colors.contentSecondary,
   margin: 0,
-});
-
-const Summary = styled.summary({
-  ...theme.typography.ParagraphMedium,
-  marginBottom: theme.sizing.scale600,
 });
 
 const ImageWrapper = styled.div({
@@ -68,7 +66,9 @@ export const ArticleCard = ({ article }: Props) => {
       <Container>
         <Header>
           <NextLink href={link} passHref>
-            <Title>{article.title}</Title>
+            <HeadingSmall margin="scale0">
+              <Title>{article.title}</Title>
+            </HeadingSmall>
           </NextLink>
           <PublishTime dateTime={article.date}>
             Published: {article.date}
@@ -88,10 +88,12 @@ export const ArticleCard = ({ article }: Props) => {
             />
           )}
         </ImageWrapper>
-        <Summary>{article.description}</Summary>
+        <ParagraphMedium marginBottom="scale600">
+          {article.description}
+        </ParagraphMedium>
 
         <NextLink href={link} passHref>
-          <Button variant="primary" shape="pill" size="compact">
+          <Button as="a" variant="primary" shape="pill" size="compact">
             Read More
           </Button>
         </NextLink>

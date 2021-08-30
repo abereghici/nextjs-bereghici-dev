@@ -1,9 +1,10 @@
-import styled from '@emotion/styled';
+import styled, { StyledComponent } from '@emotion/styled';
+import isPropValid from '@emotion/is-prop-valid';
 import { theme } from '@bereghici/design-system.theme';
 
 import { Size, Variant, Shape } from './types';
 
-export const BaseButton = styled.button<{
+type BaseButtonProps = {
   size: Size;
   variant: Variant;
   shape: Shape;
@@ -11,7 +12,23 @@ export const BaseButton = styled.button<{
   isSelected: boolean;
   disabled: boolean;
   focusVisible: boolean;
-}>(
+};
+
+export const BaseButton: StyledComponent<
+  BaseButtonProps & {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    as?: React.ElementType<any> | undefined;
+  },
+  React.DetailedHTMLProps<
+    React.HTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  >,
+  {}
+> = styled('button', {
+  shouldForwardProp: prop =>
+    // shape refers to area HTML element but in our case it means another thing and we don't need it in DOM
+    isPropValid(prop) && !['shape'].includes(String(prop)),
+})(
   ({ size, variant, shape, isLoading, isSelected, focusVisible, disabled }) => {
     return {
       display: 'inline-flex',
@@ -34,7 +51,7 @@ export const BaseButton = styled.button<{
       transitionDuration: theme.animation.timing200,
       transitionTimingFunction: theme.animation.linearCurve,
       cursor: 'pointer',
-      ':disabled': {
+      [`&:disabled, &[disabled]`]: {
         cursor: 'not-allowed',
         backgroundColor: theme.colors.buttonDisabledFill,
         color: theme.colors.buttonDisabledText,
