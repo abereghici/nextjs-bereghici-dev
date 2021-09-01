@@ -171,6 +171,10 @@
       "allowedCategories": ["apps"]
     },
     {
+      "name": "@prisma/engines-version",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@rollup/plugin-babel",
       "allowedCategories": ["platform"]
     },
