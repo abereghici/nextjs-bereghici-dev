@@ -66,7 +66,7 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
     skipWaiting: true,
   },
   reactStrictMode: true,
-  target: 'serverless',
+  target: 'experimental-serverless-trace',
   images: {
     domains: [
       'pbs.twimg.com', // Twitter Profile Picture
@@ -80,17 +80,13 @@ module.exports = withPlugins([[withPWA], [withMDX], [withBundleAnalyzer]], {
       },
     ];
   },
-  webpack: (config, { isServer, webpack }) => {
+  webpack: (config, { isServer }) => {
     if (isServer) {
       require('./scripts/generate-sitemap');
       require('./scripts/generate-rss.js');
 
-      config.plugins.push(
-        new webpack.IgnorePlugin({
-          resourceRegExp: /^cardinal$/,
-          contextRegExp: /./,
-        })
-      );
+      // https://github.com/prisma/prisma/issues/6899
+      config.externals.push('_http_common');
     }
 
     return config;

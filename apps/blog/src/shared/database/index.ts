@@ -1,1 +1,1 @@
-export * from './planetscale';
+export * from './prisma';

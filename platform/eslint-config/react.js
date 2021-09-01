@@ -118,9 +118,9 @@ module.exports = {
     'react/static-property-placement': 'off',
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error',
-
     'react-hooks/exhaustive-deps': 'warn',
     'react-hooks/rules-of-hooks': 'error',
+    'react/prefer-exact-props': 'error',
   },
   overrides: [
     {

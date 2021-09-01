@@ -167,6 +167,14 @@
       "allowedCategories": ["platform"]
     },
     {
+      "name": "@prisma/client",
+      "allowedCategories": ["apps"]
+    },
+    {
+      "name": "@prisma/engines-version",
+      "allowedCategories": ["apps"]
+    },
+    {
       "name": "@rollup/plugin-babel",
       "allowedCategories": ["platform"]
     },
@@ -579,10 +587,6 @@
       "allowedCategories": ["platform"]
     },
     {
-      "name": "planetscale-node",
-      "allowedCategories": ["apps"]
-    },
-    {
       "name": "pnp-webpack-plugin",
       "allowedCategories": ["platform"]
     },
@@ -613,6 +617,10 @@
     {
       "name": "prettier",
       "allowedCategories": ["apps", "packages"]
+    },
+    {
+      "name": "prisma",
+      "allowedCategories": ["apps"]
     },
     {
       "name": "prismjs",
