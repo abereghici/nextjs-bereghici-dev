@@ -225,7 +225,7 @@
     {
       "name": "commitlint",
       "commandKind": "global",
-      "summary": "Used by the pre-commit Git hook. This command invokes commitlint to validate commit message.",
+      "summary": "Used by the commit-msg Git hook. This command invokes commitlint to validate commit message.",
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "rush-commitlint",
       "shellCommand": "commitlint --edit ''"
