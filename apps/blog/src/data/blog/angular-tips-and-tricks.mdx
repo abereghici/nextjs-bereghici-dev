@@ -1,20 +1,20 @@
 ---
 title: Angular - tips and tricks
 description: |
-  This article aims to show some tricks that can be used in Angular to make the code
-  cleaner and improve the performance of your application.
+  This article aims to show some tricks that can be used in Angular to make the code cleaner and improve the performance of your application.
 date: '2018-06-27'
 image: /static/images/angular-tips-and-tricks.jpg
 ---
 
 <Image
-  alt={`React Code`}
+  alt={`Angular logo`}
   src={`/static/images/angular-tips-and-tricks.jpg`}
   blurDataURL={`/static/images/angular-tips-and-tricks.jpg`}
   width={800}
   height={400}
   priority
   placeholder="blur"
+  layout="responsive"
 />
 
 Recently, I completed a project in Angular and along the way, there were some things
@@ -27,7 +27,7 @@ you might want to keep in mind along the way.
 
 Every time a component or directive is destroyed, the subscription to observable
 remains active. So it is important to unsubscribe from it to release the memory
-in the system, otherwise, you will have memory leak.
+in the system, otherwise, you will have a memory leak.
 There are many approaches but I prefer to use **takeUntil** function:
 
 ```js
@@ -166,6 +166,7 @@ This is how visualisation looks like:
   width={800}
   height={450}
   priority
+  layout="responsive"
 />
 
 More information about this tool you can read here:

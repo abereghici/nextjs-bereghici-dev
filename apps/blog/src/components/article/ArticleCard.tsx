@@ -49,7 +49,7 @@ const EstimateReadingTime = styled.p({
 const ImageWrapper = styled.div({
   position: 'relative',
   width: '100%',
-  height: '300px',
+  height: '18.750rem',
   marginBottom: theme.sizing.scale600,
   background: theme.colors.backgroundAlwaysDark,
 });

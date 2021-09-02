@@ -9,9 +9,9 @@ import {
   HeadingSmall,
   HeadingXSmall,
 } from '@bereghici/design-system.typography';
+import { Block } from '@bereghici/design-system.block';
 import { Link as DSLink } from '@bereghici/design-system.link';
 import { theme } from '@bereghici/design-system.theme';
-
 export const Link = ({
   href = '/',
   children,
@@ -73,4 +73,5 @@ export default {
   pre: Pre,
   code: Code,
   inlineCode: InlineCode,
+  Block,
 };

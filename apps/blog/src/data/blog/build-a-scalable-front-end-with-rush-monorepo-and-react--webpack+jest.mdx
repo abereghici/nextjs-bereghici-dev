@@ -16,6 +16,7 @@ image: /static/images/build-a-scalable-front-end-with-rush-monorepo-and-react-pa
   height={400}
   priority
   placeholder="blur"
+  layout="responsive"
 />
 
 This is the 2nd part of the blog series "Build a scalable front-end with Rush monorepo and React"
@@ -39,22 +40,22 @@ This is the 2nd part of the blog series "Build a scalable front-end with Rush mo
 
 #### TL;DR
 
-If you're interested to just see the code, you can find it here:
+If you're interested in just see the code, you can find it here:
 [https://github.com/abereghici/rush-monorepo-boilerplate](https://github.com/abereghici/rush-monorepo-boilerplate)
 
-If you want to see an example with Rush used in a real project, at large scale, you can take a look at
+If you want to see an example with Rush used in a real, large project, you can look at
 [ITwin.js](https://github.com/imodeljs/imodeljs), an open-source project developed by Bentley Systems.
 
 ---
 
 [create-react-app](https://create-react-app.dev/) is a great tool that allows you
 to develop react applications without having to manually configure build tools.
-When you develop small projects it might be overkill to manage your own build tools and
+When you develop small projects, it might be overkill to manage your own build tools and
 CRA is more than enough, but when you start to build large projects you might find
 CRA configuration lacking. CRA is an opinionated pre-configured tool, so there will
 always be some settings that you aren't happy with and you cannot change them.
 
-In this post we'll create our own build tools, based on [create-react-app](https://create-react-app.dev/).
+In this post, we'll create our own build tools, based on [create-react-app](https://create-react-app.dev/).
 This will give us full control over the build process.
 
 #### Create react-scripts package
@@ -432,8 +433,8 @@ rushx build
 
 #### Setup BrowserList
 
-By default, `react-scripts` expects to find a `browserslist` configuration in each project,
-otherwise it fallbacks to the default `browserslist` configuration.
+By default, `react-scripts` expect to find a `browserslist` configuration in each project,
+otherwise, it fallbacks to the default `browserslist` configuration.
 If you want to use the same configuration for all your projects, you can modify
 `packages/react-scripts/build.js` to use `browserslist` from `package.json` from `@monorepo/react-scripts`.
 

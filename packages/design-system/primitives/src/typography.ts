@@ -96,135 +96,135 @@ const font = {
 const font100 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '12px',
+  fontSize: '0.750em',
   lineHeight: '200%',
 };
 const font150 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '12px',
+  fontSize: '0.750em',
   fontWeight: 500,
   lineHeight: '200%',
 };
 const font200 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '14px',
+  fontSize: '0.875em',
   lineHeight: '200%',
 };
 const font250 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '14px',
+  fontSize: '0.875em',
   fontWeight: 500,
 };
 const font300 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '16px',
+  fontSize: '1em',
   lineHeight: '200%',
 };
 const font350 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '16px',
+  fontSize: '1em',
   fontWeight: 500,
 };
 const font400 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '18px',
+  fontSize: '1.125em',
   lineHeight: '200%',
 };
 const font450 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '18px',
+  fontSize: '1.125em',
   fontWeight: 500,
 };
 const font550 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '20px',
+  fontSize: '1.250em',
   fontWeight: 700,
 };
 const font650 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '24px',
+  fontSize: '1.500em',
   fontWeight: 700,
 };
 const font750 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '26px',
+  fontSize: '1.625em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '28px',
+    fontSize: '1.750em',
   },
 };
 const font850 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '28px',
+  fontSize: '1.750em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '32px',
+    fontSize: '2em',
   },
 };
 
 const font950 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '30px',
+  fontSize: '1.875em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '36px',
+    fontSize: '2.250em',
   },
 };
 const font1050 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '30px',
+  fontSize: '1.875em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '40px',
+    fontSize: '2.5em',
   },
 };
 const font1150 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '32px',
+  fontSize: '2em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '36px',
+    fontSize: '2.250em',
   },
 };
 const font1250 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '36px',
+  fontSize: '2.250em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '44px',
+    fontSize: '2.750em',
   },
 };
 const font1350 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '44px',
+  fontSize: '2.750em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '52px',
+    fontSize: '3.250em',
   },
 };
 const font1450 = {
   ...font,
   fontFamily: fontTokens.primaryFontFamily,
-  fontSize: '72px',
+  fontSize: '4.5em',
   fontWeight: 700,
   [mediaQueries.tablet]: {
-    fontSize: '96px',
+    fontSize: '6em',
   },
 };
 export const typography: Typography = {

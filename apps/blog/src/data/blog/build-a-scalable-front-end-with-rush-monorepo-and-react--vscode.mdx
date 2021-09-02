@@ -16,6 +16,7 @@ image: /static/images/build-a-scalable-front-end-with-rush-monorepo-and-react-pa
   height={400}
   priority
   placeholder="blur"
+  layout="responsive"
 />
 
 This is the 5th part of the blog series "Build a scalable front-end with Rush monorepo and React"
@@ -39,17 +40,17 @@ This is the 5th part of the blog series "Build a scalable front-end with Rush mo
 
 #### TL;DR
 
-If you're interested to just see the code, you can find it here:
+If you're interested in just see the code, you can find it here:
 [https://github.com/abereghici/rush-monorepo-boilerplate](https://github.com/abereghici/rush-monorepo-boilerplate)
 
-If you want to see an example with Rush used in a real project, at large scale, you can take a look at
+If you want to see an example with Rush used in a real, large project, you can look at
 [ITwin.js](https://github.com/imodeljs/imodeljs), an open-source project developed by Bentley Systems.
 
 ---
 
-In previous posts we added `prettier` and `eslint` to format our code and enforce
+In previous posts, we added `prettier` and `eslint` to format our code and enforce
 a consistent code style across our projects. We can save time
-by automatically format pasted code, or fix `lint` errors while writing code,
+by automatically formatting pasted code, or fix `lint` errors while writing code,
 without running lint command to see all the errors.
 
 VSCode provides two different types of settings:
@@ -131,7 +132,7 @@ Create a new file `.vscode/settings.json` in the root of our monorepo and let's 
 }
 ```
 
-In this settings we:
+In these settings we:
 
 - set Prettier as default formatter
 - exclude from search some irrelevant folders like `node_modules` and `.nyc_output`
@@ -142,4 +143,4 @@ In this settings we:
 - provide a path to `eslint` plugins. We're helping ESLint extension to pick up
   the right rules for each project.
 
-I hope you'll find this settings useful.
+I hope you'll find these settings useful.

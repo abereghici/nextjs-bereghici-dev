@@ -3,8 +3,8 @@ title: |
   Build a scalable front-end with Rush monorepo and React — Repo Setup + Import projects + Prettier
 description: |
   This is the 1st part of the blog series "Build a scalable front-end with Rush monorepo and React".
-  In this post we'll init a new Rush monorepo and we'll import the projects without loosing git history.
-  We'll also add Prettier to format the code for entire repository.
+  In this post, we'll init a new Rush monorepo and we'll import the projects without losing git history.
+  We'll also add Prettier to format the code for the entire repository.
 date: '2021-08-16'
 image: /static/images/build-a-scalable-front-end-with-rush-monorepo-and-react-part1.jpg
 ---
@@ -17,6 +17,7 @@ image: /static/images/build-a-scalable-front-end-with-rush-monorepo-and-react-pa
   height={400}
   priority
   placeholder="blur"
+  layout="responsive"
 />
 
 This is the 1st part of the blog series "Build a scalable front-end with Rush monorepo and React"
@@ -40,9 +41,9 @@ This is the 1st part of the blog series "Build a scalable front-end with Rush mo
 
 In a multi-repository project structure, it's only a matter of time when
 you'll need to reuse some code from one project to another. Adopting a monorepo
-architecture can help the team to share and contribute code in a simple manner.
+architecture can help the team share and contribute code in a simple manner.
 I won't cover in this article the pros and cons of choosing this approach, because
-there are plenty of resources that debate this topic, instead I'll focus on the
+there are plenty of resources that debate this topic, instead, I'll focus on the
 implementation of a scalable monorepo using Rush.js and React.
 
 #### Tools
@@ -61,8 +62,7 @@ We'll be using the following tools:
 
 #### Goals
 
-Before starting to implement the monorepo, let's define the goals we want to
-achieve using these tools:
+Before implementing the monorepo, let's define the goals we want to achieve using these tools:
 
 - Multiple applications
 - Code sharing between applications
@@ -72,10 +72,10 @@ achieve using these tools:
 
 #### TL;DR
 
-If you're interested to just see the code, you can find it here:
+If you're interested in just see the code, you can find it here:
 [https://github.com/abereghici/rush-monorepo-boilerplate](https://github.com/abereghici/rush-monorepo-boilerplate)
 
-If you want to see an example with Rush used in a real project, at large scale, you can take a look at
+If you want to see an example with Rush used in a real, large project, you can look at
 [ITwin.js](https://github.com/imodeljs/imodeljs), an open-source project developed by Bentley Systems.
 
 #### Guide
@@ -87,7 +87,7 @@ Let's clone it locally and let the magic begin!
 
 ##### Initialize the rush monorepo
 
-Inside of your project folder run the following commands:
+Inside of your project folder, run the following commands:
 
 ```bash
 npm install -g @microsoft/rush
@@ -98,7 +98,7 @@ rush init
 After this command, you'll see a bunch of files and folders created. You can check
 the config files reference [here](https://rushjs.io/pages/advanced/config_files/).
 
-At this point we can remove unnecessary files and create our first commit.
+At this point, we can remove unnecessary files and create our first commit.
 
 ```bash
 rm -rf .travis.yml
