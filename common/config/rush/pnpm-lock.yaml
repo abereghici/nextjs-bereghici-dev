@@ -34,6 +34,7 @@ specifiers:
   '@rush-temp/design-system.block': file:./projects/design-system.block.tgz
   '@rush-temp/design-system.button': file:./projects/design-system.button.tgz
   '@rush-temp/design-system.global-styles': file:./projects/design-system.global-styles.tgz
+  '@rush-temp/design-system.input': file:./projects/design-system.input.tgz
   '@rush-temp/design-system.link': file:./projects/design-system.link.tgz
   '@rush-temp/design-system.primitives': file:./projects/design-system.primitives.tgz
   '@rush-temp/design-system.responsive-container': file:./projects/design-system.responsive-container.tgz
@@ -166,6 +167,7 @@ dependencies:
   '@rush-temp/design-system.block': file:projects/design-system.block.tgz_994dd10159ec17bf0fe12e75ebb15c7b
   '@rush-temp/design-system.button': file:projects/design-system.button.tgz_@babel+core@7.15.0
   '@rush-temp/design-system.global-styles': file:projects/design-system.global-styles.tgz_@babel+core@7.15.0
+  '@rush-temp/design-system.input': file:projects/design-system.input.tgz
   '@rush-temp/design-system.link': file:projects/design-system.link.tgz_994dd10159ec17bf0fe12e75ebb15c7b
   '@rush-temp/design-system.primitives': file:projects/design-system.primitives.tgz_2cde947be6cef35e44dba27277a5723c
   '@rush-temp/design-system.responsive-container': file:projects/design-system.responsive-container.tgz_994dd10159ec17bf0fe12e75ebb15c7b
@@ -12566,6 +12568,15 @@ packages:
       typescript: 4.4.2
     transitivePeerDependencies:
       - '@babel/core'
+    dev: false
+
+  file:projects/design-system.input.tgz:
+    resolution: {integrity: sha512-/dNfXXhvNv4BZ0Kt1gZFLDxQzxEvakLyI8DvcSsZPWMRaaHwiPb08pM890Gnvmr/dP3UbqrCT0LqbqbV1qtErw==, tarball: file:projects/design-system.input.tgz}
+    name: '@rush-temp/design-system.input'
+    version: 0.0.0
+    dependencies:
+      '@babel/runtime': 7.15.3
+      typescript: 4.4.2
     dev: false
 
   file:projects/design-system.link.tgz_994dd10159ec17bf0fe12e75ebb15c7b:

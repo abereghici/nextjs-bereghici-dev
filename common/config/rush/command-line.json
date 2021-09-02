@@ -213,6 +213,14 @@
       "ignoreMissingScript": false,
       "ignoreDependencyOrder": true,
       "allowWarningsInSuccessfulBuild": false
+    },
+    {
+      "name": "create:package",
+      "commandKind": "global",
+      "summary": "Creates a new component package using plop templates",
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "rush-plop",
+      "shellCommand": "plop create-package"
     }
   ],
 

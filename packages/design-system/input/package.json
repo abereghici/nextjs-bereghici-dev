@@ -1,0 +1,26 @@
+{
+  "name": "@bereghici/design-system.input",
+  "version": "0.0.1",
+  "description": "Design system input component",
+  "scripts": {
+    "build": "bereghici-scripts build --bundle cjs,esm",
+    "lint": "bereghici-scripts lint 'src/**/*.{ts,tsx}'",
+    "pre-commit": "bereghici-scriptspre-commit",
+    "typecheck": "bereghici-scripts typecheck",
+    "validate": "bereghici-scripts validate"
+  },
+  "main": "dist/design-system.input.cjs.js",
+  "module": "dist/design-system.input.esm.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@babel/runtime": "^7.14.0"
+  },
+  "devDependencies": {
+    "@bereghici/bereghici-scripts": "0.0.1",
+    "@bereghici/eslint-config": "0.0.1",
+    "typescript": "^4.3.2"
+  },
+  "peerDependencies": {
+    "typescript": "^4.3.2"
+  }
+}
