@@ -189,7 +189,7 @@
       "commandKind": "bulk",
       "summary": "Run validate on each package",
       "description": "Iterates through each package in the monorepo and runs the 'validate' script",
-      "enableParallelism": false,
+      "enableParallelism": true,
       "ignoreMissingScript": true,
       "ignoreDependencyOrder": true,
       "allowWarningsInSuccessfulBuild": true
@@ -221,6 +221,14 @@
       "safeForSimultaneousRushProcesses": true,
       "autoinstallerName": "rush-plop",
       "shellCommand": "plop create-package"
+    },
+    {
+      "name": "commitlint",
+      "commandKind": "global",
+      "summary": "Used by the commit-msg Git hook. This command invokes commitlint to validate commit message.",
+      "safeForSimultaneousRushProcesses": true,
+      "autoinstallerName": "rush-commitlint",
+      "shellCommand": "commitlint --edit ''"
     }
   ],
 
