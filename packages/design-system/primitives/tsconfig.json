@@ -1,3 +1,7 @@
 {
-  "extends": "./node_modules/@bereghici/bereghici-scripts/shared-tsconfig.json"
+  "extends": "./node_modules/@bereghici/bereghici-scripts/shared-tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react"
+  }
 }

@@ -1,5 +1,11 @@
 {
-  "exclude": ["node_modules"],
+  "exclude": [
+    "node_modules",
+    "**/*.stories.*",
+    "**/*/__tests__/*",
+    "**/*/__testfixtures__/*",
+    "**/*.spec.*"
+  ],
   "include": ["../../../src/**/*"],
   "compilerOptions": {
     "target": "es5",

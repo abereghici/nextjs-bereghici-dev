@@ -8,7 +8,7 @@
   "projectFolderMinDepth": 2,
   "projectFolderMaxDepth": 3,
   "approvedPackagesPolicy": {
-    "reviewCategories": ["apps", "packages", "platform"],
+    "reviewCategories": ["apps", "packages", "platform", "tools"],
     "ignoredNpmScopes": ["@types"]
   },
   "gitPolicy": {},
@@ -44,6 +44,11 @@
       "packageName": "@bereghici/bereghici-scripts",
       "projectFolder": "platform/bereghici-scripts",
       "reviewCategory": "platform"
+    },
+    {
+      "packageName": "@bereghici/storybook",
+      "projectFolder": "tools/storybook",
+      "reviewCategory": "tools"
     },
     {
       "packageName": "@bereghici/icons",

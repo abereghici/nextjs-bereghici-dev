@@ -1,0 +1,31 @@
+{
+  "name": "@bereghici/storybook",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
+  },
+  "devDependencies": {
+    "@bereghici/design-system.primitives": "0.0.1",
+    "@bereghici/design-system.global-styles": "0.0.1",
+    "@bereghici/design-system.theme": "0.0.1",
+    "@bereghici/design-system.block": "0.0.1",
+    "@storybook/react": "^6.4.0-alpha.34",
+    "react": "^17.0.2"
+  },
+  "dependencies": {
+    "@emotion/styled": "^11.1.5",
+    "@emotion/react": "^11.1.5",
+    "@storybook/builder-webpack5": "~6.3.8",
+    "@storybook/manager-webpack5": "~6.3.8",
+    "@storybook/addon-viewport": "~6.3.8",
+    "storybook-addon-performance": "~0.16.1",
+    "@storybook/addon-docs": "~6.3.8",
+    "@storybook/addon-storysource": "~6.3.8",
+    "@storybook/addon-controls": "~6.3.8",
+    "@storybook/addon-actions": "~6.3.8",
+    "@storybook/addon-a11y": "~6.3.8",
+    "@storybook/addon-links": "~6.3.8",
+    "@storybook/addon-essentials": "~6.3.8"
+  }
+}
