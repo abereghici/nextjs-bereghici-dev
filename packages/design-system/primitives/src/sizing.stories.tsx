@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { sizing, Sizing as SizingType } from './sizing';
 
 export default {
-  title: 'Primitives',
+  title: 'Primitives/Sizing',
 };
 
 const sizeOptions = {

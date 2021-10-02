@@ -1,5 +1,6 @@
 // borderColor is defaulted.
 // themes overrides the border colors.
+
 export const borders = {
   border100: {
     borderColor: 'hsla(0, 0%, 0%, 0.04)',
