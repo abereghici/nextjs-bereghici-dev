@@ -22,11 +22,6 @@ const ThemeContext =
 function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [themeName, setThemeName] = React.useState<ThemeTypes>('light');
 
-  React.useEffect(() => {
-    const colorMode = window.document.body.getAttribute(THEME_DATA_ATTRIBUTE);
-    setThemeName(colorMode === 'dark' ? 'dark' : 'light');
-  }, []);
-
   const setTheme = React.useCallback((newThemeName: ThemeTypes) => {
     localStorage.set(THEME_STORAGE_KEY, newThemeName);
     document.body.setAttribute(THEME_DATA_ATTRIBUTE, newThemeName);
@@ -37,6 +32,26 @@ function ThemeProvider({ children }: { children: React.ReactNode }) {
     () => [themeName, setTheme],
     [themeName, setTheme]
   );
+
+  React.useEffect(() => {
+    const colorMode = window.document.body.getAttribute(THEME_DATA_ATTRIBUTE);
+    setThemeName(colorMode === 'dark' ? 'dark' : 'light');
+  }, []);
+
+  React.useEffect(() => {
+    const onThemeChange = (e: MediaQueryListEvent) => {
+      const colorPreference = e.matches ? 'dark' : 'light';
+
+      setTheme(colorPreference);
+    };
+
+    const mql = window.matchMedia('(prefers-color-scheme: dark)');
+    mql.addEventListener('change', onThemeChange);
+
+    return () => {
+      mql.removeEventListener('change', onThemeChange);
+    };
+  }, [setTheme]);
 
   return (
     <>
