@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "prisma generate && next dev",
     "build": "prisma generate && next build",
-    "start": "next start",
+    "start": "prisma generate && next start",
     "lint": "bereghici-scripts lint './src/**/*.{js,jsx,ts,tsx}'",
     "pre-commit": "bereghici-scripts pre-commit",
     "typecheck": "bereghici-scripts typecheck",
