@@ -11,7 +11,7 @@
     "validate": "bereghici-scripts validate"
   },
   "dependencies": {
-    "@microsoft/rush-lib": "^5.47.0",
+    "@microsoft/rush-lib": "^5.56.0",
     "jest": "^27.0.4",
     "yargs-parser": "^20.2.7"
   },
