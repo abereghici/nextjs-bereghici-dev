@@ -1,1 +1,1 @@
-# bereghici.dev
+# bereghicidev.netlify.app
